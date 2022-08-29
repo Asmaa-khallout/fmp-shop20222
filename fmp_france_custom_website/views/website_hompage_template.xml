@@ -1,0 +1,282 @@
+<odoo>
+    <template id ="website_homepage_custom" inherit_id="website.homepage" name="Page d'acceuil" priority="16">
+
+     <xpath expr="//div[@id='wrap']" position="replace">
+      <div id="wrap" class="oe_structure oe_empty">
+        <section class="s_cover_1 o_colored_level" data-snippet="s_cover_1" data-name="Cover - 1" style="background-image: none;">
+          <div class="s_carousel tp-custom-carousel s_carousel_rounded carousel slide" data-interval="10000" id="myCarousel1655224352632" style="background-image: none;">
+            <ol class="carousel-indicators o_we_no_overlay">
+              <li data-slide-to="0" data-target="#myCarousel1655224352632" class="active"/>
+              <li data-slide-to="1" data-target="#myCarousel1655224352632"/>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item o_colored_level oe_img_bg o_bg_img_center pt208 pb232 active" data-name="Slide" style="background-image: url(&quot;/fmp_france_custom_website/static/src/img/home/slide_1.svg&quot;);">
+                <div class="container-fluid px-0">
+                          </div>
+              </div>
+              <div class="carousel-item o_colored_level oe_img_bg o_bg_img_center" data-name="Slide" style="background-image: url(&quot;/fmp_france_custom_website/static/src/img/home/slide_1.svg&quot;);">
+                <div class="px-0 container-fluid">
+                          </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-slide="prev" role="img" aria-label="Previous" title="Previous" href="#myCarousel1655224352632">
+              <span class="fa fa-chevron-left"/>
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </a>
+            <a class="carousel-control-next o_not_editable o_we_no_overlay" data-slide="next" role="img" aria-label="Next" title="Next" href="#myCarousel1655224352632">
+              <span class="fa fa-chevron-right" data-original-title="" title="" aria-describedby="tooltip842460"/>
+              <span class="sr-only o_default_snippet_text">Next</span>
+            </a>
+          </div>
+        </section>
+        <section class="s_heading_1 o_colored_level bg-light pt16 pb16" data-snippet="s_heading_1" data-name="Heading - 1" style="background-image: none;">
+          <div class="container">
+            <div class="row s_col_no_bgcolor s_nb_column_fixed">
+              <div class="col-12 tp-heading-container tp-line-thickness-normal tp-line-width-normal text-center">
+                <h2 class="custom-title-heading">Produits à la une</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-sale tp-dynamic-snippet dr_not_editable s_d_products_snippet_wrapper text-center o_colored_level bg-light pb0" data-tp-snippet-id="d_products_snippet" data-snippet="s_d_products_snippet" data-name="Products Cards" style="background-image: none;" data-selection-info="{&quot;selectionType&quot;:&quot;manual&quot;,&quot;recordsIDs&quot;:[1105, 997,1322, 1137]}" t-attf-data-ui-config-info="{&quot;hide&quot;:&quot;{{user_id.partner_id.activation_state}}&quot;,&quot;style&quot;:&quot;s_card_style_6&quot;,&quot;mode&quot;:&quot;slider&quot;,&quot;ppr&quot;:4,&quot;activeActions&quot;:[&quot;rating&quot;,&quot;quick_view&quot;,&quot;add_to_cart&quot;,&quot;label&quot;],&quot;model&quot;:&quot;product.template&quot;}" data-original-title="" title="" aria-describedby="tooltip9840">
+          <div class="s_d_products_snippet o_not_editable container"/>
+        </section>
+        <section class="s_heading_1 pb16 o_colored_level bg-light pt8" data-snippet="s_heading_1" data-name="Heading - 1" style="background-image: none;">
+          <div class="container">
+            <div class="row s_col_no_bgcolor s_nb_column_fixed">
+              <div class="col-12 tp-heading-container tp-line-thickness-normal tp-line-width-normal text-center">
+                <h2 class="custom-title-heading">Nouveaux produits</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="tp-dynamic-snippet dr_not_editable s_d_products_snippet_wrapper text-center o_colored_level bg-light pb16" data-tp-snippet-id="d_products_snippet" data-snippet="s_d_products_snippet" data-name="Products Cards" style="background-image: none;" data-selection-info="{&quot;selectionType&quot;:&quot;manual&quot;,&quot;recordsIDs&quot;:[1338,1343,1296,1368, 1390,1391,1367,1352]}" t-attf-data-ui-config-info="{&quot;hide&quot;:&quot;{{user_id.partner_id.activation_state}}&quot;,&quot;style&quot;:&quot;s_card_style_6&quot;,&quot;mode&quot;:&quot;slider&quot;,&quot;ppr&quot;:4,&quot;activeActions&quot;:[&quot;rating&quot;,&quot;quick_view&quot;,&quot;add_to_cart&quot;,&quot;label&quot;],&quot;model&quot;:&quot;product.template&quot;}" data-original-title="" title="" aria-describedby="tooltip650823">
+          <div class="s_d_products_snippet o_not_editable section-sale bg-light container"/>
+        </section>
+        <section class="s_cover_3 parallax s_parallax_is_fixed o_full_screen_height pt168 pb144 s_parallax_no_overflow_hidden o_colored_level oe_img_bg o_bg_img_center" data-scroll-background-ratio="0" style="background-image: url(&quot;/fmp_france_custom_website/static/src/img/home/slide_3.svg&quot;); background-position: 50% 0px;" data-snippet="s_cover_3" data-name="Cover - 3">
+          <div class="container tp-cover-container">
+            <div class="row s_nb_column_fixed">
+              <div class="jumbotron rounded pt32 pb32 col-lg-7 ml-lg-auto o_colored_level" data-name="Box">
+                <h3 class="o_default_snippet_text defalut_title_custom">Nouveau</h3>
+                <h2 class="display-4 font-weight-bold o_default_snippet_text text-white">Bloc écran OLED
+                              </h2>
+                <p class="lead">
+                  <font style="font-size: 20px;" class="o_default_snippet_text text-white">Compatible pour
+                                      iPhone 11 Pro Max - Hard Oled .
+                                  </font>
+                </p>
+                <a href="/shop" class="btn btn-primary mt-2 rounded-circle o_default_snippet_text">
+                                  Commander
+                              </a>
+                <p class="mt-3 defalut_link_custom">
+                  <a href="/shop">En savoir plus &amp;gt;</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="s_heading_1 pb16 o_colored_level bg-light pt8" data-snippet="s_heading_1" style="background-image: none;" data-name="Personnalisé Heading - 1">
+          <div class="container">
+            <div class="row s_col_no_bgcolor s_nb_column_fixed">
+              <div class="col-12 tp-heading-container tp-line-thickness-normal tp-line-width-normal text-center pt16">
+                <h2 class="custom-title-heading">Les meilleurs ventes</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="tp-dynamic-snippet dr_not_editable s_d_products_snippet_wrapper text-center o_colored_level bg-light pb16" data-tp-snippet-id="d_products_snippet" data-snippet="s_d_products_snippet" style="background-image: none;" data-selection-info="{&quot;selectionType&quot;:&quot;manual&quot;,&quot;recordsIDs&quot;:[1338,1343,1296,1368, 1390,1391,1367,1352]}"  t-attf-data-ui-config-info="{&quot;hide&quot;:&quot;{{user_id.partner_id.activation_state}}&quot;,&quot;style&quot;:&quot;s_card_style_6&quot;,&quot;mode&quot;:&quot;slider&quot;,&quot;ppr&quot;:4,&quot;activeActions&quot;:[&quot;rating&quot;,&quot;quick_view&quot;,&quot;add_to_cart&quot;,&quot;label&quot;],&quot;model&quot;:&quot;product.template&quot;}" data-original-title="" title="" aria-describedby="tooltip650823" data-name="Personnalisé Products Cards">
+          <div class="s_d_products_snippet o_not_editable section-sale bg-light container"/>
+        </section>
+        <section class="s_info_block_7 parallax s_parallax_is_fixed pt96 pb96 bg-black-50 s_parallax_no_overflow_hidden o_colored_level oe_img_bg o_bg_img_center" data-scroll-background-ratio="1" style="background-image: url(&quot;/fmp_france_custom_website/static/src/img/home/slide_2.svg&quot;); background-position: 50% 0px;" data-snippet="s_info_block_7" data-name="Info Block - 7">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 align-self-center order-lg-1 order-2 p-4 ml-lg-auto mr-lg-auto o_colored_level">
+                <h2 class="h1 mb-4 text-center">Partenaire des réparateurs
+                                  <br/>
+                              </h2>
+                <p class="lead o_default_snippet_text text-center">
+                                  Faites nous confiance pour vous aider à proposer des produits<br/>et des solutions afin
+                                  d’améliorer votre réputation et votre chiffre d’affaire.
+                              </p>
+                <p class="lead text-center">
+                  <a href="/shop" class="btn btn-primary mt-2 rounded-circle o_default_snippet_text">
+                                  Commander
+                              </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="s_icon_block_2 pt16 pb16 o_colored_level" data-snippet="s_icon_block_2" data-name="Icon Block - 2" style="background-color: rgb(16, 16, 16) !important; background-image: none;">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 py-3 text-center o_colored_level col-lg-3 pt24">
+                <img class="img-fluid o_we_custom_image fa-3x text-o-color-1" src="/fmp_france_custom_website/static/src/img/home/icon_transport.svg" alt="" style="" data-original-id="21044"  data-mimetype="image/svg+xml" data-resize-width="198"/>
+                <h5 class="mt-3">
+                  <font style="color: rgb(253, 253, 253);">Livraison en 24h&amp;nbsp;Chronopost</font>
+                </h5>
+                <p>
+                  <font style="color: rgb(51, 146, 254);">En savoir plus &amp;gt;</font>
+                </p>
+              </div>
+              <div class="col-12 py-3 text-center o_colored_level col-lg-3 pt16">
+                <img class="img-fluid o_we_custom_image fa-3x text-o-color-1" src="/fmp_france_custom_website/static/src/img/home/icon_rachat.svg" alt=""  style="" data-original-id="21045" data-mimetype="image/svg+xml" data-resize-width="99"/>
+                <h5 class="mt-3">
+                  <font style="color: rgb(253, 253, 253);">Programme de Rachat d'écran</font>
+                </h5>
+                <p>
+                  <font style="color: rgb(51, 146, 254);">En savoir plus &amp;gt;</font>
+                </p>
+              </div>
+              <div class="col-12 py-3 text-center o_colored_level col-lg-3 pt0">
+                <img class="img-fluid o_we_custom_image fa-3x text-o-color-1" src="/fmp_france_custom_website/static/src/img/home/icon_garantie.svg" alt=""  style="" data-original-id="21046"  data-mimetype="image/svg+xml" data-resize-width="236" data-original-title="" title="" aria-describedby="tooltip945729"/>
+                <h5 class="mt-3">
+                  <font style="color: rgb(253, 253, 253);">Garantie a vie Sous condition</font>
+                </h5>
+                <p>
+                  <span style="color: rgb(108, 117, 125); font-size: 14px">
+                    <font style="color: rgb(51, 146, 254);">En savoir plus &amp;gt;</font>
+                  </span>
+                  <br/>
+                </p>
+              </div>
+              <div class="col-12 py-3 text-center o_colored_level col-lg-3 pb8 pt16">
+                <img class="img-fluid o_we_custom_image fa-3x text-o-color-1" src="/fmp_france_custom_website/static/src/img/home/icon_help.svg" alt=""  style="" data-original-id="21047"  data-mimetype="image/svg+xml" data-resize-width="236" data-original-title="" title="" aria-describedby="tooltip96920"/>
+                <h5 class="mt-3">
+                  <font style="color: rgb(253, 253, 253);">Faite vous Aider</font>
+                </h5>
+                <p>
+                  <font style="" class="text-white">Une Question ? Appelez Nos spécialistes au <br/> +33 6 60 36
+                                      35 42
+                                  </font>
+                </p>
+                <p>
+                  <span style="color: rgb(108, 117, 125); font-size: 14px">
+                    <font style="color: rgb(51, 146, 254);">En savoir plus &amp;gt;</font>
+                  </span>
+                  <br/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <style>
+              .defalut_title_custom {
+              color : #FF6C00;
+              }
+              .default_link_custom{
+              color: #3392FF;
+              font-size: 14px;
+              }
+              .s_cover_3 {
+              min-height: 1000px !important;
+              }
+              .custom-title-heading{
+              font: normal normal 800 2.2rem/3rem Roboto;
+              letter-spacing: 0px;
+              color: #4B4B4B;
+              }
+              .section-sale .card {
+              border-radius: 17px;
+              }
+              .section-sale div[class*=' s_card_style_'] {
+              overflow: hidden !important;
+              }
+              .section-sale .s_card_style_6 .d_add_to_cart_btn,.section-sale .s_card_style_3 .d_add_to_cart_btn {
+              top: 8px;
+              color: #454545;
+              background: #D1D4D8 0% 0% no-repeat padding-box;
+             border-color: #D1D4D8;
+              }
+              .section-sale .d-product-price h6{
+              font-weight: bold !important;
+              font-size: 18px;
+              letter-spacing: 0px;
+              color: #F70000 !important ;
+              }
+              .section-sale .d-product-name{
+              text-align: center;
+              font-weight: bold !important;
+              color : black !important;
+              }
+              .custom_quantity .js_add_cart_json{
+              border: 1px solid #CED4DA;
+              }
+              .custom_quantity .quantity{
+                border: 1px solid #CED4DA;
+                height: 38px;
+              }
+
+              .title-bold-cart{
+              font: normal normal bold 20px/29px Roboto;
+              color: #000000 !important;
+              }
+               .custom_quantity .input-group-prepend .btn{
+              border: 1px solid #CED4DA;
+              border-top-left-radius: 19px;
+              border-bottom-left-radius: 19px;
+              }
+               .custom_quantity .input-group-append .btn{
+              border: 1px solid #CED4DA;
+              border-top-right-radius: 19px !important;
+              border-bottom-right-radius: 19px !important;
+              }
+              .card-body.position-relative{
+                  padding-top: 0;
+              }
+              .card-title.mt-1.mb-2.text-truncate.font-weight-light.d-product-name{
+              white-space: break-spaces !important;
+              }
+              .d-product-name &gt; a:not([class^="text-"]){
+              font-weight: 400;
+              }
+              .custom-title{
+              font: normal normal 500 1.8rem/2.8rem Roboto;
+              }
+              .d-inline-block.mb-0.font-weight-light.text-primary{
+              font-weight: bold !important;
+              font-size: 18px;
+              letter-spacing: 0px;
+              color: #F70000 !important;
+              }
+              .card.border.p-1.mb-2{
+              border-radius:26px !important;
+              }
+             .d_add_to_cart_btn:hover{
+              background: #274B95 !important;
+              border-color:#274B95 !important;
+              color: white !important;
+              }
+              .cart-title{
+              color: #000000;
+              font: normal normal normal 17px/24px Roboto;
+              }
+              .custom_quantity{
+              left: 14% !important;
+              }
+              .custom_quantity.input-group.my-3.w-75.mx-auto{
+              width: 68% !important;
+              }
+              .o_notification_body .text-truncate{
+                max_width:70% !important;
+              }
+              .d_product_box .tp-actions:hover{
+              color:white !important;
+              }
+              .d_product_box .d_product_quick_view:hover{
+              background-color: #274B95 !important;
+              }
+              .s_card_style_6 .tp-actions .tp-action-icon {
+                width: 3rem !important;
+                height: 3rem !important;
+                line-height: 3rem !important;
+                transition: all 0.3s !important;
+                }
+                .d_product_box .tp-actions{
+                margin-right: -8px !important;
+              }
+          </style>
+     </xpath>
+    </template>
+</odoo>

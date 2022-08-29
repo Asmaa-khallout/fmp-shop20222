@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vpicktree_extends_is_invoiced_flag">
+            <field name="name">vpicktree.extends.is.invoiced.flag</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="is_invoiced"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_picking_form_inherit_add_button_to_see_invoice_detail" model="ir.ui.view">
+            <field name="name">sr.view.picking.form.inherit.add.button.to.see.invoice.detail</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button type="object" name="action_view_invoice" class="oe_stat_button" icon="fa-pencil-square-o">
+                        <field name="invoice_count" widget="statinfo" string="Invoice"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+
+        <record id="generate_single_invoice_from_picking_form" model="ir.ui.view">
+            <field name="name">generate_single_invoice_from_picking_form</field>
+            <field name="model">sr.generate.single.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Generate Single Invoice">
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="journal_id"/>
+                        </group>
+                        <group>
+                            <field name="invoice_date"/>
+                            <field name="payment_term_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Generate Invoice" name="create_invoice" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_generate_single_invoice_from_picking" model="ir.actions.act_window">
+            <field name="name">Generate Single Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sr.generate.single.invoice</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_view_types">list</field>
+        </record>
+    </data>
+</odoo>

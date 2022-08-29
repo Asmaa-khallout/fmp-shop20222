@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_sale_custom" inherit_id="sale.portal_my_home_sale" name="Show Quotations / Sales Orders">
+        <xpath expr="//t[@t-call='portal.portal_docs_entry']" position="replace"/>
+    </template>
+
+
+    <template id="portal_my_orders_custom" inherit_id="sale.portal_my_orders" name="My Sales Orders">
+
+
+        <xpath expr="//t[@t-call='portal.portal_table']" position="replace">
+
+
+            <t t-if="orders" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th class="text-center">
+                            <span class="d-none d-md-inline">Sales Order #</span>
+                            <span class="d-block d-md-none">Ref.</span>
+                        </th>
+                        <th class="text-center">Order Date</th>
+                        <th class="text-center">Payment State</th>
+                        <th class="text-center">Shipping State</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+                </thead>
+                <t t-foreach="orders" t-as="order">
+                    <tr>
+                        <td class="text-center">
+                            <a t-att-href="order.get_portal_url()">
+                                <t t-esc="order.name"/>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <span t-field="order.date_order" t-options="{'widget': 'date'}"/>&amp;nbsp;
+                            <span class="d-none d-md-inline" t-field="order.date_order"
+                                  t-options="{'time_only': True}"/>
+                        </td>
+                        <td>
+                            <t t-set="invoices"
+                               t-value="[i for i in order.invoice_ids if i.state not in ['draft', 'cancel']]"/>
+                            <t t-foreach="invoices" t-as="i">
+                                <span t-if="i.payment_state in ('paid', 'in_payment')"
+                                      class="small badge badge-success orders_label_text_align rounded-pill">
+                                    <i class="fa fa-fw fa-check"/>
+                                    <b>Paid</b>
+                                </span>
+                                <span t-else="" class="small badge badge-info orders_label_text_align rounded-pill">
+                                    <i class="fa fa-fw fa-clock-o"/>
+                                    <b>Waiting Payment</b>
+                                </span>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-set="pickings" t-value="order.picking_ids.filtered(lambda picking: picking.picking_type_id.code == 'outgoing')"/>
+                            <t t-foreach="pickings"
+                               t-as="i">
+                                <span t-if="i.state == 'done'"
+                                      class="small badge badge-success orders_label_text_align rounded-pill mt-1">
+                                    <i class="fa fa-fw fa-truck"/>
+                                    <b>Shipped</b>
+                                </span>
+                                <span t-if="i.state == 'cancel'"
+                                      class="small badge badge-danger orders_label_text_align rounded-pill mt-1">
+                                    <i class="fa fa-fw fa-times"/>
+                                    <b>Cancelled</b>
+                                </span>
+                                <span t-if="i.state in ['draft', 'waiting', 'confirmed', 'assigned']"
+                                      class="small badge badge-info orders_label_text_align rounded-pill mt-1">
+                                    <i class="fa fa-fw fa-clock-o"/>
+                                    <b>Preparation</b>
+                                </span>
+                                 <span t-esc="i.carrier_tracking_ref" class="float-right"/>
+                                <br/>
+
+                            </t>
+                        </td>
+<!--                        <td class="text-center">-->
+<!--                            <span t-if="order.state == 'done'" class="badge badge-pill badge-success">-->
+<!--                                <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/>Done-->
+<!--                            </span>-->
+<!--                            <span t-else="" class="badge badge-pill badge-info">-->
+<!--                                <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/><span t-field="order.state"/>-->
+<!--                            </span>-->
+<!--                        </td>-->
+                        <td class="text-right">
+                            <span t-field="order.amount_total"/>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+
+        </xpath>
+
+    </template>
+
+</odoo>

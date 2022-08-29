@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="custom_web_login" inherit_id="web.login">
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="class" add="rounded-pill mb-4" separator=" "/>
+        </xpath>
+        <xpath expr="//button[@name='redirect']" position="attributes">
+            <attribute name="class" add="d-none" separator=" "/>
+
+        </xpath>
+        <xpath expr="//p[hasclass('alert')]" position="replace"/>
+        <xpath expr="//input[@name='csrf_token']" position="before">
+            <h2 class="text-center text-primary">Connexion</h2>
+            <p class="alert alert-danger" t-if="error" role="alert">
+                <t t-esc="error"/>
+            </p>
+            <p class="alert alert-success" t-if="message" role="status">
+                <t t-esc="message"/>
+            </p>
+        </xpath>
+    </template>
+
+
+    <template id="custom_web_signup" inherit_id="auth_signup.signup">
+        <xpath expr="//p[hasclass('alert')]" position="replace"/>
+        <xpath expr="//input[@name='csrf_token']" position="before">
+            <h2 class="text-center text-primary mb-4 mt-4">Créer un compte</h2>
+            <p class="alert alert-danger" t-if="error" role="alert">
+                <t t-esc="error"/>
+            </p>
+        </xpath>
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="class" add="rounded-pill mb-4" separator=" "/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('oe_login_buttons')]" position="attributes">
+            <attribute name="class" add="col-md-4 col-lg-5 ml-auto mr-auto" separator=" "/>
+        </xpath>
+    </template>
+
+</odoo>

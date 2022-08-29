@@ -1,0 +1,544 @@
+<odoo>
+    <template id="terms_sales_template" name="Conditions générales">
+    <t t-call="website.layout">
+        <style>
+            .title{
+            text-align: left;
+            font: normal normal bold 24px/29px Roboto;
+            color: #000000;
+            }
+            .paragraph{
+            font: normal normal normal 14px/24px Roboto;
+            color: #000000;
+            text-align: left;
+            }
+            .underline{
+            text-decoration: underline;
+            font-weight:normal;
+            }
+            span{
+            font-weight: bold;
+            }
+        </style>
+        <div id="wrap" class="oe_structure oe_empty">
+            <section class="s_title pt32 o_colored_level pb16" data-vcss="001" data-snippet="s_title" data-name="Title">
+                <div class="s_allow_columns container">
+                    <h1 style="text-align: center;font: normal normal bold 30px/29px Roboto;color: #000000; ">
+                        Conditions générales de vente
+                    </h1>
+                </div>
+            </section>
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">1. CHAMP D’APPLICATION</h5>
+                    <ul class="paragraph">
+                        <li>Les présentes conditions générales de vente s'appliquent sur les ventes et les prestations
+                            proposées par FRANCE MOBILE PARTS SAS au capital de 8000€ immatriculée au RCS de Toulouse
+                            sous le numéro 850 494 899 et dont le siège social se situe au 3 Boulevard de Maurens 31270
+                            CUGNAUX ci après dénommé "FMP" - ET à ses clients - personnes physiques ou morales, agissant
+                            dans le cadre de leur activité personnelles ou professionnelles, situées en France
+                            métropolitaine, en Corse ou dans les DOM TOM, ci-après dénommé "CLIENT".
+                        </li>
+                        <li>Ces conditions s'appliquent à toutes ventes effectuées depuis le site internet
+                            fmp-france.com ou bien par vente à distance en contact téléphonique ou courriel.
+                        </li>
+                        <li>Ces CGV ne s'appliquent pas aux CLIENT dont l'achat auprès de FMP est destiné à la revente
+                            en vente à distance depuis un site web ou bien tout autre moyen de vente à distance.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">2. PRODUITS</h5>
+                    <ul class="paragraph">
+                        <li>Sous réserve de la disponibilité des produits dans nos stocks, tous les produits proposés
+                            par FMP sont présentés sur le site internet ou dans les offres par courriel.
+                        </li>
+                        <li>FMP se réserve le droit de modifier à tout moment son offre et/ou les caractéristiques de
+                            ses produits
+                        </li>
+                        <li>Les informations transmises au CLIENT depuis le catalogue sont fournies à titre informatif.
+                            Les visuels proposés n'ont aucune valeur contractuelle et la réclamation d'un retour ne
+                            pourra être prise en compte que si la destination du produit diffère complètement avec le
+                            visuel suggéré. Les produits d'occasion ou reconditionnés ne peuvent pas avoir un visuel sur
+                            le site internet correspondant à leur état réel.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">3. REPARATIONS</h5>
+                    <ul  class="paragraph">
+                        <li>La société FMP propose à ses CLIENTS la réparation des produits multimédia.</li>
+                        <li>Elle propose des tarifs et des prestations sur son site internet.</li>
+                        <li>Les tarifs et les réparations réalisés sont soumis au diagnostique final du technicien une
+                            fois
+                            le produit reçu par FMP. La société FMP s'engage à effectuer la réparation par tous les
+                            MOYENS
+                            dans la limite des compétences, de la disponibilité des pièces ou bien d'une durée de
+                            réparation
+                            trop longue. Elle soumet tout changement de tarif différent au CLIENT avant d'effectuer une
+                            surfacturation.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">4. COMMANDE</h5>
+                    <ul class="paragraph">
+                        <li>La commande est validée lors de la validation du panier. Avec ou sans paiement, le client
+                            s'engage à en payer le prix lors de la validation lors de la confirmation du panier. La
+                            société FMP se réserve la possibilité d'expédier la commande avant le paiement. Pour les
+                            commandes hors site internet, le courriel de commande du client fait foi. La société FMP se
+                            réserve le droit d'accepter une annulation de commande avant le paiement final de la
+                            commande.
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">5. DÉLAIS</h5>
+                    <ul class="paragraph">
+                        <li>Selon le transporteur, FMP indique le délais de livraison. FMP s'engage à EXPEDIER les
+                            commandes le plus vite possible. Cependant, elle ne s'engage pas à une livraison dans un
+                            délais particulier. Nous recommandons une validation de commande au plus tôt dans la journée
+                            pour une expédition le jour même. La société s'emploie à faire tout ce qui est possible afin
+                            que les commandes soient expédiées le jour même. FMP transmet au client les délais de
+                            livraison indiqués par les transporteurs. FMP n'est en aucun cas responsable de retards de
+                            livraison possible, elle s'engage uniquement à transmettre les informations fournies par les
+                            transporteurs après la prise en charge des colis.
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">6. LIVRAISONS - TRANSFERT DES RISQUES</h5>
+                    <ul class="paragraph">
+                        <li>Les produits voyagent aux risques et périls du CLIENT. La responsabilité des produits vendus
+                            est transférée au CLIENT lorsque le transporteur prends en charge le colis au dépôt FMP.
+                        </li>
+                        <li>
+                            Les produits sont livrés à l'adresse de livraison indiqué par le CLIENT. Il s'engage à
+                            transmettre à FMP une information fiable qui sera utilisée par le transporteur afin
+                            d'assurer un bon service.
+                        </li>
+                        <li>
+                            Le CLIENT s'engage à la réception du/des colis à vérifier et en présence du livreur de
+                            l'état du paquet et de soumettre une réserve auprès du transporteur. Il est seul responsable
+                            de la relation avec le transporteur en cas de produits endommagés. Dans le cas où des
+                            produits auraient été cassés durant le transport, ou tout autre litige (comme une suspicion
+                            de vol), FMP se réserve le droit d'intervenir ou bien d'indemniser le CLIENT. Le CLIENT s'il
+                            le souhaite, pourra bénéficier de l'aide de FMP afin de trouver une solution qui lui
+                            conviendra, il s'engage à effectuer toutes les démarches nécessaires afin d'aider FMP à
+                            résoudre un litige.
+                        </li>
+                        <li>
+                            Toute réserve devra être transmises par le CLIENT aux transporteurs selon les conditions
+                            indiqués propres à chacun d'entre eux.
+                        </li>
+                        <li>
+                            En cas de retour du colis pour des causes de non disponibilité du client, refus, ou autres
+                            raisons imputablesau CLIENT, FMP relivrera la commande selon de nouvelles informations de
+                            livraison en facturant des frais de ports supplémentaires. Le montant de ces frais
+                            supplémentaires sera à la libre appréciation de la société FMP.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">7. RECLAMATION - RETOUR PRODUIT</h5>
+                    <ul class="paragraph">
+                        <li>Le client a la possibilité de retourner un produit défectueux sous réserve qu'il respecte la
+                            durée de garantie indiqué sur le site internet. En l'absence d'indication dans la fiche
+                            produit, le produit est considéré comme étant hors garanti. FMP se réserve la possibilité
+                            d'accepter ou refuser le retour d'un produit. Cependant la société s'engage à accepter le
+                            retour d'un produit si il est motivée par des raison valable et que ces raison sont indiqué
+                            de bonne foi.
+                        </li>
+                        <li>
+                            Les frais d'emballage et de retour sont à la charge du client.
+                        </li>
+                        <li>
+                            Les produits retournés doivent être emballés dans l'emballage d'origine fourni par FMP. La
+                            référence du produit doit y figurer, en cas de manquement, le produit peut ne pas être
+                            repris. L'information concernant le défaut constaté sur le produit doit OBLIGATOIREMENT être
+                            indiqué.
+                        </li>
+                        <li>
+                            En cas d'acceptation du produit par FMP, le client recevra un bon d'achat correspondant au
+                            prix d'achat du produit indiqué dans sa facture.
+                        </li>
+                        <li>
+                            Les produits refusés par FMP pour non confirmité avec son règlement, pourrons être retournés
+                            au clients à ses frais.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">8. PRIX</h5>
+                    <ul class="paragraph">
+                        <li>Les prix de vente sur le site internet de FMP sont indicatifs. FMP s'engage à modifier le
+                            prix des produits ou des services à tout moment. Le CLIENT s'assure de vérifier le prix
+                            indiqué dans son panier lors de la validation de commande. Les tarifs proposés aux
+                            professionnels sont indiqués en HT et aux particuliers en TTC.
+                        </li>
+                        <li>
+                            Les frais de ports peuvent être offert selon les offres proposées sur le site internet.
+                            Certains produits peuvent nécessiter des frais de port supplémentaires, ils seront indiqués
+                            lors de la validation de commande dans le panier.
+                        </li>
+                        <li>
+                            Une surcharge sur les frais de port est appliquée si le client souhaite une livraison le
+                            samedi.
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">9. CONDITIONS DE REGLEMENT</h5>
+                    <ul class="paragraph">
+                        <li>Toute commande doit être réglée le jour de la commande.</li>
+                        <li>
+                            Toute commande livrée non réglées dans les délais initialement prévu peut faire l'objet de
+                            frais de gestion correspondant à 40€
+                        </li>
+                        <li>
+                            Aux Frais de gestion s'ajouteront les pénalités forfaire au taux légal.
+                        </li>
+                        <li>
+
+                            Plusieurs modes de règlement seront proposés au client : Virement, Carte Bancaire,
+                            Prélèvement SEPA.
+                        </li>
+
+                        <li>
+
+                            Prélèvement SEPA : En cas de refus par la banque d'un prélèvement dûment signé par le
+                            client, des frais de gestion de 40€ seront facturés en sus des pénalités de retard.
+
+                        </li>
+
+                        <li>
+                            FMP n'est pas responsable de l'acceptation ou le refus d'un prélèvement ou d'un paiement par
+                            CB. En cas de refus de la part de la banque du CLIENT, seul le CLIENT peut intervenir afin
+                            de régulariser sa situation.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">10. RÉSERVE DE PROPRIETÉ</h5>
+                    <ul  class="paragraph">
+                        <li>Sauf indication contraire, les produits livrés demeurent la propriété de la société FMP
+                            jusqu'au paiement COMPLET de la commande du CLIENT. En cas de retard de paiement, FMP est
+                            libre d'exiger le retour des produits dans leur état d'origine aux frais du CLIENT dans un
+                            délais de 72h maximum.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">11. GARANTIES</h5>
+                    <ul class="paragraph">
+                        <li>Conformément à la réglementation en vigueur, le CLIENT bénéfice des garanties légales liées
+                            à la vente de produits, en particulier la garantie des vices cachés telle que définie aux
+                            articles 1641 et suivants du Code Civil.
+                        </li>
+                        <li>
+                            Les conditions de garantie sont applicables sur les produits retournés dans leur emballage
+                            d'origine, étiquetés et n'ayant subit aucun dommage liés à l'utilisation ou la réparation.
+                        </li>
+                        <li>
+                            La garantie exclue toute demande d'indemnisation au CLIENT ou de remboursement. Un avoir
+                            sous forme de bon d'achat sera offert au client afin qu'il puisse remplacer le produit
+                            défectueux.
+                        </li>
+                        <li>
+
+                            Ne sont pas couverts par la garantie, les consommables - Les produits ayant subit négligence
+                            du CLIENT - Les produits ayant ubit une usure normale - défaut dû à un cas de force majeure
+                            - ayant subit une transformation ou incorporation d'un autre produit incompatible.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">12. LIMITATION DE RESPONSABILITÉ</h5>
+                    <ul class="paragraph">
+                        <li>Sauf disposition légales contraire, la responsabilité de FMP ne pourra pas être engagée en
+                            cas de que survenance d'un dommage sauf sur faute prouvée et exclusive de FMP dans sa
+                            réalisation.
+                        </li>
+                        <li>
+                            La responsabilité de FMP est limitée à la valeur des produits facturés au CLIENT.
+                        </li>
+                        <li>
+                            La responsabilité de FMP ne peut être engagée en cas de préjudice commercial, économique ou
+                            de perte de données.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">13. PROPRIETE INTELLECTUELLE</h5>
+                    <ul class="paragraph">
+                        <li>Le contenu du site internet, photos, textes liens et vidéos sont propriété exclusive de FMP
+                            et de ses partenaires et ce dans le monde.
+                        </li>
+                        <li>
+                            L'utilisation, la copie sans autorisation expresse écrite au préalable est interdite. FMP se
+                            réserve le droit de se rétracter.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">14. PROTECTION DES DONNEES</h5>
+                    <ul class="paragraph">
+                        <li>Des informations sont collectées afin de fournir le meilleur service possible. Des
+                            informations telles que les noms,adresses physique, courriel et numéros de téléphone sont
+                            indispensable pour la livraison des colis. D'autres informations peuvent être utilisée pour
+                            des analyses marketing.
+                        </li>
+                        <li>
+                            Conformément à la Loi informatique et Liberté, le client peu demander un accès, modification
+                            ou retrait de ses informations personnelles en faisant une demande à FMP. Contact dans les
+                            mentions légales.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="s_text_block pt32  pb32 o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">15. JURIDICTION</h5>
+                    <ul class="paragraph">
+                        <li>Conditions générales de ventes soumis au droit français
+                        </li>
+                        <li>
+                            Tout litige qui ne peut être résolu à l'amiable avec le client ou tout autre utilisateur soumis à ces conditions relèvera de la compétence exclusive du Tribunal de commerce de Toulouse.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </t>
+    </template>
+     <template id="mentions_legales_template" name="Mentions légale">
+    <t t-call="website.layout">
+        <style>
+            .title{
+            text-align: left;
+            font: normal normal bold 24px/29px Roboto;
+            color: #000000;
+            }
+            .paragraph{
+            font: normal normal normal 14px/24px Roboto;
+            color: #000000;
+            text-align: left;
+            }
+
+
+        </style>
+        <div id="wrap" class="oe_structure oe_empty">
+            <section class="s_title pt32 o_colored_level pb16" data-vcss="001" data-snippet="s_title" data-name="Title">
+                <div class="s_allow_columns container">
+                    <h1 style="text-align: center;font: normal normal bold 30px/29px Roboto;color: #000000; ">
+                        Mentions légales
+                    </h1>
+                </div>
+            </section>
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+ <div class="row">
+                        <div class="o_colored_level col">
+                    <p class="paragraph mx-4">SAS France Mobile Parts - 3 boulevard de Maurens 31270 CUGNAUX <br/>
+                        <b>Capital : </b> 8 000 euros<br/>
+                         <b> Siret : </b> 850 494 899 00014 RCS Toulouse <br/>
+                          <b> Code APE : </b> 4652Z <br/>
+                         <b> TVA : </b> FR07 850 494 899 <br/>
+                         <b> Tél : </b> 06 60 36 35 42 <br/>
+                         <b> Mail : </b> info@fmp-france.com <br/>
+                    </p>
+
+                    <p class="paragraph mx-4">
+                        <b> Directeur de publication : </b> Mirkaz SERALY-BALL www.fmp-france.com <br/>
+                        <b> Hebergement :</b> OVH SAS - RCS Lille Métropole 424 761 419 00045 <br/>
+                        <b> Contact : </b> Tél 1007 <br/>
+                        <b> Adresse : </b> 2 rue Kellermann 59100 Roubaix FRANCE <br/>
+                    </p>
+                </div>
+ </div>
+                </div>
+            </section>
+            <section class="s_text_block pt32 pb32 o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="s_allow_columns container">
+                    <div class="row">
+                        <div class="o_colored_level col">
+                            <h3 class="title mx-4">Données personnelles</h3>
+                            <p class="paragraph mx-4">Le site www.fmp-france.com et la société France Mobile Parts enregistre
+                                vos informations personnelles afin de pouvoir vous livrer des commandes dans de bonnes
+                                conditions, de suivre vos colis ou bien de traiter vos demandes de retours.
+                                L'utilisation de certaines de vos données sont nécessaire au bon fonctionnement du site
+                                ainsi que des services proposés.
+                            </p>
+                             <p class="paragraph  mx-4">
+                                 Conformément à la loi Informatique et Libertés, vous disposez d’un droit d’accès, de modification et de rectification et de suppression des données qui vous concernent en nous contactant par mail ou par courrier.
+                             </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </t>
+     </template>
+    <template id="rgpd_template" name="Rgpd">
+    <t t-call="website.layout">
+        <style>
+            .title {
+                text-align: left;
+                font: normal normal bold 24px/29px Roboto;
+                color: #000000;
+            }
+
+            .paragraph {
+                font: normal normal normal 14px/24px Roboto;
+                color: #000000;
+                text-align: left;
+            }
+
+            .underline {
+                text-decoration: underline;
+                font-weight: normal;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        </style>
+        <div id="wrap" class="oe_structure oe_empty">
+            <section class="s_title pt32 o_colored_level pb16" data-vcss="001" data-snippet="s_title" data-name="Title">
+                <div class="s_allow_columns container">
+                    <h1 style="text-align: center;font: normal normal bold 30px/29px Roboto;color: #000000; ">
+                        RGPD
+                    </h1>
+                </div>
+            </section>
+            <section class="s_text_block pt32  o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="container s_allow_columns">
+                    <h5 class="title">Lorem ipsum dolor sit amet</h5>
+                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                </div>
+            </section>
+            <section class="s_text_block pt32 pb32 o_colored_level" data-snippet="s_text_block" data-name="Text">
+                <div class="s_allow_columns container">
+                    <div class="row">
+                        <div class="o_colored_level col-lg-6">
+                            <h3 class="title">Article 1</h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 2</h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 3 </h3>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 4 </h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 5 </h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 6 </h3>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="o_colored_level col-lg-6">
+                            <h3 class="title">Article 7 </h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <h3 class="title">Article 8</h3>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </t>
+    </template>
+</odoo>

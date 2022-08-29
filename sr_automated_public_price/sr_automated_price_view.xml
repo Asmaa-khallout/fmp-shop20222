@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_product_tree_view_extend_margin_price_category">
+            <field name="name">product.product.tree.view.extend.margin.price.category</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lst_price']" position="before">
+                    <field name="price_category"/>
+                    <field name="public_price_list_margin"/>
+                    <field name="distributor_price_list_margin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_normal_form_view_extend_add_distributor_price_field">
+            <field name="name">product.normal.form.view.extend.add.distributor.price.field</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="taxes_id" position="before">
+                    <field name="distributor_price" widget='monetary'
+                           options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="sr_price_category_tree_view" model="ir.ui.view">
+            <field name="name">sr.price.category.tree.view</field>
+            <field name="model">sr.price.category</field>
+            <field name="arch" type="xml">
+                <tree string="Price Category">
+                    <field name="name"/>
+                    <field name="public_price_list_id"/>
+                    <field name="public_price_list_margin"/>
+                    <field name="distributor_price_list_id"/>
+                    <field name="distributor_price_list_margin"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sr_price_category_form_view" model="ir.ui.view">
+            <field name="name">sr.price.category.form.view</field>
+            <field name="model">sr.price.category</field>
+            <field name="arch" type="xml">
+                <form string="Price Category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Public price list">
+                                <field name="public_price_list_id"/>
+                                <label for="public_price_list_margin" string="Margin (%)"/>
+                                <div>
+                                    <field name="public_price_list_margin" class="oe_inline"/>
+                                    <span class="oe_inline">%</span>
+                                </div>
+                            </group>
+                            <group string="Distributor price list">
+                                <field name="distributor_price_list_id"/>
+                                <label for="distributor_price_list_margin" string="Margin (%)"/>
+                                <div>
+                                    <field name="distributor_price_list_margin" class="oe_inline"/>
+                                    <span class="oe_inline">%</span>
+                                </div>
+                            </group>
+                            <group string="Products">
+                                <field name="product_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sr_action_price_category" model="ir.actions.act_window">
+            <field name="name">Price Category</field>
+            <field name="res_model">sr.price.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to Create a New Record.
+                </p>
+            </field>
+        </record>
+        <menuitem action="sr_action_price_category" id="sr_menu_price_category" parent="sale.menu_sale_config"/>
+    </data>
+</odoo>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <template id="website_footer_inherit" inherit_id="website.layout" name="Template footer custom" active="True" priority="16">
+  <xpath expr="//div[@id='footer']" position="replace">
+    <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer" style="">
+      <section class="s_text_block pt64 pb16" data-snippet="s_text_block" data-name="Text" style="background-image: none;">
+        <div class="container">
+          <div class="row" data-original-title="" title="" aria-describedby="tooltip534230">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
+              <h6 class="mb-3 text-black">Nous Contacter</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="py-1">
+                  <i class="fa fa-1x fa-fw fa-map-marker text-black mr-1"/>
+                  <span class="o_force_ltr">
+                    <a class="text-black" href="tel:1 (650) 691-3277">
+                      <span t-field="res_company.street"/>
+                    </a>
+                  </span>
+                </li>
+                <li class="py-1">
+                  <i class="fa fa-1x fa-fw fa-phone mr-1 text-black"/>
+                  <span class="o_force_ltr text-black">
+                    <a class="text-black" href="tel:1 (650) 691-3277">
+                      <span t-field="res_company.phone"/>
+                    </a>
+                  </span>
+                </li>
+                <li class="py-1">
+                  <i class="fa fa-1x fa-fw fa-envelope mr-1 text-black"/>
+                  <a class="text-black" href="mailto:info@yourcompany.com">
+                    <span t-field="res_company.email"/>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
+              <h6 class="mb-3 text-black">
+                                Informations générales
+                            </h6>
+              <ul class="list-unstyled mb-0 tp-list-arrow">
+                <li class="my-2 text-black">
+                  <a class="text-black" href="/terms-of-sales">Conditions générales de vente</a>
+                </li>
+                <li class="my-2 text-black">
+                  <a class="text-black" href="/mentions-legales">Mentions légales</a>
+                </li>
+                <li class="my-2 text-black">
+                  <a class="text-black" href="/cookie-policy">Rgpd</a>
+                </li>
+                <li class="my-2 text-black">
+                  <a class="text-black" href="/">Accueil</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-4 o_colored_level text-black">
+              <h6 class="mb-3 text-black">Rejoignez-nous</h6>
+              <div>Nous sommes une équipe de passionnés dont le but est d'améliorer la vie de chacun grâce
+                                à des produits disruptifs. Nous construisons d'excellents produits pour résoudre vos
+                                problèmes commerciaux.
+                            </div>
+              <div>
+                <div class="s_share tp-followus-icons mt-4" data-name="Social Media">
+                  <a href="/website/social/linkedin" class="s_share_linkedin" target="_blank" data-original-title="" title="">
+                    <img class="img-fluid o_we_custom_image cstm-img" src="/fmp_france_custom_website/static/src/img/footer/linkdin.svg" alt="" loading="lazy" style="" data-original-title="" title="" aria-describedby="tooltip327185" data-original-id="21039" data-original-src="/web/image/21039-6303fb42/linkdin.svg" data-mimetype="image/svg+xml" data-resize-width="undefined"/>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </xpath>
+  <xpath expr="//div[hasclass('o_footer_copyright')]" position="attributes">
+    <attribute name="class" add="tp-custom-copyright" separator=" "/>
+  </xpath>
+  <xpath expr="//div[hasclass('o_footer_copyright')]/div[hasclass('container')]" position="attributes">
+    <attribute name="t-if">False</attribute>
+  </xpath>
+  <xpath expr="//div[hasclass('o_footer_copyright')]/div[hasclass('container')]" position="after">
+    <div class="container">
+      <div class="row justify-content-between border-top border-secondar">
+        <div class="col-lg-auto text-center text-lg-left text-black">
+          <div class="">Copyright &amp;copy; 2021 FMP-France . Tous droits réservés.</div>
+        </div>
+        <div class="col-lg-auto text-center text-lg-right" t-if="(len(languages) &gt; 1 or (website and (editable or translatable))) or (website_sale_pricelists and len(website_sale_pricelists)&gt;1)">
+          <ul class="list-inline">
+            <ul class="list-inline tp-payment-icons text-center my-3">
+              <li class="list-inline-item my-1">
+                <img class="cstm-img" src="/fmp_france_custom_website/static/src/img/footer/visa.svg" alt="" loading="lazy" style="" data-original-title="" title="" aria-describedby="tooltip95543" data-original-id="21040" data-original-src="/web/image/21040-69d9dfcd/visa.svg" data-mimetype="image/svg+xml" data-resize-width="undefined"/>
+              </li>
+              <li class="list-inline-item my-1">
+                <img class="cstm-img" src="/fmp_france_custom_website/static/src/img/footer/pay2.svg" alt="" loading="lazy" style="" data-original-id="21041" data-original-src="/web/image/21041-80725793/pay2.svg" data-mimetype="image/svg+xml" data-resize-width="undefined"/>
+              </li>
+              <li class="list-inline-item my-1">
+                <img class="cstm-img" src="/fmp_france_custom_website/static/src/img/footer/pay3.svg" alt="" loading="lazy" style="" data-original-id="21042" data-original-src="/web/image/21042-4269d4fe/pay3.svg" data-mimetype="image/svg+xml" data-resize-width="undefined"/>
+              </li>
+              <li class="list-inline-item my-1">
+                <img class="cstm-img" src="/fmp_france_custom_website/static/src/img/footer/pay4.svg" alt="" loading="lazy" style="" data-original-id="21043" data-original-src="/web/image/21043-87b22b8b/pay4.svg" data-mimetype="image/svg+xml" data-resize-width="236"/>
+              </li>
+              <li class="list-inline-item my-1">
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <style>
+            .o_footer .o_footer_copyright {padding: unset}
+            .o_footer_copyright{
+            background: #EFEFEF !important;
+            }
+            #footer{
+            background: #EFEFEF !important;
+            }
+            .cstm-img{
+             width: 75% !important;
+             }
+            h6.mb-3.text-black{
+            font-size: 18px;
+            font-weight: 700;
+            }
+    </style>
+  </xpath>
+</template>
+</odoo>

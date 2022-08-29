@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem id="sr_menu_import_product_customer_info"
+			parent="sale.product_menu_catalog"
+			action="sr_action_import_product_customer_info" />
+	</data>
+</odoo>
+

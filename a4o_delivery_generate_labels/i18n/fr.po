@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* a4o_delivery_generate_labels
+#
+# Christophe <xt0ph@adiczion.net>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-28 17:47+0000\n"
+"PO-Revision-Date: 2022-02-28 18:48+0100\n"
+"Last-Translator: Christophe <xt0ph@adiczion.net>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+"Language: fr_FR\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_res_company__all_attachments_on_pdf
+msgid "All attachments of picking(s)"
+msgstr "Toutes les pièce jointes des colisage(s)"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model,name:a4o_delivery_generate_labels.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model,name:a4o_delivery_generate_labels.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_stock_warehouse__default_package_weight
+msgid "Default Package Weight"
+msgstr "Poids du colis par défaut"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,help:a4o_delivery_generate_labels.field_stock_warehouse__default_package_weight
+msgid ""
+"Default weight limit for the grouped generation of labels before packaging."
+msgstr ""
+"Limite de poids par défaut pour la génération groupée d'étiquettes avant "
+"mise en colis."
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model,name:a4o_delivery_generate_labels.model_get_generated_labels
+msgid "Download Generated labels Wizard"
+msgstr "Assistant de téléchargement des étiquette générées"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__filename
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.actions.server,name:a4o_delivery_generate_labels.action_get_labels_from_carrier
+msgid "Generate delivery label"
+msgstr "Générer étiquette(s) de livraison"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__id
+msgid "ID"
+msgstr ""
+
+#. module: a4o_delivery_generate_labels
+#: code:addons/a4o_delivery_generate_labels/models/get_generated_labels.py:0
+#, python-format
+msgid "Label_"
+msgstr "Etiquette_"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__labels_data
+msgid "Labels File"
+msgstr "Fichier des étiquettes"
+
+#. module: a4o_delivery_generate_labels
+#: code:addons/a4o_delivery_generate_labels/models/get_generated_labels.py:0
+#, python-format
+msgid "Labels.pdf"
+msgstr ""
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_get_generated_labels__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: a4o_delivery_generate_labels
+#: code:addons/a4o_delivery_generate_labels/models/get_generated_labels.py:0
+#, python-format
+msgid ""
+"No labels found on the selected packages. It may have been impossible to "
+"create them. Check by manual creation."
+msgstr ""
+"Aucune étiquette trouvée sur les colis sélectionnés. Il était peut-être "
+"impossible de les créer. Vérifier par création manuelle."
+
+#. module: a4o_delivery_generate_labels
+#: model_terms:ir.ui.view,arch_db:a4o_delivery_generate_labels.view_picking_withcarrier_out_form_auto_generate_label
+msgid "Print a new label"
+msgstr "Imprime une nouvelle étiquette"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,field_description:a4o_delivery_generate_labels.field_res_config_settings__all_attachments_on_pdf
+msgid "Take all attachments of picking(s)"
+msgstr "Prendre toutes les pièces jointes du colisage"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model.fields,help:a4o_delivery_generate_labels.field_res_company__all_attachments_on_pdf
+#: model:ir.model.fields,help:a4o_delivery_generate_labels.field_res_config_settings__all_attachments_on_pdf
+#: model_terms:ir.ui.view,arch_db:a4o_delivery_generate_labels.res_config_settings_view_form
+msgid "Take all the attachments for generate one pdf on selected picking(s)"
+msgstr ""
+"Prendre toutes les pièces jointes pour générer un seul PDF sur les colisages"
+" sélectionnés"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model,name:a4o_delivery_generate_labels.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
+
+#. module: a4o_delivery_generate_labels
+#: model:ir.model,name:a4o_delivery_generate_labels.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Entrepôt"

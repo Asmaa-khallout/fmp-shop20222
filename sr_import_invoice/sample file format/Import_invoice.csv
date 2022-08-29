@@ -1,0 +1,7 @@
+Order Number,Customer Name,Date,Payment term,Salesperson,Product Name,Description,Account,Quantity,UOM,Price,Taxes
+Order4,Gemini Furniture,2019-01-04,Immediate Payment,,Large Cabinet,Large Cabinet,,10,Unit(s),100,Tax 15.00%
+Order4,Gemini Furniture,2019-01-05,Immediate Payment,,Pedal Bin,Pedal Bin,,2,Unit(s),50,Tax 15.00%
+Order4,Gemini Furniture,2019-01-06,Immediate Payment,,Office Chair,Office Chair,,5,Unit(s),10,
+Order2,Azure Interior,2019-01-07,Immediate Payment,,Large Desk,Large Desk,,4,Unit(s),150,Tax 15.00%
+Order2,Azure Interior,2019-01-08,Immediate Payment,,Drawer,Drawer,,8,Unit(s),80,
+Order3,Deco Addict,2019-01-09,Immediate Payment,,Flipover,Flipover,,15,Unit(s),100,

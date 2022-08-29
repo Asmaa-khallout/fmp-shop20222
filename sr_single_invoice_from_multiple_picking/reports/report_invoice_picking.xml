@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_with_picking_document">
+            <t t-call="sr_single_invoice_from_multiple_picking.external_layout_france_mobile_parts_custom">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <div class="page">
+                    <div class="row mb8">
+                        <div class="col-6">
+                            <strong>
+                                <span>Shipping Address</span>
+                            </strong>
+                            <span t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        </div>
+                        <div class="col-6">
+                            <strong>
+                                <span>Billing address</span>
+                            </strong>
+                            <span t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        </div>
+                    </div>
+                    <table style="margin-top:50px; border-top: 1px solid black; width=100%">
+                        <thead class="thead-light" style="background-color: #f2f2f2;">
+                            <tr>
+                                <th scope="col" style="text-align: center; padding: 5px">Invoice Number</th>
+                                <th scope="col" style="text-align: center; padding: 5px">Date Of Invoice</th>
+                                <th scope="col" style="text-align: center; padding: 5px">References</th>
+                                <th scope="col" style="text-align: center; padding: 5px">Due Date</th>
+                                <th scope="col" style="text-align: center; padding: 5px">Payment Terms</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center; padding: 5px">
+                                    <span t-field="o.name"/>
+                                </td>
+                                <td style="text-align: center; padding: 5px">
+                                    <span t-field="o.invoice_date"/>
+                                </td>
+                                <td style="text-align: center; padding: 5px">
+                                    <span t-field="o.ref"/>
+                                </td>
+                                <td style="text-align: center; padding: 5px">
+                                    <span t-field="o.invoice_date_due"/>
+                                </td>
+                                <td style="text-align: center; padding: 5px">
+                                    <span t-field="o.invoice_payment_term_id"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table style="margin-top:50px; border-top: 1px solid black;width=100%">
+                        <thead class="thead-light" style="background-color: #f2f2f2;">
+                            <tr>
+                                <th scope="col" style="text-align: center; padding: 5px">Picking</th>
+                                <th scope="col" style="text-align: center; padding: 5px">customer Order Reference</th>
+                                <th scope="col" style="text-align: center; padding: 5px">Date</th>
+                                <th scope="col" style="text-align: center; padding: 5px">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="lines" t-value="o._find_picking_details()"/>
+                            <t t-foreach="lines" t-as="line">
+                                <tr>
+                                    <td style="text-align: center; padding: 5px">
+                                        <Span t-esc="line.get('picking')"/>
+                                    </td>
+                                    <td style="text-align: center; padding: 5px">
+                                        <Span t-esc="line.get('ref')"/>
+                                    </td>
+                                    <td style="text-align: center; padding: 5px">
+                                        <Span t-esc="line.get('date')"/>
+                                    </td>
+                                    <td style="text-align: center; padding: 5px">
+                                        <Span t-esc="'%.2f'%line.get('amount')"/>
+                                    </td>
+                                </tr>
+                            </t>
+
+                        </tbody>
+                    </table>
+
+                    <div class="clearfix">
+                        <table style="display: inline-block; margin-top:50px; border-top: 1px solid black; float: left; width:50%; ">
+                            <thead class="thead-light" style="background-color: #f2f2f2;">
+                                <tr class="border-black o_subtotal">
+                                    <th style="width:15%; text-align: center; padding: 5px;">Tax details</th>
+                                    <th style="width:15%; text-align: center; padding: 5px;">Tax rate</th>
+                                    <th style="width:15%; text-align: center; padding: 5px;">Total tax</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.line_ids" t-as="line">
+                                    <t t-if="line.tax_line_id">
+                                        <tr>
+                                            <td style="text-align: center; padding: 5px;">
+                                                <span t-field="line.tax_line_id.name"/>
+                                            </td>
+                                            <td style="text-align: center; padding: 5px;">
+                                                <span t-field="line.tax_line_id.amount"/>
+                                            </td>
+                                            <td style="text-align: center; padding: 5px;">
+                                                <span t-field="line.credit"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <table style=" margin-left:20px; width:30%; float:right; margin-top:50px; border-top: 1px solid black;">
+                            <tr class="border-black o_subtotal" style="">
+                                <td style="background-color: #f2f2f2; text-align: right; padding: 5px;">
+                                    <strong>Subtotal</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed"/>
+                                </td>
+                            </tr>
+                            <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                <tr style="">
+                                    <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                        <td style="background-color: #f2f2f2; text-align: right; padding: 5px;">
+                                            <span t-esc="amount_by_group[0]"/>
+                                        </td>
+                                        <td class="text-right o_price_total">
+                                            <span t-esc="amount_by_group[3]"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td style="background-color: #f2f2f2; text-align: right; padding: 5px;">
+                                            <span t-esc="amount_by_group[0]"/><span>
+                                                &amp;bsp;
+                                                <span>on</span>
+                                                <t t-esc="amount_by_group[4]"/>
+                                            </span>
+                                        </td>
+                                        <td class="text-right o_price_total">
+                                            <span t-esc="amount_by_group[3]"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                            <tr class="border-black o_total">
+                                <td style="background-color: #f2f2f2; text-align: right; padding: 5px;">
+                                    <strong>Total</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_total"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <t t-foreach="o.custom_picking_ids" t-as="pick">
+                        <div style="page-break-after: always;"/>
+                        <center>
+                            <h2>Picking#
+                                <span t-field="pick.name"/>
+                                #
+                                <span t-field="pick.group_id.sale_id.client_order_ref"/>
+                            </h2>
+                        </center>
+                        <table style="margin-top:50px; border-top: 1px solid black;width=100%">
+                            <thead style="background-color: #f2f2f2;">
+                                <tr>
+                                    <th scope="col" style="text-align: center; padding: 5px">Internal Reference</th>
+                                    <th scope="col" style="text-align: center; padding: 5px">Customer Product Code</th>
+                                    <th scope="col" style="text-align: center; padding: 5px">Customer Product Name</th>
+                                    <th scope="col" style="text-align: center; padding: 5px">Product</th>
+                                    <th scope="col" style="text-align: center; padding: 5px">Qty</th>
+                                    <th scope="col" style="text-align: center; padding: 5px">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="invoice_tbody">
+                                <t t-set="move" t-value="o._find_move_details(pick)"/>
+                                <t t-set="total" t-value="0"/>
+                                <t t-foreach="move" t-as="move_detail">
+                                    <tr>
+                                        <td style="text-align: center; padding: 5px">
+                                            <span t-field="move_detail.product_id.default_code"/>
+                                        </td>
+                                        <td style="text-align: center; padding: 5px">
+                                            <span t-esc="move_detail._get_customer_product_code()"/>
+                                        </td>
+                                        <td style="text-align: center; padding: 5px">
+                                            <span t-esc="move_detail._get_customer_product_name()"/>
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span t-field="move_detail.product_id.name"/>
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span t-field="move_detail.quantity"/>
+                                        </td>
+                                        <td style="text-align: center; padding: 5px">
+                                            <span t-field="move_detail.price_subtotal"/>
+                                        </td>
+                                        <t t-set="total"
+                                           t-value="total + move_detail.price_subtotal"/>
+                                    </tr>
+                                </t>
+                                <tr class="is-subtotal text-right">
+                                    <td colspan="99">
+                                        <strong class="mr16">Total</strong>
+                                        <span t-esc="total"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+                <div class="footer">
+                    <div style="border-top: 1px solid black;">
+                        <center>
+                            <span style="font-size: 12px;">FMP France-France</span>
+                        </center>
+                        <center>
+                            <span style="font-size: 12px;" t-field="o.company_id"/>
+                            <span style="font-size: 12px;" t-field="o.company_id.street"/>
+                            <span style="font-size: 12px;" t-field="o.company_id.zip"/>
+                            <span style="font-size: 12px;" t-field="o.company_id.city"/>
+                            <span style="font-size: 12px;">-</span>
+                            <span style="font-size: 12px;">Siret:</span>
+                            <span style="font-size: 12px;" t-field="o.company_id.siret"/>
+                            <span style="font-size: 12px;">RCS de Toulouse</span>
+                            <span style="font-size: 12px;">-</span>
+                            <span style="font-size: 12px;">TVA:</span>
+                            <span style="font-size: 12px;" t-field="o.company_id.vat"/>
+                        </center>
+                        <center>
+                            <span style="font-size: 12px;">IBAN:</span>
+                            <span style="font-size: 12px;">FR76 1460 7003 5970 4211 0611 608</span>
+                            <span style="font-size: 12px;">BIC:</span>
+                            <span style="font-size: 12px;">CCBPFRPPMAR</span>
+                        </center>
+                        <center>
+                            <span>Page:</span>
+                            <span class="page"/>/
+                            <span class="topage"/>
+                        </center>
+                    </div>
+                </div>
+
+            </t>
+        </template>
+
+        <template id="report_invoice_with_picking">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang"
+                       t-value="o.invoice_user_id.sudo().lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="sr_single_invoice_from_multiple_picking.report_invoice_with_picking_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

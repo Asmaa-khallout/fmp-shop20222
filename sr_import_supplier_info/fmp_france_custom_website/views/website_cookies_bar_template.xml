@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <template id="custom_cookies_bar" inherit_id="website.cookies_bar" name="option_back_to_top" active="True" priority="16">
+          <xpath expr="//div[@id='website_cookies_bar']" position="replace">
+
+                  <div id="website_cookies_bar" t-if="website.cookies_bar" class="s_popup o_snippet_invisible o_no_save" data-name="Cookies Bar" data-vcss="001" data-invisible="1" style="">
+      <div class="modal modal_shown s_popup_bottom o_cookies_classic" data-show-after="500" data-display="afterDelay" data-consents-duration="999" data-focus="false" data-backdrop="false" data-keyboard="false" tabindex="-1" role="dialog" style="display: none; background-color: var(--black-50) !important;" aria-hidden="true">
+        <div class="modal-dialog d-flex s_popup_size_full">
+          <div class="modal-content oe_structure">
+            <section class="o_colored_level o_cc o_cc1 pt32 pb16" style="background-image: none;">
+              <div class="container">
+                <div class="row" data-original-title="" title="" aria-describedby="tooltip828257">
+                  <div class="col-lg-6">
+                    <h3 class="o_cookies_bar_text_title text-black">
+            Le respect de votre vie privée est notre priorité.
+        </h3>
+                    <p class="o_cookies_bar_text_primary">
+            Nous utilisons des cookies pour vous fournir une meilleure expérience utilisateur.
+        </p>
+                    <p class="o_cookies_bar_text_secondary">
+            Nous les utilisons pour stocker des informations sur vos habitudes sur notre site web. Cela nous aidera à vous offrir la meilleure expérience et à personnaliser ce que vous voyez. <br/>
+            En cliquant sur cette bannière, vous nous autorisez à collecter des données.
+        </p>
+                  </div>
+                  <div class="col-lg-3 offset-lg-3">
+                    <a href="#" role="button" class="js_close_popup o_cookies_bar_text_button btn btn-primary btn-block py-2 rounded-pill">Je suis d'accord</a>
+                    <a href="/cookie-policy" class="o_cookies_bar_text_policy btn btn-link btn-block py-2">Politique relative aux cookies</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+          </xpath>
+      </template>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="view_picking_form_inherit_add_resend_button_to_send_mail" model="ir.ui.view">
+        <field name="name">sr.view.picking.form.inherit.add.resend.button.to.send.mail</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <button name="action_cancel" position="after">
+                <button type="object" name="action_resend_email" string="Resend Email"/>
+            </button>
+            <field name="backorder_id" position="after">
+                <field name="need_to_send_email" invisible="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

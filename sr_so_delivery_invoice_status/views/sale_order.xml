@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_extends_add_delivery_invoice_Status" model="ir.ui.view">
+            <field name="name">view.order.form.extends.add.delivery.invoice.Status</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="after">
+                    <center>
+                        <button name="custom_dummy_button" type="object" class="oe_stat_button" icon="fa-truck" attrs="{'invisible': [('delivery_count', '=', 0)]}">
+                            <field name="delivery_status"/>
+                        </button>
+                        <button name="custom_dummy_button" type="object" class="oe_stat_button" icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                            <field name="invoice_status"/>
+                        </button>
+                    </center>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_extends_add_delivery_invoice_Status" model="ir.ui.view">
+            <field name="name">view.quotation.tree.extends.add.delivery.invoice.Status</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="invoice_status"/>
+                    <field name="delivery_status"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="view_order_tree_extends_add_delivery_invoice_Status" model="ir.ui.view">
+            <field name="name">view.order.tree.extends.add.delivery.invoice.Status</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="invoice_status" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="invoice_status" position="after">
+                    <field name="invoice_status"/>
+                    <field name="delivery_status"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

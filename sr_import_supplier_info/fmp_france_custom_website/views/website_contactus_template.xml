@@ -1,0 +1,26 @@
+<odoo>
+    <template id="contactus_custom" inherit_id="website.contactus">
+<!--        <xpath expr="//section[hasclass('s_title parallax')]" position="replace"/>-->
+        <xpath expr="//div[@id='wrap']" position="after">
+            <style>
+              label{
+              color:black;
+              }
+            </style>
+        </xpath>
+        <xpath expr="//div[@class='row']//div[hasclass('col-lg-8')]" position="attributes">
+            <attribute name="class" remove="col-lg-8" add="col-lg-9" separator=" "/>
+
+        </xpath>
+        <xpath expr="//a[hasclass('s_website_form_send')]" position="attributes">
+            <attribute name="class" add="rounded-pill" separator=" "/>
+        </xpath>
+                <xpath expr="//div[@class='row']//div[hasclass('col-lg-4')]" position="attributes">
+            <attribute name="class" remove="col-lg-4" add="col-lg-3" separator=" "/>
+
+        </xpath>
+        <xpath expr="//ul" position="attributes">
+            <attribute name="class" add="text-black" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

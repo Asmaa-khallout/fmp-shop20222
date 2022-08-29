@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="auth_signup_fields_extend" inherit_id="auth_signup.fields" name="Extended record fields">
+            <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+                <div class="form-group field-phone">
+                    <label for="phone">Téléphonne</label>
+                    <input type="text" name="phone" t-att-value="phone" id="phone" class="form-control  form-control-sm" t-att-readonly="'readonly' if only_passwords else None"
+	                t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+                </div>
+                 <div class="form-group field-mobile">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" name="mobile" t-att-value="mobile" id="mobile" class="form-control form-control-sm" required="required" t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+                </div>
+
+                <div class="form-group field-siret">
+                    <label for="numero_siret" class="control-label">N° SIRET</label>
+                    <input type="text" name="numero_siret" t-att-value="numero_siret" id="numero_siret" class="form-control form-control-sm" required="required" t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+                </div>
+                                <div class="form-group field-shop">
+                    <label for="name_shop" class="control-label">Name of Magazin</label>
+                    <input type="text" name="name_shop" t-att-value="name_shop" id="name_shop" class="form-control form-control-sm" required="required" t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+                </div>
+
+                <div class="form-group field-file">
+                    <label for="attachement_activation_ids" class="control-label">Document(s)</label>
+                    <input type="file" name="attachement_activation_ids" multiple="1" data-fill-with="undefined" id="attachement_activation_ids" class="form-control-file s_website_form_input  form-control-sm"  t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+
+                </div>
+            </xpath>
+
+
+        </template>
+<template  id="auth_signup_extend" inherit_id="auth_signup.signup" name="Extended Sign up login">
+    <xpath expr="//form" position="attributes">
+        <attribute name="enctype">multipart/form-data</attribute>
+    </xpath>
+</template>
+
+    </data>
+</odoo>

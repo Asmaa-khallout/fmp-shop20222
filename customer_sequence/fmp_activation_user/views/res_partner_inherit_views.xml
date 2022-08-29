@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_activation_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="activation_state" invisible="1"/>
+                    <button name="activate_portal_user" type="object" string="Account activation" class="btn-primary"
+                            attrs="{'invisible': ['|',('activation_state', '=', 'active'),('activation_state', '=', False)]}"/>
+
+                    <button name="deactivate_portal_user" type="object" string="Account deactivation"
+                            class="btn-danger"
+                            attrs="{'invisible': ['|',('activation_state', '=', 'inactive'),('activation_state', '=', False)]}"/>
+
+                </header>
+
+                <sheet>
+                     <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" type="object" name="action_show_attachments_activation" icon="fa-paperclip">
+                        <field string="Attachments" name="attachment_activation_count" widget="statinfo"/>
+                    </button>
+                </div>
+                    <widget name="web_ribbon" title="Active"
+                            attrs="{'invisible': [('activation_state', '!=', 'active')]}"/>
+                    <widget name="web_ribbon" title="Inactive" bg_color="bg-danger"
+                            attrs="{'invisible': [('activation_state', '!=', 'inactive')]}"/>
+
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="numero_siret"/>
+                            <field name="name_shop"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+
+                        </group>
+                    </group>
+                    <group string="Description">
+                                <group>
+                                    <field name="description_activation" nolabel="1"
+                                           placeholder="This note is only for internal purposes."/>
+                                </group>
+                            </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_contact_activation" model="ir.actions.act_window">
+        <field name="name">Account activation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('base.view_partner_tree')}),
+    (0, 0, {'view_mode': 'form', 'view_id': ref('res_partner_activation_form_inherit')})]"/>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('activation_state', '!=',False)]</field>
+    </record>
+
+    <menuitem id="partner_menu_contact_activation"
+              name="Account activation"
+              action="action_contact_activation"
+              parent="crm.crm_menu_root"
+              sequence="10"/>
+
+</odoo>

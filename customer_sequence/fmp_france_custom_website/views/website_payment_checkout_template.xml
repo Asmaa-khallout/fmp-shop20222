@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<odoo>
+<template id="custom_payment_checkout" inherit_id="payment.checkout">
+        <xpath expr="//form" position="after">
+            	        <style>
+                            .payment_option_name{
+                            margin-left: 1.5rem!important;}
+           .payment_option_name>b{
+              font: normal normal bold 17px/20px Roboto;
+              color: #000000;
+           }
+           .text-muted.ml-3>p{
+           margin-left: 30px;
+           }
+           #delivery_carrier h3{
+           color: #000000;
+           }
+           #payment_method h3{
+           color: #000000;
+           }
+           .progress-wizard .progress-wizard-step.active .progress-wizard-steplabel {
+            color: #000000;
+           }
+        </style>
+        </xpath>
+    <xpath expr="//form[@name='o_payment_checkout']" position="attributes">
+
+                    <attribute name="class"  remove="mt-3" separator=" "/>
+    </xpath>
+    </template>
+
+    <template inherit_id="website_sale.wizard_checkout" id="custom_wizard_checkout">
+        <xpath expr="//div[@class='row']" position="after">
+
+                                <style>
+              #o_cart_summary>.js_cart_summary{
+              border-radius: 33px;
+              }
+              .monetary_field{
+              font-weight: bold !important;
+              font-size: 16px;
+              letter-spacing: 0px;
+              color: #F70000 !important;
+              }
+              #o_cart_summary #cart_total td.text-right {
+              font: normal normal 14px/17px Roboto;
+              color: #000000 !important;
+              }
+              .btn.btn-secondary{
+              border-radius: 50rem;
+                  padding: 0.5rem 1rem;
+              font-size: 1rem;
+              line-height: 1.5;
+              }
+              .btn.btn-primary{
+              border-radius: 50rem;
+                  padding: 0.5rem 1rem;
+                font-size: 1rem;
+                line-height: 1.5;
+              }
+              .oe_cart #cart_products {
+              border-radius: 2rem;
+              }
+              .oe_cart  .table th{
+              border-top: none !important;
+              }
+              .oe_cart th.td-img{
+              border-top-left-radius: 2rem;
+              }
+              .oe_cart th.td-action{
+              border-top-right-radius: 2rem;
+              }
+              .oe_cart #cart_products td.td-price > span {
+              color:#F70000;
+              }
+              .css_quantity{
+              border:none !important;
+              }
+              .css_quantity .input-group-prepend .btn {
+              border: 1px solid #CED4DA;
+              border-top-left-radius: 19px;
+              border-bottom-left-radius: 19px;
+              }
+              .css_quantity .input-group-append .btn {
+              border: 1px solid #CED4DA;
+              border-top-right-radius: 19px !important;
+              border-bottom-right-radius: 19px !important;
+              }
+              .js_quantity.form-control.quantity{
+              border: 1px solid #CED4DA;
+              }
+              .card{
+              border-radius: 1.4rem;
+              }
+              #delivery_method{
+              overflow: unset !important;
+              }
+              .float-right.badge.badge-secondary{
+              border-radius: 50rem !important;
+              }
+              .o_delivery_carrier_select{
+              margin-top: 1rem !important;
+              }
+              #address_on_payment{
+              display:none;
+              }
+              .label-optional{
+              margin-left: 1.5rem !important;
+              }
+              .label-optional{
+              font: normal normal bold 17px/20px Roboto;
+              color: #000000;
+              }
+              .payment_option_name{
+              font: normal normal bold 17px/20px Roboto;
+              color: #000000 !important;
+              }
+              .o_delivery_carrier_select{
+              padding-bottom: 1.5rem !important;
+              padding-top: 1.5rem !important;
+              }
+              .css_quantity .btn:hover {
+                background-color: #E4E4E4 !important;
+                color: #000000 !important;
+              }
+
+            </style>
+        </xpath>
+    </template>
+    <template id="custom_checkout" inherit_id="website_sale.checkout">
+        <xpath expr="//a[hasclass('a-submit')]" position="attributes">
+            <attribute name="class" add="btn-block" remove="float-right"/>
+        </xpath>
+    </template>
+</odoo>

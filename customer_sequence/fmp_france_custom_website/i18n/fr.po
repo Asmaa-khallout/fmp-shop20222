@@ -1,0 +1,866 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fmp_france_custom_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-26 23:09+0000\n"
+"PO-Revision-Date: 2022-06-26 23:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "%s review"
+msgstr "%s avis"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "%s reviews"
+msgstr "%s avis"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "1. CHAMP D’APPLICATION"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "10. RÉSERVE DE PROPRIETÉ"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "11. GARANTIES"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "12. LIMITATION DE RESPONSABILITÉ"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "13. PROPRIETE INTELLECTUELLE"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "14. PROTECTION DES DONNEES"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "15. JURIDICTION"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "2. PRODUITS"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "3. REPARATIONS"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "4. COMMANDE"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "5. DÉLAIS"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "6. LIVRAISONS - TRANSFERT DES RISQUES"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "7. RECLAMATION - RETOUR PRODUIT"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "8. PRIX"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "9. CONDITIONS DE REGLEMENT"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+msgid ""
+"<b> Directeur de publication : </b> Mirkaz SERALY-BALL www.fmp-france.com <br/>\n"
+"                        <b> Hebergement :</b> OVH SAS - RCS Lille Métropole 424 761 419 00045 <br/>\n"
+"                        <b> Contact : </b> Tél 1007 <br/>\n"
+"                        <b> Adresse : </b> 2 rue Kellermann 59100 Roubaix FRANCE <br/>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<font style=\"\" class=\"text-white\">Une Question ? Appelez Nos spécialistes au <br/> +33 6 60 36\n"
+"                                      35 42\n"
+"                                  </font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "<font style=\"color: rgb(253, 253, 253);\">Faite vous Aider</font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<font style=\"color: rgb(253, 253, 253);\">Garantie a vie Sous "
+"condition</font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<font style=\"color: rgb(253, 253, 253);\">Livraison en "
+"24h&amp;nbsp;Chronopost</font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<font style=\"color: rgb(253, 253, 253);\">Programme de Rachat "
+"d'écran</font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "<font style=\"color: rgb(51, 146, 254);\">En savoir plus &amp;gt;</font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<font style=\"font-size: 20px;\" class=\"o_default_snippet_text text-white\">Compatible pour\n"
+"                                      iPhone 11 Pro Max - Hard Oled .\n"
+"                                  </font>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "<i class=\"fa fa-shopping-cart mr-2\"/>ADD TO CART"
+msgstr "<i class=\"fa fa-shopping-cart mr-2\"/>Ajouter au panier"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"              <span class=\"sr-only o_default_snippet_text\">Previous</span>"
+msgstr ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"              <span class=\"sr-only o_default_snippet_text\">Précédent</span>"
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<span class=\"fa fa-chevron-right\" data-original-title=\"\" title=\"\" aria-describedby=\"tooltip842460\"/>\n"
+"              <span class=\"sr-only o_default_snippet_text\">Next</span>"
+msgstr ""
+"<span class=\"fa fa-chevron-right\" data-original-title=\"\" title=\"\" aria-describedby=\"tooltip842460\"/>\n"
+"              <span class=\"sr-only o_default_snippet_text\">Suivant</span>"
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"<span style=\"color: rgb(108, 117, 125); font-size: 14px\">\n"
+"                    <font style=\"color: rgb(51, 146, 254);\">En savoir plus &amp;gt;</font>\n"
+"                  </span>\n"
+"                  <br/>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Accessory Products"
+msgstr "Produits accessoires"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Accueil"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Add one"
+msgstr "Ajoute un"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 1"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 2"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 3"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 4"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 5"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 6"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 7"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Article 8"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Aux Frais de gestion s'ajouteront les pénalités forfaire au taux légal."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Bloc écran OLED"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Ces CGV ne s'appliquent pas aux CLIENT dont l'achat auprès de FMP est destiné à la revente\n"
+"                            en vente à distance depuis un site web ou bien tout autre moyen de vente à distance."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Ces conditions s'appliquent à toutes ventes effectuées depuis le site internet\n"
+"                            fmp-france.com ou bien par vente à distance en contact téléphonique ou courriel."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Commander"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Conditions générales de vente"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "Conditions générales de ventes soumis au droit français"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Conformément à la Loi informatique et Liberté, le client peu demander un accès, modification\n"
+"                            ou retrait de ses informations personnelles en faisant une demande à FMP. Contact dans les\n"
+"                            mentions légales."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+msgid ""
+"Conformément à la loi Informatique et Libertés, vous disposez d’un droit "
+"d’accès, de modification et de rectification et de suppression des données "
+"qui vous concernent en nous contactant par mail ou par courrier."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Conformément à la réglementation en vigueur, le CLIENT bénéfice des garanties légales liées\n"
+"                            à la vente de produits, en particulier la garantie des vices cachés telle que définie aux\n"
+"                            articles 1641 et suivants du Code Civil."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_web_login
+msgid "Connexion"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Copyright &amp;copy; 2021 FMP-France . Tous droits réservés."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_web_signup
+msgid "Créer un compte"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Des informations sont collectées afin de fournir le meilleur service possible. Des\n"
+"                            informations telles que les noms,adresses physique, courriel et numéros de téléphone sont\n"
+"                            indispensable pour la livraison des colis. D'autres informations peuvent être utilisée pour\n"
+"                            des analyses marketing."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Description"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid ""
+"Details\n"
+"                                <i class=\"fa fa-angle-right\"/>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+msgid "Données personnelles"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "Elle propose des tarifs et des prestations sur son site internet."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"En cas d'acceptation du produit par FMP, le client recevra un bon d'achat correspondant au\n"
+"                            prix d'achat du produit indiqué dans sa facture."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"En cas de retour du colis pour des causes de non disponibilité du client, refus, ou autres\n"
+"                            raisons imputablesau CLIENT, FMP relivrera la commande selon de nouvelles informations de\n"
+"                            livraison en facturant des frais de ports supplémentaires. Le montant de ces frais\n"
+"                            supplémentaires sera à la libre appréciation de la société FMP."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "En savoir plus &amp;gt;"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"FMP n'est pas responsable de l'acceptation ou le refus d'un prélèvement ou d'un paiement par\n"
+"                            CB. En cas de refus de la part de la banque du CLIENT, seul le CLIENT peut intervenir afin\n"
+"                            de régulariser sa situation."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"FMP se réserve le droit de modifier à tout moment son offre et/ou les caractéristiques de\n"
+"                            ses produits"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"Faites nous confiance pour vous aider à proposer des produits<br/>et des solutions afin\n"
+"                                  d’améliorer votre réputation et votre chiffre d’affaire."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Informations générales"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"L'utilisation, la copie sans autorisation expresse écrite au préalable est interdite. FMP se\n"
+"                            réserve le droit de se rétracter."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"La commande est validée lors de la validation du panier. Avec ou sans paiement, le client\n"
+"                            s'engage à en payer le prix lors de la validation lors de la confirmation du panier. La\n"
+"                            société FMP se réserve la possibilité d'expédier la commande avant le paiement. Pour les\n"
+"                            commandes hors site internet, le courriel de commande du client fait foi. La société FMP se\n"
+"                            réserve le droit d'accepter une annulation de commande avant le paiement final de la\n"
+"                            commande."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"La garantie exclue toute demande d'indemnisation au CLIENT ou de remboursement. Un avoir\n"
+"                            sous forme de bon d'achat sera offert au client afin qu'il puisse remplacer le produit\n"
+"                            défectueux."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"La responsabilité de FMP est limitée à la valeur des produits facturés au "
+"CLIENT."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"La responsabilité de FMP ne peut être engagée en cas de préjudice commercial, économique ou\n"
+"                            de perte de données."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"La société FMP propose à ses CLIENTS la réparation des produits multimédia."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Le CLIENT s'engage à la réception du/des colis à vérifier et en présence du livreur de\n"
+"                            l'état du paquet et de soumettre une réserve auprès du transporteur. Il est seul responsable\n"
+"                            de la relation avec le transporteur en cas de produits endommagés. Dans le cas où des\n"
+"                            produits auraient été cassés durant le transport, ou tout autre litige (comme une suspicion\n"
+"                            de vol), FMP se réserve le droit d'intervenir ou bien d'indemniser le CLIENT. Le CLIENT s'il\n"
+"                            le souhaite, pourra bénéficier de l'aide de FMP afin de trouver une solution qui lui\n"
+"                            conviendra, il s'engage à effectuer toutes les démarches nécessaires afin d'aider FMP à\n"
+"                            résoudre un litige."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Le client a la possibilité de retourner un produit défectueux sous réserve qu'il respecte la\n"
+"                            durée de garantie indiqué sur le site internet. En l'absence d'indication dans la fiche\n"
+"                            produit, le produit est considéré comme étant hors garanti. FMP se réserve la possibilité\n"
+"                            d'accepter ou refuser le retour d'un produit. Cependant la société s'engage à accepter le\n"
+"                            retour d'un produit si il est motivée par des raison valable et que ces raison sont indiqué\n"
+"                            de bonne foi."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Le contenu du site internet, photos, textes liens et vidéos sont propriété exclusive de FMP\n"
+"                            et de ses partenaires et ce dans le monde."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+msgid ""
+"Le site www.fmp-france.com et la société France Mobile Parts enregistre\n"
+"                                vos informations personnelles afin de pouvoir vous livrer des commandes dans de bonnes\n"
+"                                conditions, de suivre vos colis ou bien de traiter vos demandes de retours.\n"
+"                                L'utilisation de certaines de vos données sont nécessaire au bon fonctionnement du site\n"
+"                                ainsi que des services proposés."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les conditions de garantie sont applicables sur les produits retournés dans leur emballage\n"
+"                            d'origine, étiquetés et n'ayant subit aucun dommage liés à l'utilisation ou la réparation."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "Les frais d'emballage et de retour sont à la charge du client."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les frais de ports peuvent être offert selon les offres proposées sur le site internet.\n"
+"                            Certains produits peuvent nécessiter des frais de port supplémentaires, ils seront indiqués\n"
+"                            lors de la validation de commande dans le panier."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les informations transmises au CLIENT depuis le catalogue sont fournies à titre informatif.\n"
+"                            Les visuels proposés n'ont aucune valeur contractuelle et la réclamation d'un retour ne\n"
+"                            pourra être prise en compte que si la destination du produit diffère complètement avec le\n"
+"                            visuel suggéré. Les produits d'occasion ou reconditionnés ne peuvent pas avoir un visuel sur\n"
+"                            le site internet correspondant à leur état réel."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Les meilleurs ventes"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les prix de vente sur le site internet de FMP sont indicatifs. FMP s'engage à modifier le\n"
+"                            prix des produits ou des services à tout moment. Le CLIENT s'assure de vérifier le prix\n"
+"                            indiqué dans son panier lors de la validation de commande. Les tarifs proposés aux\n"
+"                            professionnels sont indiqués en HT et aux particuliers en TTC."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les produits refusés par FMP pour non confirmité avec son règlement, pourrons être retournés\n"
+"                            au clients à ses frais."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les produits retournés doivent être emballés dans l'emballage d'origine fourni par FMP. La\n"
+"                            référence du produit doit y figurer, en cas de manquement, le produit peut ne pas être\n"
+"                            repris. L'information concernant le défaut constaté sur le produit doit OBLIGATOIREMENT être\n"
+"                            indiqué."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les produits sont livrés à l'adresse de livraison indiqué par le CLIENT. Il s'engage à\n"
+"                            transmettre à FMP une information fiable qui sera utilisée par le transporteur afin\n"
+"                            d'assurer un bon service."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les produits voyagent aux risques et périls du CLIENT. La responsabilité des produits vendus\n"
+"                            est transférée au CLIENT lorsque le transporteur prends en charge le colis au dépôt FMP."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les présentes conditions générales de vente s'appliquent sur les ventes et les prestations\n"
+"                            proposées par FRANCE MOBILE PARTS SAS au capital de 8000€ immatriculée au RCS de Toulouse\n"
+"                            sous le numéro 850 494 899 et dont le siège social se situe au 3 Boulevard de Maurens 31270\n"
+"                            CUGNAUX ci après dénommé \"FMP\" - ET à ses clients - personnes physiques ou morales, agissant\n"
+"                            dans le cadre de leur activité personnelles ou professionnelles, situées en France\n"
+"                            métropolitaine, en Corse ou dans les DOM TOM, ci-après dénommé \"CLIENT\"."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Les tarifs et les réparations réalisés sont soumis au diagnostique final du technicien une\n"
+"                            fois\n"
+"                            le produit reçu par FMP. La société FMP s'engage à effectuer la réparation par tous les\n"
+"                            MOYENS\n"
+"                            dans la limite des compétences, de la disponibilité des pièces ou bien d'une durée de\n"
+"                            réparation\n"
+"                            trop longue. Elle soumet tout changement de tarif différent au CLIENT avant d'effectuer une\n"
+"                            surfacturation."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "Lorem ipsum dolor sit amet"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n"
+"                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n"
+"                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\n"
+"                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n"
+"                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n"
+"                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n"
+"                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\n"
+"                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n"
+"                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n"
+"                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n"
+"                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\n"
+"                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n"
+"                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Mentions légales"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Ne sont pas couverts par la garantie, les consommables - Les produits ayant subit négligence\n"
+"                            du CLIENT - Les produits ayant ubit une usure normale - défaut dû à un cas de force majeure\n"
+"                            - ayant subit une transformation ou incorporation d'un autre produit incompatible."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Next"
+msgstr "Suivant"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Nous Contacter"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid ""
+"Nous sommes une équipe de passionnés dont le but est d'améliorer la vie de chacun grâce\n"
+"                                à des produits disruptifs. Nous construisons d'excellents produits pour résoudre vos\n"
+"                                problèmes commerciaux."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Nouveau"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Nouveaux produits"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.404_custom
+msgid "On dirait que vous êtes arrivé au mauvais endroit."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid ""
+"Partenaire des réparateurs\n"
+"                                  <br/>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Plusieurs modes de règlement seront proposés au client : Virement, Carte Bancaire,\n"
+"                            Prélèvement SEPA."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Prev"
+msgstr "Précédent"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Previous"
+msgstr "Précédent"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Product Name"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_homepage_custom
+msgid "Produits à la une"
+msgstr "Nom du produit"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Prélèvement SEPA : En cas de refus par la banque d'un prélèvement dûment signé par le\n"
+"                            client, des frais de gestion de 40€ seront facturés en sus des pénalités de retard."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "REF :"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.rgpd_template
+msgid "RGPD"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Rejoignez-nous"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Remove one"
+msgstr "Supprimer un"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.404_custom
+msgid "Retour à l’accueil"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.404_custom
+msgid ""
+"Revenez à la page précédente ou <br/> essayez d’utiliser notre recherche "
+"pour trouver quelque chose de spécifique."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.website_footer_inherit
+msgid "Rgpd"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.mentions_legales_template
+msgid ""
+"SAS France Mobile Parts - 3 boulevard de Maurens 31270 CUGNAUX <br/>\n"
+"                        <b>Capital : </b> 8 000 euros<br/>\n"
+"                         <b> Siret : </b> 850 494 899 00014 RCS Toulouse <br/>\n"
+"                          <b> Code APE : </b> 4652Z <br/>\n"
+"                         <b> TVA : </b> FR07 850 494 899 <br/>\n"
+"                         <b> Tél : </b> 06 60 36 35 42 <br/>\n"
+"                         <b> Mail : </b> info@fmp-france.com <br/>"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Sauf disposition légales contraire, la responsabilité de FMP ne pourra pas être engagée en\n"
+"                            cas de que survenance d'un dommage sauf sur faute prouvée et exclusive de FMP dans sa\n"
+"                            réalisation."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Sauf indication contraire, les produits livrés demeurent la propriété de la société FMP\n"
+"                            jusqu'au paiement COMPLET de la commande du CLIENT. En cas de retard de paiement, FMP est\n"
+"                            libre d'exiger le retour des produits dans leur état d'origine aux frais du CLIENT dans un\n"
+"                            délais de 72h maximum."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Selon le transporteur, FMP indique le délais de livraison. FMP s'engage à EXPEDIER les\n"
+"                            commandes le plus vite possible. Cependant, elle ne s'engage pas à une livraison dans un\n"
+"                            délais particulier. Nous recommandons une validation de commande au plus tôt dans la journée\n"
+"                            pour une expédition le jour même. La société s'emploie à faire tout ce qui est possible afin\n"
+"                            que les commandes soient expédiées le jour même. FMP transmet au client les délais de\n"
+"                            livraison indiqués par les transporteurs. FMP n'est en aucun cas responsable de retards de\n"
+"                            livraison possible, elle s'engage uniquement à transmettre les informations fournies par les\n"
+"                            transporteurs après la prise en charge des colis."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Shop"
+msgstr "Boutique"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "Similar Products"
+msgstr "Produits similaires"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Sous réserve de la disponibilité des produits dans nos stocks, tous les produits proposés\n"
+"                            par FMP sont présentés sur le site internet ou dans les offres par courriel."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "This combination does not exist."
+msgstr "Cette combinaison n'existe pas."
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "This product has no valid combination."
+msgstr "Ce produit n'a pas de combinaison valide."
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_product_template
+msgid "This product is no longer available."
+msgstr "Ce produit n'est plus disponible"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Tout litige qui ne peut être résolu à l'amiable avec le client ou tout autre"
+" utilisateur soumis à ces conditions relèvera de la compétence exclusive du "
+"Tribunal de commerce de Toulouse."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid "Toute commande doit être réglée le jour de la commande."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Toute commande livrée non réglées dans les délais initialement prévu peut faire l'objet de\n"
+"                            frais de gestion correspondant à 40€"
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Toute réserve devra être transmises par le CLIENT aux transporteurs selon les conditions\n"
+"                            indiqués propres à chacun d'entre eux."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.terms_sales_template
+msgid ""
+"Une surcharge sur les frais de port est appliquée si le client souhaite une livraison le\n"
+"                            samedi."
+msgstr ""
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.tpsvg404_custom
+msgid "page not found"
+msgstr "Page non trouvée"
+
+#. module: fmp_france_custom_website
+#: model_terms:ir.ui.view,arch_db:fmp_france_custom_website.custom_confirmation
+msgid "strong t-field=\"order.amount_total\""
+msgstr ""

@@ -1,0 +1,387 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fmp_activation_user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-23 12:10+0000\n"
+"PO-Revision-Date: 2022-06-23 12:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fmp_activation_user
+#: model:mail.template,body_html:fmp_activation_user.user_activation_mail_template_for_deactive_user
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Dear <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                                Your account has been deactivated!<br/>\n"
+"                                Thanks,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Cher <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                               Votre compte a été désactivé !<br/>\n"
+"                                Merci,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+
+#. module: fmp_activation_user
+#: model:mail.template,body_html:fmp_activation_user.user_activation_mail_template_for_active_user
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Dear <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                                Your account has been successfully activated!<br/>\n"
+"                                Your login is <strong><t t-out=\"object.email or ''\"/></strong><br/>\n"
+"                                To gain access to your account, you can use the following link:\n"
+"                                <div style=\"margin: 16px 0px 16px 0px;\">\n"
+"                                    <a t-attf-href=\"/web/login?auth_login={{object.email}}\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\">\n"
+"                                        Go to My Account\n"
+"                                    </a>\n"
+"                                </div>\n"
+"                                Thanks,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Cher <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                                Votre compte a été activé avec succès !<br/>\n"
+"                                Votre identifiant est <strong><t t-out=\"object.email or ''\"/></strong><br/>\n"
+"                                Pour accéder à votre compte, vous pouvez utiliser le lien suivant ::\n"
+"                                <div style=\"margin: 16px 0px 16px 0px;\">\n"
+"                                    <a t-attf-href=\"/web/login?auth_login={{object.email}}\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\">\n"
+"                                        Accéder à mon Compte\n"
+"                                    </a>\n"
+"                                </div>\n"
+"                                Merci,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+
+#. module: fmp_activation_user
+#: model:mail.template,body_html:fmp_activation_user.user_activation_mail_template_for_new_user
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Dear <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                                Your account has been successfully created!<br/>\n"
+"                                You can access your account after administrator validation.\n"
+"                                Thanks,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Cher <t t-out=\"object.name or ''\"/>,<br/><br/>\n"
+"                                Votre compte a été créé avec succès !<br/>\n"
+"                                Vous pouvez accéder à votre compte après validation administrateur.\n"
+"                                Merci,<br/>\n"
+"                                <t t-if=\"user.signature\">\n"
+"                                    <br/>\n"
+"                                    <t t-out=\"user.signature or ''\"/>\n"
+"                                </t>\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+
+#. module: fmp_activation_user
+#: model:mail.template,body_html:fmp_activation_user.user_activation_mail_template_for_admin
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                New validation request for user: <t t-out=\"object.name or ''\"/>\n"
+"                                <br/><br/>\n"
+"                                Thanks,<br/>\n"
+"\n"
+"                                                <a t-att-href=\"'/web#id=%s&amp;model=res.partner&amp;view_type=form&amp;action=fmp_activation_user.action_contact_activation' % (object.partner_id.id)\" style=\"background-color: #9E588B; margin-top: 10px; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\">View Request</a>\n"
+"\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                                Nouvelle demande de validation pour l'utilisateur : <t t-out=\"object.name or ''\"/>\n"
+"                                <br/><br/>\n"
+"                                Merci,<br/>\n"
+"\n"
+"<br/><br/>\n"
+"                                                <a t-att-href=\"'/web#id=%s&amp;model=res.partner&amp;view_type=form&amp;action=fmp_activation_user.action_contact_activation' % (object.partner_id.id)\" style=\"background-color: #9E588B; margin-top: 10px; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\">Afficher la demande</a>\n"
+"\n"
+"                            </div>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+
+#. module: fmp_activation_user
+#: model:mail.template,name:fmp_activation_user.user_activation_mail_template_for_admin
+msgid "Account Activation: New user account activated"
+msgstr "Activation du compte : nouveau compte utilisateur activé"
+
+#. module: fmp_activation_user
+#: model:mail.template,name:fmp_activation_user.user_activation_mail_template_for_active_user
+msgid "Account Activation: User account activated"
+msgstr "Activation du compte : compte utilisateur activé"
+
+#. module: fmp_activation_user
+#: model:mail.template,name:fmp_activation_user.user_activation_mail_template_for_deactive_user
+msgid "Account Deactivation: User account deactivated"
+msgstr "Désactivation du compte : compte utilisateur désactivé"
+
+#. module: fmp_activation_user
+#: model:mail.template,subject:fmp_activation_user.user_activation_mail_template_for_active_user
+msgid "Account activated {{ object.user_id.name }}"
+msgstr "Compte activé {{ object.user_id.name }}"
+
+#. module: fmp_activation_user
+#: model:ir.actions.act_window,name:fmp_activation_user.action_contact_activation
+#: model:ir.ui.menu,name:fmp_activation_user.partner_menu_contact_activation
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "Account activation"
+msgstr "Demande(s) d'activation"
+
+#. module: fmp_activation_user
+#: model:mail.template,name:fmp_activation_user.user_activation_mail_template_for_new_user
+msgid "Account created: pending activation"
+msgstr "Compte créé : activation en attente"
+
+#. module: fmp_activation_user
+#: model:mail.template,subject:fmp_activation_user.user_activation_mail_template_for_deactive_user
+msgid "Account deactivated {{ object.user_id.name }}"
+msgstr "Compte désactivé {{ object.user_id.name }}"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "Account deactivation"
+msgstr "Désactivation du compte"
+
+#. module: fmp_activation_user
+#: model:mail.template,subject:fmp_activation_user.user_activation_mail_template_for_admin
+msgid "Activation for User: {{ object.name }}"
+msgstr "Activation pour l'utilisateur : {{ object.name }}"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_partner__activation_state
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_users__activation_state
+msgid "Activation state"
+msgstr "État d'activation"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields.selection,name:fmp_activation_user.selection__res_partner__activation_state__active
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "Active"
+msgstr "Actif"
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/controllers/main_signup.py:0
+#, python-format
+msgid "Another user is already registered using this email address."
+msgstr "Un autre utilisateur est déjà enregistré avec cette adresse e-mail."
+
+#. module: fmp_activation_user
+#: model:ir.model,name:fmp_activation_user.model_ir_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_partner__attachment_activation_count
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_users__attachment_activation_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/models/res_partner_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+#, python-format
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#. module: fmp_activation_user
+#: model:ir.model,name:fmp_activation_user.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/controllers/main_signup.py:0
+#, python-format
+msgid "Could not create a new account."
+msgstr "Impossible de créer un nouveau compte."
+
+#. module: fmp_activation_user
+#: model_terms:ir.actions.act_window,help:fmp_activation_user.action_contact_activation
+msgid "Créer un nouveau document"
+msgstr ""
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "Description"
+msgstr ""
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_partner__description_activation
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_users__description_activation
+msgid "Description activation"
+msgstr "Descriptif activation"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.auth_signup_fields_extend
+msgid "Document(s)"
+msgstr ""
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_ir_attachment__file_activation
+msgid "File activation"
+msgstr "Fichier d'activation"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields.selection,name:fmp_activation_user.selection__res_partner__activation_state__inactive
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/controllers/main_signup.py:0
+#, python-format
+msgid "Invalid signup token"
+msgstr "Jeton d'inscription non valide"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.auth_signup_fields_extend
+msgid "Mobile"
+msgstr ""
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.auth_signup_fields_extend
+msgid "Name of Magazin"
+msgstr "Nom du magasin"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_partner__name_shop
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_users__name_shop
+msgid "Name of shop"
+msgstr "Nom du magasin"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.auth_signup_fields_extend
+msgid "N° SIRET"
+msgstr "N° siret"
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/controllers/main_signup.py:0
+#, python-format
+msgid "Passwords do not match; please retype them."
+msgstr "Les mots de passe ne correspondent pas; veuillez les retaper."
+
+#. module: fmp_activation_user
+#: model:mail.template,subject:fmp_activation_user.user_activation_mail_template_for_new_user
+msgid "Pending Activation {{ object.user_id.name }}"
+msgstr "Activation en attente {{ object.user_id.name }}"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.portal_my_activation
+msgid "Please wait for account validation..."
+msgstr "Veuillez attendre la validation du compte..."
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/models/res_partner_inherit.py:0
+#: code:addons/fmp_activation_user/models/res_partner_inherit.py:0
+#, python-format
+msgid "Related user not found!"
+msgstr "Utilisateur associé introuvable !"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.portal_my_activation
+msgid "Retour à l’accueil"
+msgstr "Retour à l'accueil"
+
+#. module: fmp_activation_user
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_partner__numero_siret
+#: model:ir.model.fields,field_description:fmp_activation_user.field_res_users__numero_siret
+msgid "Siret"
+msgstr ""
+
+#. module: fmp_activation_user
+#: code:addons/fmp_activation_user/controllers/main_signup.py:0
+#, python-format
+msgid "The form was not properly filled in."
+msgstr "Le formulaire n'a pas été correctement rempli."
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.res_partner_activation_form_inherit
+msgid "This note is only for internal purposes."
+msgstr "Cette note est uniquement à des fins internes."
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.auth_signup_fields_extend
+msgid "Téléphonne"
+msgstr "Téléphone"
+
+#. module: fmp_activation_user
+#: model_terms:ir.ui.view,arch_db:fmp_activation_user.portal_my_activation
+msgid "Your FMP France account is being activated"
+msgstr "Votre compte FMP France est en cours d'activation"

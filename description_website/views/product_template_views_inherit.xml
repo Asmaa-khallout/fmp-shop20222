@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_view_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="model">product.template</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Description E-commerce">
+                    <group>
+
+                      <field name="website_description" widget="html"/>
+                    <field name="website_short_description" widget="html"/>
+                    </group>
+
+                </page>
+
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

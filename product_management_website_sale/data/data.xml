@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="product_template_update_public_categories" model="ir.actions.server">
+            <field name="name">Update public categories</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">
+action = env.ref("product_management_website_sale.update_prm_public_categories_action").sudo().read()[0]
+            </field>
+        </record>
+
+        <record id="product_template_website_publish" model="ir.actions.server">
+            <field name="name">Publish products on website</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="product.model_product_template" />
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    records.write({"website_published": True})
+            </field>
+        </record>
+
+        <record id="product_template_website_unpublish" model="ir.actions.server">
+            <field name="name">Unpublish products from website</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="product.model_product_template" />
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    records.write({"website_published": False})
+            </field>
+        </record>
+
+        <record id="product_template_update_alternatives" model="ir.actions.server">
+            <field name="name">Update products alternatives</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">
+action = env.ref("product_management_website_sale.update_prm_alternatives_action").sudo().read()[0]
+            </field>
+        </record>
+
+        <record id="product_template_update_accessories" model="ir.actions.server">
+            <field name="name">Update product accessories</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">
+action = env.ref("product_management_website_sale.update_prm_accessories_action").sudo().read()[0]
+            </field>
+        </record>
+
+    </data>
+</odoo>

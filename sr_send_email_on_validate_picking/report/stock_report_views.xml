@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            string="Delivery Slip With Customer Code"
+            id="action_report_delivery_with_customer_code"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="sr_send_email_on_validate_picking.report_deliveryslip_with_customer_code"
+            file="sr_send_email_on_validate_picking.report_deliveryslip_with_customer_code"
+            print_report_name="'Delivery Slip - %s - %s' % (object.partner_id.name or '', object.name)"
+        />
+    </data>
+</odoo>

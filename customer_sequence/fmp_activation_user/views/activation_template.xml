@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_activation" name="User activation">
+  <t t-call="website.layout">
+        <div  id="wrap" class="oe_structure oe_empty">
+      <section class="s_heading_4 o_colored_level pb144 pt112" data-snippet="s_heading_4" data-name="Heading - 4" style="background-image: none;">
+        <div class="container">
+          <div class="row justify-content-center s_col_no_bgcolor s_nb_column_fixed">
+            <div class="col-12 col-lg-8 text-center">
+              <span class="fa fa-users fa-2x bg-o-color-1 rounded-circle"/>
+              <h2 class="mt-3">Your FMP France account is being activated</h2>
+              <h2 class="mt-3"/>
+              <p class="lead">Please wait for account validation...</p>
+              <p class="lead"/>
+                <a class="btn btn-primary btn-lg btn-back rounded-pill" href="/">Retour à l’accueil</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </t>
+    </template>
+
+<!--   <template inherit_id="portal.frontend_layout" id="ow_website_activation" name="Main layout">-->
+<!--      <xpath expr="//div[@id='wrapwrap']" position="attributes">-->
+<!--         <attribute name="t-if">-->
+<!--           user_id.partner_id.activation_state == 'active' or request.httprequest.path =='/'-->
+<!--         </attribute>-->
+<!--      </xpath>-->
+
+<!--   </template>-->
+</odoo>
+
+
+

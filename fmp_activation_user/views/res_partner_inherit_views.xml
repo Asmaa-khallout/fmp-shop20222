@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_activation_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.tree.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="activation_state" widget="badge" decoration-danger="activation_state == 'inactive'"
+                       decoration-success="activation_state == 'active'"/>
+
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="create_date"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_partner_activation_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="activation_state" invisible="1"/>
+                    <button name="activate_portal_user" type="object" string=" Account activate " class="btn-primary"
+                            attrs="{'invisible': ['|',('activation_state', '=', 'active'),('activation_state', '=', False)]}"/>
+
+                    <button name="deactivate_portal_user" type="object" string="Account deactivation"
+                            class="btn-danger"
+                            attrs="{'invisible': ['|',('activation_state', '=', 'inactive'),('activation_state', '=', False)]}"/>
+
+                </header>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position='after'>
+                <field name="numero_siret"/>
+                <field name="name_shop"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button class="oe_stat_button" type="object" name="action_show_attachments_activation"
+                        icon="fa-paperclip">
+                    <field string="Attachments" name="attachment_activation_count" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//widget" position="before">
+                <widget name="web_ribbon" title="Active"
+                        attrs="{'invisible': [('activation_state', '!=', 'active')]}"/>
+                <widget name="web_ribbon" title="Inactive" bg_color="bg-danger"
+                        attrs="{'invisible': [('activation_state', '!=', 'inactive')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_res_partner_search_inherit" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <filter string="Compte active" name="compte_active" domain="[('activation_state','=', 'active')]"/>
+                <filter string="Compte inactive" name="compte_inactive"
+                        domain="[('activation_state','=', 'inactive')]"/>
+                <separator/>
+                <filter string="Compte state" name="compte_state" domain="[]"
+                        context="{'group_by': 'activation_state'}"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+    <record id="action_contact_activation" model="ir.actions.act_window">
+        <field name="name">Account activation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('activation_state', '!=',False)]</field>
+        <field name="context">{'search_default_compte_state': 1}</field>
+    </record>
+
+    <menuitem id="partner_menu_contact_activation"
+              name="Account activation"
+              action="action_contact_activation"
+              parent="crm.crm_menu_root"
+              sequence="10"/>
+
+</odoo>

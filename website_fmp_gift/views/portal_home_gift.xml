@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_sale_custom" inherit_id="portal.portal_my_home" customize_show="True" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Gift Cart</t>
+                <t t-set="url" t-value="'/my/gifts'"/>
+                <t t-set="placeholder_count" t-value="'gift_count'"/>
+            </t>
+
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Coupon Code</t>
+                <t t-set="url" t-value="'/my/coupons'"/>
+                <t t-set="placeholder_count" t-value="'coupon_count'"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

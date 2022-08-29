@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_activation" name="User activation">
+      <t t-call="web.login_layout">
+        <div id="wrap">
+          <div class="container">
+            <h1 id="pageTitle">Account activation</h1>
+            <p>
+              Please wait for account validation.
+            </p>
+          </div>
+        </div>
+      </t>
+    </template>
+</odoo>

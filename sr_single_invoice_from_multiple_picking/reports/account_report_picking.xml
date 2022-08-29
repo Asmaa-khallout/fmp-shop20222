@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+                id="account_invoices_with_picking"
+                model="account.move"
+                string="Invoices with Pickings"
+                report_type="qweb-pdf"
+                name="sr_single_invoice_from_multiple_picking.report_invoice_picking"
+                file="sr_single_invoice_from_multiple_picking.report_invoice_picking"
+        />
+    </data>
+</odoo>

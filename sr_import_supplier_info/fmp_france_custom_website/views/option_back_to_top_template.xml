@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <template id="custom_option_back_to_top" inherit_id="website.layout" name="option_back_to_top" active="True" priority="16">
+          <xpath expr="//a[hasclass('tp-back-to-top')]" position="attributes">
+              <attribute name="class" add="rounded-pill" separator=" "/>
+          </xpath>
+      </template>
+</odoo>

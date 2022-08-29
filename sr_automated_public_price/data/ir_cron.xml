@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="ir_cron_automated_public_price" model="ir.cron">
+        <field name='name'>Auto Set Sale Price</field>
+        <field name='interval_number'>30</field>
+        <field name='interval_type'>minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True" />
+        <field name="doall" eval="False" />
+        <field name="code">model.set_auto_set_price()</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="model_product_product" />
+    </record>
+</odoo>

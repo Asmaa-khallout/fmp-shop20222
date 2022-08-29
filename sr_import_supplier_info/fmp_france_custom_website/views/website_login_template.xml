@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+<template id="custom_web_login" inherit_id="web.login">
+    <xpath expr="//input[@name='csrf_token']" position="before">
+                      <h2 class="text-center text-primary">Connexion</h2>
+    </xpath>
+    <xpath expr="//button[@type='submit']" position="attributes">
+        <attribute name="class" add="rounded-pill mb-4" separator=" "/>
+    </xpath>
+    <xpath expr="//button[@name='redirect']" position="attributes">
+        <attribute name="class" add="d-none" separator=" "/>
+
+    </xpath>
+</template>
+
+
+<template id="custom_web_signup" inherit_id="auth_signup.signup">
+            <xpath expr="//input[@name='csrf_token']" position="before">
+                                      <h2 class="text-center text-primary mb-4">Créer un compte</h2>
+    </xpath>
+    <xpath expr="//button[@type='submit']" position="attributes">
+        <attribute name="class" add="rounded-pill mb-4" separator=" "/>
+    </xpath>
+</template>
+
+</odoo>

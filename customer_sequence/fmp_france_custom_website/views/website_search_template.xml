@@ -1,0 +1,8 @@
+<odoo>
+        <template id="website_search_box" inherit_id="website.website_search_box">
+        <xpath expr="//input[@name='search']" position="attributes">
+            <attribute
+                name="t-att-data-display-price">'false'</attribute>
+        </xpath>
+    </template>
+</odoo>

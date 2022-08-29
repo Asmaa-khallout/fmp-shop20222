@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Email template for new users activation -->
+        <record id="user_activation_mail_template_for_new_user" model="mail.template">
+            <field name="name">Account created: pending activation</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">Pending Activation {{ object.user_id.name }}</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                Dear <t t-out="object.name or ''"></t>,<br/><br/>
+                                Your account has been successfully created!<br/>
+                                You can access your account after administrator validation.
+                                Thanks,<br/>
+                                <t t-if="user.signature">
+                                    <br/>
+                                    <t t-out="user.signature or ''"/>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email template for administrator to ask users activation -->
+        <record id="user_activation_mail_template_for_admin" model="mail.template">
+            <field name="name">Account Activation: New user account activated</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">Activation for User: {{ object.user_id.name }}</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">"{{ object.company_id.name }}" &lt;{{ object.company_id.email }}&gt;</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                New validation request for user: <t t-out="object.name or ''"></t>
+                                <br/><br/>
+                                Thanks,<br/>
+                                <t t-if="user.signature">
+                                    <br/>
+                                    <t t-out="user.signature or ''"/>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>        
+
+        <!-- Email template for activated users -->
+        <record id="user_activation_mail_template_for_active_user" model="mail.template">
+            <field name="name">Account Activation: User account activated</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">Account activated {{ object.user_id.name }}</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                Dear <t t-out="object.name or ''"></t>,<br/><br/>
+                                Your account has been successfully activated!<br/>
+                                Your login is <strong><t t-out="object.email or ''"></t></strong><br/>
+                                To gain access to your account, you can use the following link:
+                                <div style="margin: 16px 0px 16px 0px;">
+                                    <a t-attf-href="/web/login?auth_login={{object.email}}"
+                                        style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                                        Go to My Account
+                                    </a>
+                                </div>
+                                Thanks,<br/>
+                                <t t-if="user.signature">
+                                    <br/>
+                                    <t t-out="user.signature or ''"/>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email template for deactivated users -->
+        <record id="user_activation_mail_template_for_deactive_user" model="mail.template">
+            <field name="name">Account Deactivation: User account deactivated</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">Account deactivated {{ object.user_id.name }}</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                Dear <t t-out="object.name or ''"></t>,<br/><br/>
+                                Your account has been deactivated!<br/>
+                                Thanks,<br/>
+                                <t t-if="user.signature">
+                                    <br/>
+                                    <t t-out="user.signature or ''"/>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

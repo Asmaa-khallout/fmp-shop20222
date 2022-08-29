@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="custom_payment_delivery" inherit_id="website_sale_delivery.payment_delivery_methods">
+        <xpath expr="//t[@t-set='badge_class']" position="before">
+            <t t-set="badge_class_free" t-value="(delivery_nb != 1 and 'float-right ' or '') + 'badge badge-secondary badge-success'"/>
+
+        </xpath>
+        <xpath expr="//span[@t-att-class='badge_class']" position="attributes">
+
+            <attribute name="t-att-class">badge_class_free</attribute>
+
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is part of an Adiczion's Module.
+The COPYRIGHT and LICENSE files at the top level of this repository
+contains the full copyright notices and license terms. -->
+<odoo>
+    <record id="view_picking_withcarrier_out_form_auto_generated_label" model="ir.ui.view">
+		<field name="name">delivery.stock.picking_withcarrier.form.view.auto_generated_label</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.view_picking_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='move_type']" position="after">
+				<field name="auto_print_label_state" />
+			</xpath>
+
+        </field>
+    </record>
+
+	<record id="inherit_vpicktree" model="ir.ui.view">
+		<field name="name">stock.picking.tree</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.vpicktree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='state']" position="after">
+				<field name="auto_print_label_state" />
+			</xpath>
+		</field>
+	</record>
+
+	<record id="view_picking_internal_search_auto_generated_label" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search.auto_generated_label</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="/search/filter[@name='backorder']" position="after">
+                <separator/>
+                <filter name="auto_print_label_state"
+                    string="Generated label"
+                    domain="[('auto_print_label_state', '=', 'generated_label')]"
+                    help="Filters pickings for which the label is generated."/>
+				<filter name="auto_print_label_state"
+                    string="Not relevant"
+                    domain="[('auto_print_label_state', '=', 'not_relevant')]"
+                    help="Filters pickings for which the label don't have any status yet."/>
+            </xpath>
+			<xpath expr="//filter[@name='expected_date']" position="after">
+				<filter string="Label State" name="label_state" domain="[]" context="{'group_by':'auto_print_label_state'}"/>
+			</xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_withcarrier_out_form_auto_generate_label" model="ir.ui.view">
+        <field name="name">delivery.stock.picking_withcarrier.form.view.generate_label</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_toggle_is_locked']" position="after">
+                <button name="create_package_and_label" type="object" context="{'new_label': True}"
+                string="Print a new label" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_get_labels_from_carrier">
+        <field name="name">Generate delivery label</field>
+        <field name="model_id" ref="a4o_delivery_generate_labels.model_get_generated_labels"/>
+        <field name="binding_model_id" ref="stock.model_stock_picking" />
+        <field name="state">code</field>
+        <field name="code">
+action = env['get.generated.labels'].retrieve_labels()
+        </field>
+    </record>
+</odoo>

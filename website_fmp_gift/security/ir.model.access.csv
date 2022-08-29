@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gift_card_all,Gift Card Program All,website_sale_gift_card.model_gift_card,,1,0,0,0
+access_coupon_program_all,Coupon Program All,coupon.model_coupon_program,,1,0,0,0
+access_coupon_coupon_all,Coupon Coupon All,coupon.model_coupon_coupon,,1,0,0,0
+access_coupon_reward_all,Coupon Reward All,coupon.model_coupon_reward,,1,0,0,0
+access_coupon_rule_all,Coupon Rule All,coupon.model_coupon_rule,,1,0,0,0

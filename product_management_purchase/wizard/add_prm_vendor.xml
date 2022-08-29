@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="add_vendor_wizard_form_view"  model="ir.ui.view">
+        <field name="name">add.prm.vendor.form.view</field>
+        <field name="model">add.prm.vendor</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="products" invisible="1"/>
+                    <field name="supplier_id"/>
+                    <field name="min_qty"/>
+                    <field name="delay"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="add_vendor_action" model="ir.actions.act_window">
+         <field name="name">Add Vendor</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="res_model">add.prm.vendor</field>
+         <field name="view_mode">form</field>
+         <field name="view_id" ref="product_management_purchase.add_vendor_wizard_form_view"/>
+         <field name="target">new</field>
+    </record>
+
+
+</odoo>

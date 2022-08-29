@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="coupon_modal">
+        <div id="open_coupons_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow d-block">
+                        <h3 class=" text-center">AVAILABLE COUPONS</h3>
+                    </div>
+                    <!-- partie coupon -->
+                    <div class="modal-body wk_modal">
+                        <t t-set="coupon_ids" t-value="website.get_customer_coupon()"/>
+                        <t t-foreach="coupon_ids" t-as="coupon_id">
+                            <t t-if="coupon_id.program_type=='coupon_program'">
+                                <t t-foreach="coupon_id.coupon_ids" t-as="c">
+                                    <div class="voucher">
+                                        <div class="row">
+                                        <div class="voucher_code text-center col-10">
+                                            <span style="margin-left:60px;" t-esc="c.code"/>
+                                        </div>
+                                        <div class="col-2">
+                                <form action="/shop/pricelist?r=/shop/payment" method="post"
+                                          name="gift_card_code">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input name="promo" type="hidden" t-att-value="c.code"
+                                                   required="required"/>
+                                        <button href="#" type="submit" role="button"
+                                                        class="btn btn-danger btn-pay a-submit">Apply</button>
+                                    </form>
+                            </div>
+                                    </div>
+                                        <div class="value_div text-left">Get a maximum discount of
+                                            <!--                                    <span t-if="c.discount_type == 'fixed_amount'" class="voucher_value"-->
+                                            <!--                                          t-esc="c.discount_fixed_amount"-->
+                                            <!--                                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+                                            <!--                                    <span class="voucher_value" t-if="c.discount_type == 'percentage'">-->
+                                            <!--                                        <t t-esc="c.discount_percentage"/>-->
+                                            <!--                                        %-->
+                                            <!--                                    </span>-->
+                                            <!--                                    <div t-if="c.rule_minimum_amount and c.rule_minimum_amount &gt; 0">-->
+                                            <!--                                        To avail this offer minimum purchase should be-->
+                                            <!--                                        <span class="voucher_value" t-esc="c.rule_minimum_amount"-->
+                                            <!--                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+                                            <!--                                    </div>-->
+                                            <!--                                    <div>This offer is valid till-->
+                                            <!--                                        <span class="expirty_date" t-esc="c.rule_date_to"/>-->
+                                            <!--                                        <div t-if="c.discount_apply_on=='specific_products'">-->
+                                            <!--                                            <select class="form-select">-->
+                                            <!--                                                <option>Specific Products</option>-->
+                                            <!--                                                <t t-foreach='c.discount_specific_product_ids'-->
+                                            <!--                                                   t-as='product_id'>-->
+                                            <!--                                                    <option disabled="disabled">-->
+                                            <!--                                                        <t t-esc="product_id.name"/>-->
+                                            <!--                                                    </option>-->
+                                            <!--                                                </t>-->
+                                            <!--                                            </select>-->
+                                            <!--                                        </div>-->
+                                            <!--                                        <div t-else="">-->
+                                            <!--                                            <p t-field="c.discount_apply_on"/>-->
+
+                                            <!--                                        </div>-->
+
+                                            <!--                                    </div>-->
+
+
+                                        </div>
+                                    </div>
+
+
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <div class="voucher">
+                                    <div class="row">
+                                    <div class="voucher_code text-center col-10">
+                                        <span style="margin-left:60px;" t-esc="coupon_id.promo_code"/>
+
+                                    </div>
+                                    <div class="col-2">
+                                <form action="/shop/pricelist?r=/shop/payment" method="post"
+                                          name="gift_card_code">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input name="promo" type="hidden" t-att-value="coupon_id.promo_code"
+                                                   required="required"/>
+                                        <button href="#" type="submit" role="button"
+                                                        class="btn btn-danger btn-pay a-submit">Apply</button>
+                                    </form>
+                            </div>
+                                    </div>
+                                    <div class="value_div text-left">Get a maximum discount of
+                                        <span t-if="coupon_id.discount_type == 'fixed_amount'" class="voucher_value"
+                                              t-esc="coupon_id.discount_fixed_amount"
+                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                        <span class="voucher_value" t-if="coupon_id.discount_type == 'percentage'">
+                                            <t t-esc="coupon_id.discount_percentage"/>
+                                            %
+                                        </span>
+                                        <div t-if="coupon_id.rule_minimum_amount and coupon_id.rule_minimum_amount &gt; 0">
+                                            To avail this offer minimum purchase should be
+                                            <span class="voucher_value" t-esc="coupon_id.rule_minimum_amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                        </div>
+                                        <div>This offer is valid till
+                                            <span class="expirty_date" t-esc="coupon_id.rule_date_to"/>
+                                            <div t-if="coupon_id.discount_apply_on=='specific_products'">
+                                                <select class="form-select">
+                                                    <option>Specific Products</option>
+                                                    <t t-foreach='coupon_id.discount_specific_product_ids'
+                                                       t-as='product_id'>
+                                                        <option disabled="disabled">
+                                                            <t t-esc="product_id.name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div t-else="">
+                                                <p t-field="coupon_id.discount_apply_on"/>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+                        <div t-if="not coupon_ids" class="no_vouchers">No<br/>Coupons<br/>Available
+                        </div>
+                    </div>
+
+                    <!-- end part coupon -->
+                    <div class="modal-footer">
+                        <center>
+                            <button class="btn btn-primary rounded-pill" data-dismiss="modal">Cancel</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="gift_modal">
+        <div id="open_gifts_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow d-block">
+                        <h3 class=" text-center">AVAILABLE Gift Card</h3>
+                    </div>
+                    <div class="modal-body wk_modal">
+                        <t t-set="gift_ids" t-value="website.get_customer_gifts()"/>
+                        <t t-foreach="gift_ids" t-as="gift_id">
+                            <div class="voucher">
+                                <div class="row">
+                                <div class="voucher_code text-center col-10">
+                                    <span t-esc="gift_id.code"/>
+
+                                </div>
+                                <div class="col-2">
+                                <form action="/shop/pay_with_gift_card" method="post"
+                                          name="gift_card_code">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input name="gift_card_code" type="hidden" t-att-value="gift_id.code"
+                                                   required="required"/>
+                                        <button href="#" type="submit" role="button"
+                                                        class="btn btn-danger btn-pay a-submit">Pay</button>
+                                    </form>
+                            </div>
+                                    </div>
+                                <div class="value_div text-left">
+
+                                    <div>This offer is valid till
+                                        <span class="expirty_date" t-esc="gift_id.expired_date"/>
+
+
+                                    </div>
+                                    <div>Initial Amount :
+                                        <span t-esc="gift_id.initial_amount"
+                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    </div>
+                                    <div>Balance :
+                                        <span t-esc="gift_id.balance"
+                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </t>
+                        <div t-if="not gift_ids" class="no_vouchers">No<br/>Gift Card<br/>Available
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button class="btn btn-primary rounded-pill" data-dismiss="modal">Cancel</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+<!--    <template id="voucher_code" inherit_id="website_sale.short_cart_summary" active="True" name="Coupon Code">-->
+<!--        <xpath expr="//a[@role='button']" position="before">-->
+<!--            <tr>-->
+<!--                <div style="display:none;text-align:center" class="alert alert-danger error_msg"/>-->
+<!--                <div style="display:none; text-align:center" class="alert alert-success success_msg"/>-->
+<!--                <div style="margin-bottom: 10px;;">-->
+<!--                    <div class="voucher_history">-->
+<!--                        <a type="button" class="btn_modal_vouchers" data-toggle="modal"-->
+<!--                           data-target="#open_vouchers_modal" href="#">Click here-->
+<!--                        </a>-->
+<!--                        <span>-->
+<!--                            <i>to see your available coupons.</i>-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </tr>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+
+<!--    <template id="portal_layout_inherited_voucher" inherit_id="portal.portal_layout" active="True"-->
+<!--              name="Available User Vouchers">-->
+<!--        <xpath expr="//div[@id='wrap']//div[hasclass('container')]//div[@id='o_my_sidebar']" position="after">-->
+<!--            <div class="col-md-3 col-md-offset-1">-->
+<!--                <h3>Coupon Codes</h3>-->
+<!--                <a type="button" class="btn_modal_vouchers" href="#" data-toggle="modal"-->
+<!--                   data-target="#open_vouchers_modal">Click here-->
+<!--                </a>-->
+<!--                <span>-->
+<!--                    <i>to see your available coupons.</i>-->
+<!--                </span>-->
+<!--            </div>-->
+<!--            <t t-call="website_fmp_gift.coupon_modal"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+    <template id="voucher_code" inherit_id="website_sale.coupon_form" active="True" name="Coupon Code">
+        <xpath expr="//form[@name='coupon_code']" position="after">
+
+            <div style="margin-bottom: 10px;;">
+                <div class="voucher_history">
+                    <a type="button" class="btn_modal_vouchers" data-toggle="modal" data-target="#open_coupons_modal"
+                       href="#">Click here
+                    </a>
+                    <span>
+                        <i>to see your available coupons.</i>
+                    </span>
+                </div>
+            </div>
+
+            <t t-call="website_fmp_gift.coupon_modal"/>
+        </xpath>
+    </template>
+
+    <template id="gift_code" inherit_id="website_sale_gift_card.pay_with_gift_card_form" active="True" name="Gift Code">
+        <xpath expr="//form[@name='gift_card_code']" position="after">
+
+            <div style="margin-bottom: 10px;">
+                <div class="voucher_history">
+                    <a type="button" class="btn_modal_vouchers" data-toggle="modal" data-target="#open_gifts_modal"
+                       href="#">Click here
+                    </a>
+                    <span>
+                        <i>to see your available gift card.</i>
+                    </span>
+                </div>
+            </div>
+
+            <t t-call="website_fmp_gift.gift_modal"/>
+        </xpath>
+    </template>
+
+    <template name="My Gift" id="portal_my_gift">
+
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Gifts card</t>
+            </t>
+            <t t-if="not gifts">
+                <p>There are currently no gift card for your account.</p>
+            </t>
+            <t t-if="gifts" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Code</th>
+                        <th>Create date</th>
+                        <th>Expired date</th>
+                        <th>Balance</th>
+                        <th>Amount Initial</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="gifts" t-as="gift">
+                        <tr>
+                            <td class="code_input">
+                                <span t-field="gift.code"/>
+                            </td>
+                            <td>
+                                <span t-field="gift.create_date"/>
+                            </td>
+                            <td>
+                                <span t-field="gift.expired_date"/>
+                            </td>
+                            <td>
+                                <span t-field="gift.balance"/>
+                            </td>
+                            <td>
+                                <span t-field="gift.initial_amount"/>
+                            </td>
+                            <td>
+                                <span class="btn btn btn-danger rounded-pill copy_code"><i class="fa fa-solid fa-copy"/></span>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+
+
+    </template>
+
+    <template name="Portal layout : gift" id="portal_breadcrumbs_gift" inherit_id="portal.portal_breadcrumbs"
+              priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'gift'" t-attf-class="breadcrumb-item #{'active ' if not invoice else ''}">
+                <a t-attf-href="/my/gifts?{{ keep_query() }}">Gifts cards</a>
+            </li>
+        </xpath>
+
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'coupon'" t-attf-class="breadcrumb-item #{'active ' if not invoice else ''}">
+                <a t-attf-href="/my/coupons?{{ keep_query() }}">Coupons codes</a>
+            </li>
+        </xpath>
+    </template>
+
+        <template name="My Coupon" id="portal_my_coupon">
+
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Coupons Codes</t>
+            </t>
+            <t t-if="not coupons">
+                <p>There are currently no coupon code for your account.</p>
+            </t>
+            <t t-if="coupons" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Code</th>
+                        <th>Create date</th>
+<!--                        <th>Expired date</th>-->
+<!--                        <th>Balance</th>-->
+<!--                        <th>Amount Initial</th>-->
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="coupons" t-as="coupon">
+                        <t t-if="coupon.program_type=='promotion_program'">
+                        <tr>
+                            <td class="code_input">
+                                <span t-field="coupon.promo_code"/>
+                            </td>
+                            <td>
+                                <span t-field="coupon.create_date"/>
+                            </td>
+                            <!--<td>
+                                <span t-field="gift.expired_date"/>
+                            </td>-->
+<!--                            <td>-->
+<!--                                <span t-field="gift.balance"/>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <span t-field="gift.initial_amount"/>-->
+<!--                            </td>-->
+                            <td>
+                                <span class="btn btn btn-danger rounded-pill copy_code"><i class="fa fa-solid fa-copy"/></span>
+                            </td>
+                        </tr>
+                            </t>
+                        <t t-else="">
+
+                             <t t-foreach="coupon.coupon_ids" t-as="c">
+                                   <tr>
+                            <td class="code_input">
+                                <span t-field="c.promo_code"/>
+                            </td>
+                            <td>
+                                <span t-field="c.create_date"/>
+                            </td>
+                            <!--<td>
+                                <span t-field="gift.expired_date"/>
+                            </td>-->
+<!--                            <td>-->
+<!--                                <span t-field="gift.balance"/>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <span t-field="gift.initial_amount"/>-->
+<!--                            </td>-->
+                            <td>
+                                <span class="btn btn btn-danger rounded-pill copy_code"><i class="fa fa-solid fa-copy"/></span>
+                            </td>
+                        </tr>
+                             </t>
+
+                        </t>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+
+
+    </template>
+</odoo>

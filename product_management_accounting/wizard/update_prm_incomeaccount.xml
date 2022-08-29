@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="update_prm_incomeaccount_wizard_form_view"  model="ir.ui.view">
+        <field name="name">update.prm.incomeaccount.form.view</field>
+        <field name="model">update.prm.incomeaccount</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="products" invisible="1"/>
+                    <field name="incomeaccount_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_prm_incomeaccount_action" model="ir.actions.act_window">
+         <field name="name">Update Income Account</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="res_model">update.prm.incomeaccount</field>
+         <field name="view_mode">form</field>
+         <field name="view_id" ref="product_management_accounting.update_prm_incomeaccount_wizard_form_view"/>
+         <field name="target">new</field>
+    </record>
+
+
+</odoo>

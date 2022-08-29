@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is part of an Adiczion's Module.
+The COPYRIGHT and LICENSE files at the top level of this repository
+contains the full copyright notices and license terms. -->
+<odoo>
+
+    <record id="stock_warehouse_config_auto_generated_label" model="ir.ui.view">
+        <field name="name">stock.warehouse.config.auto_generated_label</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="default_package_weight"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

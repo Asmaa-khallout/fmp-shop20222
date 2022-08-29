@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fmp-contact_activation_fmp-contact_activation,fmp-contact_activation.fmp-contact_activation,model_fmp-contact_activation_fmp-contact_activation,base.group_user,1,1,1,1

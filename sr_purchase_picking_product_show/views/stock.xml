@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="view_picking_form_inherit_add_button_to_see_product_detail" model="ir.ui.view">
+        <field name="name">sr.view.picking.form.inherit.add.button.to.see.product.detail</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button type="object" name="action_view_product"
+                        class="oe_stat_button" icon="fa-pencil-square-o">
+                    <field name="product_count" widget="statinfo"
+                           string="Products"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

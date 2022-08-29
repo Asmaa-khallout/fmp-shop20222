@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_inherit">
+        <field name="name">view.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <field name="activation_state" invisible="1"/>
+                <button name="activate_portal_user" type="object" string="Account activation" class="btn-secondary" attrs="{'invisible': ['|',('activation_state', '=', 'active'),('activation_state', '=', False)]}"/>
+                <span>
+                  <button name="deactivate_portal_user" type="object" string="Account deactivation" class="btn-secondary" attrs="{'invisible': ['|',('activation_state', '=', 'inactive'),('activation_state', '=', False)]}"/>
+                </span>
+                <div class="separator"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="action_contact_activation" model="ir.actions.act_window">
+        <field name="name">Account activation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('activation_state', '=','inactive')]</field>
+    </record>    
+
+    <menuitem id="partner_menu_contact_activation"
+        name="Account activation"
+        action="action_contact_activation"
+        parent="contacts.menu_contacts"
+        sequence="2"/>    
+</odoo>

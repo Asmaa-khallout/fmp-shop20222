@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_partner_form_extends_opt_in_excel_email_attachment">
+            <field name="name">view.partner.form.extends.opt.in.excel.email.attachment</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="opt_in_email_excel"/>
+                    <field name="email_template_id" attrs="{'invisible': [('opt_in_email_excel', '=', False)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
