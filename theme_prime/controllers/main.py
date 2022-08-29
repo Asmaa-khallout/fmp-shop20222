@@ -267,6 +267,8 @@ class ThemePrimeMainClass(http.Controller):
             res_product['price'] = FieldMonetary.value_to_html(res_product['price'], monetary_options)
             res_product['list_price'] = FieldMonetary.value_to_html(res_product['list_price'], monetary_options)
             res_product['product_variant_id'] = product._get_first_possible_variant_id()
+            res_product['free_qty'] = product.product_variant_id.free_qty
+            res_product['cart_qty'] = product.product_variant_id.cart_qty
 
             sha = hashlib.sha1(str(getattr(product, '__last_update')).encode('utf-8')).hexdigest()[0:7]
             # Images

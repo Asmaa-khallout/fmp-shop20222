@@ -365,11 +365,11 @@
                     </div>
                 </div>
                 <div class="row"  t-if="userParams.hide=='active'">
-                    <t t-esc="item.product_variant_id.cart_qty"/>
+                    <t t-esc="item.cart_qty"/>
                     <br/>jjjjjjjjj
-                    <t t-esc="item.product_variant_id.free_qty"/>
+                    <t t-esc="item.free_qty"/>
 
-                     <t t-if="(item.product_variant_id.free_qty - item.product_variant_id.cart_qty) &gt;= 1">
+                     <t t-if="(item.free_qty - item.cart_qty) &gt;= 1">
                     <div class="col-9">
                                 <div  class="custom_quantity input-group my-3 w-75 mx-auto" contenteditable="false">
                                 <div class="input-group-prepend">
