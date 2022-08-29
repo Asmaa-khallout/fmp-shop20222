@@ -195,7 +195,7 @@
                                     </a>
                                 </div>
 <!--                               <input type="text" class="form-control quantity" data-min="1" name="add_qty" />-->
-                                 <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" />
+                                 <input type="text" class="form-control quantity text-center" data-min="1" t-att-data-max="(item.free_qty - item.cart_qty)" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" />
 
                                 <div class="input-group-append">
                                     <a t-attf-href="#" class="btn text-primary btn-light float_left js_add_cart_json" aria-label="Add one" title="Add one">
@@ -374,7 +374,7 @@
                                     </a>
                                 </div>
 <!--                                <input type="text" class="form-control quantity" data-min="1" name="add_qty" />-->
-                                 <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" />
+                                 <input type="text" class="form-control quantity text-center" data-min="1" t-att-data-max="(item.free_qty - item.cart_qty)" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" />
 
                                 <div class="input-group-append">
                                     <a t-attf-href="#" class="btn text-primary btn-light float_left js_add_cart_json" aria-label="Add one" title="Add one">
