@@ -35,7 +35,9 @@ publicWidget.registry.WebsiteSale.include({
         this._super.apply(this, arguments);
         // Stick add to cart
         const $stickyAddToCart = $('.tp-sticky-add-to-cart');
+        console.log(combination)
         if ($stickyAddToCart.length && (combination.free_qty - combination.cart_qty) > 0) {
+        console.log("oui try !! ")
             $stickyAddToCart.find('.oe_currency_value').text(this._priceToStr(combination.price));
             $stickyAddToCart.find('.product-img').attr('src', '/web/image/product.product/' + combination.product_id + '/image_128');
             $stickyAddToCart.find('.product-add-to-cart').removeClass('disabled');
