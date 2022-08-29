@@ -31,6 +31,7 @@ publicWidget.registry.WebsiteSale.include({
         // Disable zoomOdoo, Because we have Drift
     },
     _onChangeCombination: function (ev, $parent, combination) {
+    console.log("oui on change combination")
         this._super.apply(this, arguments);
         // Stick add to cart
         const $stickyAddToCart = $('.tp-sticky-add-to-cart');
