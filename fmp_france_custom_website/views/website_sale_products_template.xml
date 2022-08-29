@@ -148,7 +148,7 @@
                 <div class="row">
 
                  <div class="col-12 text-center text-lg-left" t-if="user_id.partner_id.activation_state=='active'">
-                                <div  class="css_quantity ml-lg-3 custom_quantity input-group mb-3 mt-1 w-75 mx-auto" contenteditable="false" t-if="product.qty_available &gt;= 1">
+                                <div  class="css_quantity ml-lg-3 custom_quantity input-group mb-3 mt-1 w-75 mx-auto" contenteditable="false" t-if="(product.product_variant_id.free_qty - product.product_variant_id.cart_qty)  &gt;= 1">
                                 <div class="input-group-prepend">
                                     <a t-attf-href="#" class="btn text-primary btn-light  js_add_cart_json" aria-label="Remove one" title="Remove one">
                                         <i class="fa fa-minus pt-1"/>
@@ -181,7 +181,7 @@
                     <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
                     <t t-if="is_view_active('website_sale.products_add_to_cart') and user_id.partner_id.activation_state=='active'">
                         <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
-                        <t t-if="product_variant_id and product.qty_available &gt;=1">
+                        <t t-if="product_variant_id and (product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &gt;=1">
                             <a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
                                 <span class="dri dri-cart"/>
                             </a>
