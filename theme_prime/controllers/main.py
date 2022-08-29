@@ -615,7 +615,7 @@ class ThemeWebsite(Website):
             try:
                 template = request.env['product.template'].browse(record['id'])
                 if template:
-                    mapped['qty_available'] = template.qty_available
+                    mapped['qty_available'] = template.product_variant_id.free_qty - template.product_variant_id.cart_qty
             except:
                 pass
             for mapped_name, field_meta in mapping.items():
