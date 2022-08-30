@@ -298,10 +298,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            console.log("ggggggggggggggggg");
-            console.log($(event.currentTarget).parents('.row').find('.custom_quantity').parent().append( "<p class='text-danger'>Left stock</p>"));
-            console.log($(event.currentTarget).parents('.row').find('.custom_quantity').parent().append( "<p class='text-danger'>"+data.warning+"</p>"));
-}
+            console.log($(event.currentTarget).addClass("disabled");}
         });
     },
 };
