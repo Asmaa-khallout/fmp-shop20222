@@ -303,7 +303,7 @@ var CartManagerMixin = {
             else{
             console.log("selection les parent")
             console.log(this.$el.parentsUntil());
-            console.log(this.$el);
+            console.log(this);
 }
         });
     },
