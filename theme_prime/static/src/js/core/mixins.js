@@ -89,7 +89,6 @@ let cartMixin = {
      */
     onAddToCartClick: function (ev, QuickViewDialog) {
         console.log(ev)
-        console.log(QuickViewDialog)
         this._addProductToCart(this._getCartParams(ev), QuickViewDialog);
     },
 };
@@ -287,11 +286,13 @@ var CartManagerMixin = {
 
     _customCartSubmit: function (params) {
         params.force_create = true;
-        //params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
+        params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
         return this._rpc({
             route: "/shop/cart/update_json",
             params: params,
         }).then(async data => {
+             console.log("data")
+             console.log(data)
             updateCartNavBar(data);
             this.$el.trigger('dr_close_dialog', {});
             return this._handleCartConfirmation(params.dr_cart_flow, data);
