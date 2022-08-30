@@ -299,8 +299,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            console.log(this);
-            console.log($el);
+            console.log(this.$el);
 }
         });
     },
