@@ -386,7 +386,7 @@
                     </div>
                     <div class="col-3">
                 <button t-if="widget._isActionEnabled('add_to_cart')" t-att-data-product-product-id="item.product_variant_id" data-toggle="tooltip" data-placement="bottom" class="d_action_btn p-0 btn btn-lg btn-primary d_add_to_cart_btn rounded-pill" title="Add to Cart" t-att-disabled="(item.free_qty - item.cart_qty) &lt;1">
-                    <i class="d_action_btn_icon #{ (item.free_qty - item.cart_qty) &gt;0 and 'dri dri-cart' or 'fa fa-ban text-danger'}"></i>
+                    <i t-attf-class="d_action_btn_icon #{ (item.free_qty - item.cart_qty) &gt;0 and 'dri dri-cart' or 'fa fa-ban text-danger'}"></i>
                 </button>
                     </div>
                      </t>
