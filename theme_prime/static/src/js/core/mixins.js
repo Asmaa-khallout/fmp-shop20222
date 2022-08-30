@@ -283,7 +283,7 @@ var CartManagerMixin = {
         new CartSidebar(this).open();
     },
 
-    _customCartSubmit: function (params) {
+    _customCartSubmit: function (params,event) {
         params.force_create = true;
         console.log("paraams")
         console.log(params)
@@ -300,7 +300,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            if('button' in params) params.button.currentTarget.addClass("d-none");
+            event.currentTarget.addClass("d-none");
 }
         });
     },
