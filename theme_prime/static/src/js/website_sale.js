@@ -35,6 +35,7 @@ publicWidget.registry.WebsiteSale.include({
     console.log(combination.free_qty - combination.cart_qty);
     if ((combination.free_qty - combination.cart_qty) <= 0){
     alert("pas en stock !!! ");
+    return ;
     }
         this._super.apply(this, arguments);
         // Stick add to cart
