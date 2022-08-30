@@ -32,7 +32,7 @@ publicWidget.registry.WebsiteSale.include({
     },
     _onChangeCombination: function (ev, $parent, combination) {
     console.log("oui on change combination")
-    console.log((combination.free_qty - combination.cart_qty) > 0))
+    console.log(combination.free_qty - combination.cart_qty);
     if (!(combination.free_qty - combination.cart_qty) > 0)){
     alert("pas en stock !!! ");
     }
