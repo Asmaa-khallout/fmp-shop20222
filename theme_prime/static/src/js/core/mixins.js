@@ -291,11 +291,16 @@ var CartManagerMixin = {
             route: "/shop/cart/update_json",
             params: params,
         }).then(async data => {
+         if (! data.warning) {
              console.log("data")
              console.log(data)
             updateCartNavBar(data);
             this.$el.trigger('dr_close_dialog', {});
             return this._handleCartConfirmation(params.dr_cart_flow, data);
+            }
+            else{
+
+            alert(data.warning)}
         });
     },
 };
