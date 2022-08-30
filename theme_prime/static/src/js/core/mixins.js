@@ -298,7 +298,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-           console.log($(event.currentTarget).parentsUntil("div").find(".custom_quantity"))
+            console.log($(event.currentTarget).parentsUntil("div").find(".custom_quantity"))
             $(event.currentTarget).parentsUntil("div").find(".custom_quantity").append( "<p>Left stock</p>");
 }
         });
