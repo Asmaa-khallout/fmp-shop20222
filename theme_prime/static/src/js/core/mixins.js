@@ -76,7 +76,7 @@ let cartMixin = {
     */
     _getCartParams: function (ev) {
     var qtyy = $(ev.currentTarget).closest(".card").find('.quantity').val() || 1
-    return {productID: parseInt($(ev.currentTarget).attr('data-product-product-id')), qty: qtyy};
+    return {productID: parseInt($(ev.currentTarget).attr('data-product-product-id')), qty: qtyy,'button':ev};
     },
 
     //--------------------------------------------------------------------------
@@ -88,7 +88,6 @@ let cartMixin = {
      * @param  {Event} ev
      */
     onAddToCartClick: function (ev, QuickViewDialog) {
-        console.log(ev)
         this._addProductToCart(this._getCartParams(ev), QuickViewDialog);
     },
 };
@@ -301,10 +300,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            console.log("selection les parent")
-            console.log(this.$el.parentsUntil());
-            console.log(this);
-            this.$el.addClass("d-none");
+            params.button.addClass("d-none");
 }
         });
     },
