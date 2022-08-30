@@ -299,8 +299,8 @@ var CartManagerMixin = {
             }
             else{
             console.log("ggggggggggggggggg");
-            console.log($(event.currentTarget).parentsUntil("div"));
-            console.log($(event.currentTarget).parentsUntil("div"));
+            console.log($(event.currentTarget).parents('.row'));
+            console.log($(event.currentTarget).parents("div"));
             console.log($(event.currentTarget).parentsUntil("div").find(".custom_quantity"));
             $(event.currentTarget).parentsUntil("div").find(".custom_quantity").append( "<p>Left stock</p>");
 }
