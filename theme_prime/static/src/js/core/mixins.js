@@ -301,7 +301,7 @@ var CartManagerMixin = {
             }
             else{
             console.log(event)
-            $(event.currentTarget).addClass("d-none");
+            $(event.currentTarget).parentsUntil("div").find("custom_quantity").append( "<p>Left stock</p>" );
 }
         });
     },
