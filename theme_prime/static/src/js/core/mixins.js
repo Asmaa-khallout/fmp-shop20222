@@ -300,7 +300,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            event.currentTarget.addClass("d-none");
+            $event.currentTarget.addClass("d-none");
 }
         });
     },
