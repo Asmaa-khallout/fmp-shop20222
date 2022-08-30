@@ -31,18 +31,11 @@ publicWidget.registry.WebsiteSale.include({
         // Disable zoomOdoo, Because we have Drift
     },
     _onChangeCombination: function (ev, $parent, combination) {
-    console.log("oui on change combination")
-    console.log(combination.free_qty - combination.cart_qty);
-    if ((combination.free_qty - combination.cart_qty) <= 0){
-    alert("pas en stock !!! ");
-    return ;
-    }
         this._super.apply(this, arguments);
         // Stick add to cart
         const $stickyAddToCart = $('.tp-sticky-add-to-cart');
         console.log(combination)
         if ($stickyAddToCart.length && (combination.free_qty - combination.cart_qty) > 0) {
-        console.log("oui try !! ")
             $stickyAddToCart.find('.oe_currency_value').text(this._priceToStr(combination.price));
             $stickyAddToCart.find('.product-img').attr('src', '/web/image/product.product/' + combination.product_id + '/image_128');
             $stickyAddToCart.find('.product-add-to-cart').removeClass('disabled');

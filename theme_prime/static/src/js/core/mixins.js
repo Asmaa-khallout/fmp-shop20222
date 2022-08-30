@@ -285,8 +285,6 @@ var CartManagerMixin = {
 
     _customCartSubmit: function (params,event) {
         params.force_create = true;
-        console.log("paraams")
-        console.log(params)
         params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
         return this._rpc({
             route: "/shop/cart/update_json",
@@ -300,8 +298,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            console.log(event)
-            $(event.currentTarget).parentsUntil("div").find("custom_quantity").append( "<p>Left stock</p>" );
+            $(event.currentTarget).parentsUntil("div").find(".custom_quantity").append( "<p>Left stock</p>");
 }
         });
     },
