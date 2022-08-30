@@ -64,7 +64,7 @@ let cartMixin = {
         let dialogOptions = {mini: true, size: 'small'};
         dialogOptions['variantID'] = cartInfo.productID;
         this.QuickViewDialog = new QuickViewDialog(this, dialogOptions).open();
-        var params = {product_id: cartInfo.productID, add_qty: cartInfo.qty};
+        var params = {product_id: cartInfo.productID, add_qty: cartInfo.qty,button:cartInfo.button};
         if (this._customCartSubmit) {
             this.QuickViewDialog.on('tp_auto_add_product', null, this._customCartSubmit.bind(this, params));
         }
