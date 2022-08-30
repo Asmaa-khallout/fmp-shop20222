@@ -299,7 +299,7 @@ var CartManagerMixin = {
             }
             else{
             $(event.currentTarget).prop('disabled', true);
-            $(event.currentTarget).css('pointer-events', 'none');
+            //$(event.currentTarget).css('pointer-events', 'none');
             $(event.currentTarget).find("i").replaceWith('<i class="d_action_btn_icon fa fa-ban text-danger" />')
 
             }
