@@ -286,6 +286,8 @@ var CartManagerMixin = {
 
     _customCartSubmit: function (params) {
         params.force_create = true;
+        console.log("paraams")
+        console.log(params)
         params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
         return this._rpc({
             route: "/shop/cart/update_json",
