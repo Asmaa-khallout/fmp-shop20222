@@ -298,7 +298,7 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            console.log($(event.currentTarget).addClass("disabled");}
+            $(event.currentTarget).addClass("disabled");}
         });
     },
 };
