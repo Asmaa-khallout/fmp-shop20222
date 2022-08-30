@@ -59,6 +59,8 @@ let cartMixin = {
     */
     _addProductToCart: function (cartInfo, QuickViewDialog) {
         // Do not add variant for default flow
+        console.log("_addProductToCart")
+        console.log(cartInfo)
         let dialogOptions = {mini: true, size: 'small'};
         dialogOptions['variantID'] = cartInfo.productID;
         this.QuickViewDialog = new QuickViewDialog(this, dialogOptions).open();
