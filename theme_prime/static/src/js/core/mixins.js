@@ -299,6 +299,8 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
+            console.log("selection les parent")
+            console.log(this.$el.parentsUntil()
             console.log(this.$el);
 }
         });
