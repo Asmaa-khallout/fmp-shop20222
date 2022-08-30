@@ -88,6 +88,8 @@ let cartMixin = {
      * @param  {Event} ev
      */
     onAddToCartClick: function (ev, QuickViewDialog) {
+        console.log(ev)
+        console.log(QuickViewDialog)
         this._addProductToCart(this._getCartParams(ev), QuickViewDialog);
     },
 };
