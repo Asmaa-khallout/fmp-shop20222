@@ -298,7 +298,10 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
-            $(event.currentTarget).prop('disabled', true);}
+            $(event.currentTarget).prop('disabled', true);
+            $(event.currentTarget).css('pointer-events', 'none');
+
+            }
         });
     },
 };
