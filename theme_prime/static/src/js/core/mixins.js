@@ -299,7 +299,7 @@ var CartManagerMixin = {
             }
             else{
             console.log("ggggggggggggggggg");
-            console.log($(event.currentTarget).parents('.row').find('.custom_quantity').append( "<p class='text-danger'>Left stock</p>"));
+            console.log($(event.currentTarget).parents('.row').find('.custom_quantity').parent().append( "<p class='text-danger'>Left stock</p>"));
 }
         });
     },
