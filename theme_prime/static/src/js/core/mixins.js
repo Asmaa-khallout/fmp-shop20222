@@ -304,7 +304,7 @@ var CartManagerMixin = {
             console.log("selection les parent")
             console.log(this.$el.parentsUntil());
             console.log(this);
-            console.log($(ev.currentTarget))
+            console.log($(params.currentTarget))
 }
         });
     },
