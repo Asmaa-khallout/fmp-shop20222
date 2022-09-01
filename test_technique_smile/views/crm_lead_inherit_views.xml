@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Inherited the crm lead view from and added attribute domain -->
+    <record id="crm_lead_inherit_form" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='user_id']" position="attributes">
+                <attribute name="domain">[('team_id', 'in', members_contact)]</attribute>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
