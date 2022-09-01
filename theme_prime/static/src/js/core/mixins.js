@@ -17,6 +17,25 @@ let DroggolUtils = {
     _getShopConfig: async function () {
         return await this._rpc({ model: 'website', method: 'get_theme_prime_shop_config' });
     },
+
+        _addToCartInPage(params) {
+        params.force_create = true;
+        return this._rpc({
+            route: "/shop/cart/update_json",
+            params: params,
+        }).then(async data => {
+        console("asmaa laa")
+            if (data.cart_quantity && (data.cart_quantity !== parseInt($(".my_cart_quantity").text()))) {
+                await animateClone($('header .o_wsale_my_cart').first(), this.$itemImgContainer, 25, 40);
+                updateCartNavBar(data);
+            }
+            if(data.warning){
+            console.log("oui warning ");
+            console.log(data.warning);
+
+            }
+        });
+    },
 };
 
 let MarkupRecords = {
@@ -282,6 +301,7 @@ var CartManagerMixin = {
     },
 
     _customCartSubmit: function (params,event) {
+    console.log("asmaaaaaaaa")
         params.force_create = true;
         params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
         return this._rpc({
