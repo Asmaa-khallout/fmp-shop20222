@@ -5,6 +5,7 @@
 
     'depends': [
         'base',
+        'crm',
     ],
 
     'data': [
