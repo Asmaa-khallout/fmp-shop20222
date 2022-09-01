@@ -4,6 +4,6 @@ class CrmLeadInherit(models.Model):
     _inherit = "crm.lead"
 
 
-    @api.onchange('user_id')
+    @api.onchange('team_id')
     def Responsables_onchange(self):
         return {'domain': {'user_id': [('team_id', '=', self.team_id)]}}
