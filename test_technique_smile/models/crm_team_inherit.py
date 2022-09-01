@@ -8,4 +8,4 @@ class CrmTeamInherit(models.Model):
 
     @api.onchange('Responsables')
     def Responsables_onchange(self):
-        return {'domain': {'Responsables': [('id', 'in', self.members_contact)]}}
+        return {'domain': {'Responsables': [('id', 'in', self.members_contact.ids)]}}

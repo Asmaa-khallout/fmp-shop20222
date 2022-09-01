@@ -4,12 +4,10 @@ from datetime import datetime
 class CrmLeadInherit(models.Model):
     _inherit = "crm.lead"
 
-    @api.model
-    def _get_user_domain(self):
-        return [('id', 'in', self.team_id.member_ids.ids)]
+    @api.onchange('team_id')
+    def user_domain_onchange(self):
+        return {'domain': {'user_id': [('id', 'in', self.team_id.member_ids.ids)]}}
 
-
-    user_id = fields.Many2one('res.users', domain=_get_user_domain)
     state_flag = fields.Selection(selection=[('Plus','Plus'),('Moins','Moins')],default="Moins",strin='Statut de flagger')
 
 
