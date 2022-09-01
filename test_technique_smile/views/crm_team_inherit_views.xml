@@ -10,7 +10,7 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='members_users']" position="after">
                 <page string="Members Contact" name="members_contact">
-               <field name="member_ids" mode="kanban" class="w-100">
+               <field name="member_contact" mode="kanban" class="w-100">
                                 <kanban>
                                     <field name="id"/>
                                     <field name="name"/>
