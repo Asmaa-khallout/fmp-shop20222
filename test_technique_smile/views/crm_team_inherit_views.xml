@@ -39,7 +39,7 @@
 
                  <page string="Responsibles" name="Responsables">
 
-                      <field name="Responsables" mode="kanban" class="w-100"/>
+                      <field name="Responsables" mode="kanban" class="w-100">
                                 <kanban>
                                     <field name="id"/>
                                     <field name="name"/>
