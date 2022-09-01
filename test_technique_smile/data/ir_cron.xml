@@ -3,7 +3,7 @@
     <record id="ir_cron_flagger_piste" model="ir.cron">
         <field name='name'>Auto Set Sale Price</field>
         <field name='interval_number'>1</field>
-        <field name='interval_type'>jours</field>
+        <field name='interval_type'>days</field>
         <field name="numbercall">-1</field>
         <field name="active" eval="True" />
         <field name="doall" eval="False" />
