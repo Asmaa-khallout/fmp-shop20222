@@ -9,7 +9,7 @@
         <field name="priority" eval="20"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='user_id']" position="attributes">
-                <attribute name="domain">[('team_id', 'in', team_id.member_ids)]</attribute>
+                <attribute name="domain">[('team_id', '=', team_id)]</attribute>
 
             </xpath>
         </field>
