@@ -15,6 +15,6 @@ class CrmLeadInherit(models.Model):
 
     def flagger_lead(self):
         lead_ids = self.search([('type','=','opportunity'),('probability','<',0.4)])
-        lead_ids.filterd(lambda r : (r.create_date- datetime.today()).days >15)
+        lead_ids.fileterd(lambda r : (r.create_date- datetime.today()).days >15)
         lead_ids.write({'state_flag':'Plus'})
         return
