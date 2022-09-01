@@ -301,7 +301,6 @@ var CartManagerMixin = {
     },
 
     _customCartSubmit: function (params,event) {
-    console.log("asmaaaaaaaa")
         params.force_create = true;
         params.dr_cart_flow = odoo.dr_theme_config.cart_flow || 'notification';
         return this._rpc({
