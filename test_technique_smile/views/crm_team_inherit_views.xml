@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Inherited the res team view from and added members contact -->
+    <record id="res_partner_category_parent" model="ir.ui.view">
+        <field name="name">crm.team.inherit</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form" />
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='members_users']" position="after">
+                <field name="members_contact" string="Members contact" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
