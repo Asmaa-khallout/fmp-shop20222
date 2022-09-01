@@ -6,6 +6,6 @@ class CrmTeamInherit(models.Model):
     members_contact = fields.One2many("res.partner",'team_id',string="Members (contact)")
     Responsables = fields.Many2many('res.partner', 'team_contact_rel', 'partner_id', 'team_id')
 
-    @api.onchange('Responsables')
+    @api.models
     def Responsables_onchange(self):
-        return {'domain': {'Responsables': [('team_id', 'in', self.members_contact)]}}
+        return {'domain': {'Responsables': [('id', 'in', self.members_contact)]}}
