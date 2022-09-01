@@ -288,14 +288,16 @@ var CartManagerMixin = {
             route: "/shop/cart/update_json",
             params: params,
         }).then(async data => {
+        if (data.warning) {
+            $(event.currentTarget).prop('disabled', true);
+            $(event.currentTarget).css('pointer-events', 'none');
+            $(event.currentTarget).find("i").replaceWith('<i class="d_action_btn_icon fa fa-ban text-danger" />')
+console.log("daaaataaa ggg ")
+console.log(data)
 
             updateCartNavBar(data);
             this.$el.trigger('dr_close_dialog', {});
             return this._handleCartConfirmation(params.dr_cart_flow, data);
-            if (data.warning) {
-            $(event.currentTarget).prop('disabled', true);
-            $(event.currentTarget).css('pointer-events', 'none');
-            $(event.currentTarget).find("i").replaceWith('<i class="d_action_btn_icon fa fa-ban text-danger" />')
 
             }
         });
