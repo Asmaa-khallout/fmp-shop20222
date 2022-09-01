@@ -298,6 +298,8 @@ var CartManagerMixin = {
             return this._handleCartConfirmation(params.dr_cart_flow, data);
             }
             else{
+                         console.log("data elsee")
+             console.log(data)
             $(event.currentTarget).prop('disabled', true);
             //$(event.currentTarget).css('pointer-events', 'none');
             $(event.currentTarget).find("i").replaceWith('<i class="d_action_btn_icon fa fa-ban text-danger" />')
