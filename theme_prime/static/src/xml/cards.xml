@@ -369,15 +369,15 @@
                     <div class="col-9">
                                 <div  class="custom_quantity input-group my-3 w-75 mx-auto" contenteditable="false">
                                 <div class="input-group-prepend">
-                                    <a t-attf-href="#" class="btn text-primary btn-light  js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                    <a t-attf-href="#" class="btn text-primary btn-light  js_add_cart_json" aria-label="Remove one" title="Remove one" t-att-disabled="(item.free_qty - item.cart_qty) &lt;1">
                                         <i class="fa fa-minus pt-1"/>
                                     </a>
                                 </div>
 <!--                                <input type="text" class="form-control quantity" data-min="1" name="add_qty" />-->
-                                 <input type="text" class="form-control quantity text-center" data-min="1" t-att-data-max="(item.free_qty - item.cart_qty)" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" />
+                                 <input type="text" class="form-control quantity text-center" data-min="1" t-att-data-max="(item.free_qty - item.cart_qty)" name="add_qty" id="input_qty_list" t-att-value="1" t-att-data-min="1" t-att-data-setqty="1" t-att-readonly="(item.free_qty - item.cart_qty) &lt;1"/>
 
                                 <div class="input-group-append">
-                                    <a t-attf-href="#" class="btn text-primary btn-light float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                    <a t-attf-href="#" class="btn text-primary btn-light float_left js_add_cart_json" aria-label="Add one" title="Add one" t-att-disabled="(item.free_qty - item.cart_qty) &lt;1">
                                         <i class="fa fa-plus pt-1"/>
                                     </a>
 
