@@ -246,7 +246,7 @@
                     </div>
                     <div class="col-5 col-lg-5 text-center">
                         <div class="css_quantity input-group d-inline-flex mr-2 my-1 align-middle"
-                             contenteditable="false" t-if="(product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &gt;0">
+                             contenteditable="false" t-if="product.product_variant_id.free_qty &gt;0">
                             <div class="input-group-prepend">
                                 <a t-attf-href="#" t-attf-class="btn btn-primary js_add_cart_json #{(product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &lt;1 and 'disabled' or ''}" aria-label="Remove one"
                                    title="Remove one"   >
@@ -263,17 +263,17 @@
                                 </a>
                             </div>
                         </div>
-                         <div class="mt-2 float-right" t-if="(product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &lt; 1">
+                         <div class="mt-2 float-right" t-if="product.product_variant_id.free_qty &lt; 1">
                                 <h5 class="oe_price" t-if="product.detailed_type=='product'">En rupture de stock </h5>
                             </div>
                     </div>
 
                     <div class="col-3 col-lg-4 text-center pr-sm-4">
                         <div id="add_to_cart_wrap">
-                            <a role="button" id="add_to_cart"  t-if="(product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &gt;= 1"
+                            <a role="button" id="add_to_cart"  t-if="product.product_variant_id.free_qty &gt; 0"
                                class="btn btn-primary  js_check_product a-submit d-block d-sm-inline-block flex-grow-1 rounded-pill m-auto"
-                               href="#">
-                                <i class="dri dri-cart mt-2"/>
+                               href="#"  t-attf-style="pointer-events: {{(product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &lt;1 and 'none;' or ';'}}">
+                                <i t-attf-class="#{ (product.product_variant_id.free_qty - product.product_variant_id.cart_qty) &gt;0 and 'dri dri-cart' or 'fa fa-ban text-danger'} mt-2"/>
                             </a>
                             <div id="product_option_block" class="d-inline-block align-middle"/>
                         </div>
