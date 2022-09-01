@@ -39,7 +39,7 @@
 
                  <page string="Responsibles" name="Responsables">
 
-                      <field name="Responsables" mode="kanban" class="w-100" domain="[('id', 'in', parent.Responsables)]"/>
+                      <field name="Responsables" mode="kanban" class="w-100"/>
 
 
 
