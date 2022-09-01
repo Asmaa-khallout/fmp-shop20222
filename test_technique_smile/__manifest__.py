@@ -12,5 +12,6 @@
         'views/res_partner_inherit_views.xml',
         'views/crm_team_inherit_views.xml',
         #'views/crm_lead_inherit_views.xml',
+        'data/ir_cron.xml',
     ]
 }
