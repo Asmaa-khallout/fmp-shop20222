@@ -81,10 +81,10 @@ class WebsiteDataFeeds(models.Model):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url')
         ir_model_obj = self.env['ir.model.data']
         mail_tmpl_obj = self.env['mail.template']
-        success_tmp_id = ir_model_obj.get_object_reference(
-            'biztech_prod_data_feeds', 'prod_data_feed_mail_template_success')
-        error_tmp_id = ir_model_obj.get_object_reference(
-            'biztech_prod_data_feeds', 'prod_data_feed_mail_template_error')
+        success_tmp_id = ir_model_obj._xmlid_lookup(
+            'biztech_prod_data_feeds.prod_data_feed_mail_template_success')[2]
+        error_tmp_id = ir_model_obj._xmlid_lookup(
+            'biztech_prod_data_feeds.prod_data_feed_mail_template_error')[2]
         for feed in feed_data:
             self.env['generatefeeds.live.feeds'].sudo(
             ).generate_live_feeds(feed)
