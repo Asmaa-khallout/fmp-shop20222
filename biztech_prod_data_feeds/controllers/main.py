@@ -12,6 +12,10 @@ import json
 import jxmlease
 import sys
 from imp import reload
+
+import logging
+
+_logger = logging.getLogger(__name__)
 reload(sys)
 # sys.setdefaultencoding('utf-8')
 
@@ -122,6 +126,7 @@ class GenerateFeeds(models.Model):
             values['base_url'] = 'http://127.0.0.1:8069'
 
         # for field_name, field in prod_temp_obj._fields.iteritems():
+        _logger.inf("jeee passse ici asmaaaaa")
         for field_name, field in prod_temp_obj._fields.items():
             product_data = {}
             field_type = prod_temp_obj._fields.get(field_name)
