@@ -109,7 +109,7 @@ class WebsiteDataFeeds(models.Model):
                                     str(exit_file.id) + '/' + str(xml_file),
                                     'file_last_modified': exit_file.write_date or datetime.datetime.now()})
                         if success_tmp_id:
-                            mail_tmpl_obj.browse(success_tmp_id[1]).send_mail(
+                            mail_tmpl_obj.browse(success_tmp_id).send_mail(
                                 feed.id, force_send=True)
                             _logger.info(
                                 'Data feed named %s successfully generated.', (feed.file_name))
@@ -128,13 +128,13 @@ class WebsiteDataFeeds(models.Model):
                                     str(attch_id.id) + '/' + str(xml_file),
                                     'file_last_modified': attch_id.create_date or datetime.datetime.now()})
                         if success_tmp_id:
-                            mail_tmpl_obj.browse(success_tmp_id[1]).send_mail(
+                            mail_tmpl_obj.browse(success_tmp_id).send_mail(
                                 feed.id, force_send=True)
                             _logger.info(
                                 'Data feed named %s successfully generated.', (feed.file_name))
             except:
                 if error_tmp_id:
-                    mail_tmpl_obj.browse(error_tmp_id[1]).send_mail(
+                    mail_tmpl_obj.browse(error_tmp_id).send_mail(
                         feed.id, force_send=True)
                     _logger.exception(
                         'Data feed generation failed for %s.', (feed.file_name))
