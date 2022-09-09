@@ -49,6 +49,31 @@ class WebsiteInherit(models.Model):
 class ProductTemplateInherit(models.Model):
     _inherit = 'product.template'
 
+    # def _search_build_domain_custom(self, domain, search, fields, extra=None):
+    #     """
+    #     Builds a search domain AND-combining a base domain with partial matches of each term in
+    #     the search expression in any of the fields.
+    #
+    #     :param domain: base domain combined in the search expression
+    #     :param search: search expression string
+    #     :param fields: list of field names to match the terms of the search expression with
+    #     :param extra: function that returns an additional subdomain for a search term
+    #
+    #     :return: domain limited to the matches of the search expression
+    #     """
+    #     domains = domain.copy()
+    #     _logger.info("domain asmmaaa")
+    #     _logger.info(fields)
+    #     if search:
+    #         for search_term in search.split(' '):
+    #             subdomains = []
+    #             for field in fields:
+    #                 subdomains.append([(field, 'ilike', escape_psql(search_term))])
+    #             if extra:
+    #                 subdomains.append(extra(self.env, search_term))
+    #             domains.append(OR(subdomains))
+    #     return AND(domains)
+
     def _search_build_domain_custom(self, domain, search, fields, extra=None):
         """
         Builds a search domain AND-combining a base domain with partial matches of each term in
@@ -65,13 +90,18 @@ class ProductTemplateInherit(models.Model):
         _logger.info("domain asmmaaa")
         _logger.info(fields)
         if search:
-            for search_term in search.split(' '):
+            for field in fields:
                 subdomains = []
-                for field in fields:
-                    subdomains.append([(field, 'ilike', escape_psql(search_term))])
-                if extra:
-                    subdomains.append(extra(self.env, search_term))
-                domains.append(OR(subdomains))
+                if(field !="product_variant_ids.default_code"):
+                    for search_term in search.split(' '):
+                        subdomains.append([(field, 'ilike', escape_psql(search_term))])
+                        if extra:
+                            subdomains.append(extra(self.env, search_term))
+                        domains.append(OR(subdomains))
+                else:
+                    subdomains.append([(field, 'ilike', escape_psql(search))])
+                    domains.append(OR(subdomains))
+        _logger.info("domains domains domains domains %s ----"%(domains))
         return AND(domains)
 
 
