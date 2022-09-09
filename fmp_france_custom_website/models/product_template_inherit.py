@@ -90,9 +90,8 @@ class ProductTemplateInherit(models.Model):
         _logger.info("domain asmmaaa")
         _logger.info(fields)
         if search:
-            subdomains = []
             for field in fields:
-
+                subdomains = []
                 if(field !="product_variant_ids.default_code"):
                     for search_term in search.split(' '):
                         subdomains.append([(field, 'ilike', escape_psql(search_term))])
@@ -100,7 +99,7 @@ class ProductTemplateInherit(models.Model):
                             subdomains.append(extra(self.env, search_term))
                         domains.append(OR(subdomains))
                 else:
-                    subdomains.append([(field, 'ilike', escape_psql(search))])
+                    subdomains.append((field, 'ilike', escape_psql(search)))
                     domains.append(OR(subdomains))
         _logger.info("domains domains domains domains %s ----"%(AND(domains)))
         return AND(domains)
