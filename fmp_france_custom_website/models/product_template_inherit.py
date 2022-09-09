@@ -87,7 +87,7 @@ class ProductTemplateInherit(models.Model):
         :return: domain limited to the matches of the search expression
         """
         domains = domain.copy()
-        _logger.info("domain asmmaaa")
+        _logger.info("domain asmmaaa ")
         _logger.info(fields)
         if search:
             for field in fields:
