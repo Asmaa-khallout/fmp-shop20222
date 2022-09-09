@@ -3,6 +3,40 @@
 
 from odoo import api, fields, models, _
 from odoo.addons.http_routing.models.ir_http import slug, unslug
+import logging
+_logger = logging.getLogger(__name__)
+class WebsiteInherit(models.Model):
+    _inherit = 'website'
+
+    def _search_exact(self, search_details, search, limit, order):
+        """
+        Performs a search with a search text
+
+        :param search_details: see :meth:`_search_get_details`
+        :param search: text against which to match results
+        :param limit: maximum number of results per model type involved in the result
+        :param order: order on which to sort results within a model type
+
+        :return: tuple containing:
+            - total number of results across all involved models
+            - list of results per model made of:
+                - initial search_detail for the model
+                - count: number of results for the model
+                - results: model list equivalent to a `model.search()`
+        """
+        all_results = []
+        total_count = 0
+        _logger.info("seaarch details")
+        _logger.info("search details %s " %(search_details))
+        _logger.info("search : %s" %(search))
+        for search_detail in search_details:
+            model = self.env[search_detail['model']]
+            results, count = model._search_fetch(search_detail, search, limit, order)
+            search_detail['results'] = results
+            total_count += count
+            search_detail['count'] = count
+            all_results.append(search_detail)
+        return total_count, all_results
 
 
 
