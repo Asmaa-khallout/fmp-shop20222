@@ -31,7 +31,10 @@ class WebsiteInherit(models.Model):
         _logger.info("search : %s" %(search))
         for search_detail in search_details:
             model = self.env[search_detail['model']]
-            results, count = model._search_fetch(search_detail, search, limit, order)
+            if(model=="product.template"):
+                results, count = model._search_fetch_custom(search_detail, search, limit, order)
+            else:
+                results, count = model._search_fetch(search_detail, search, limit, order)
             search_detail['results'] = results
             total_count += count
             search_detail['count'] = count
@@ -42,6 +45,24 @@ class WebsiteInherit(models.Model):
 
 class ProductTemplateInherit(models.Model):
     _inherit = 'product.template'
+
+
+    @api.model
+    def _search_fetch_custom(self, search_detail, search, limit, order):
+        _logger.info("asmaa tu es laa !!!")
+
+        fields = search_detail['search_fields']
+        base_domain = search_detail['base_domain']
+        domain = self._search_build_domain(base_domain, search, fields, search_detail.get('search_extra'))
+        _logger.info("dommain est %s" %(domain))
+        model = self.sudo() if search_detail.get('requires_sudo') else self
+        results = model.search(
+            domain,
+            limit=limit,
+            order=search_detail.get('order', order)
+        )
+        count = model.search_count(domain)
+        return results, count
 
     @api.model
     def _search_get_detail(self, website, order, options):
