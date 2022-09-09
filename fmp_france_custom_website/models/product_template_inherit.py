@@ -104,7 +104,7 @@ class ProductTemplateInherit(models.Model):
                     domain2.append([(field, '=', escape_psql(search))])
                 domains.append(OR(domain2))
 
-        total = AND(domains)+OR(domain2)
+        total = AND(domains)
         total2 = OR(domain2)
         _logger.info("total %s " %(total))
         _logger.info("domain2 %s" %(domain2))
