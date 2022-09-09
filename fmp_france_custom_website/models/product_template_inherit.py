@@ -4,6 +4,7 @@
 from odoo import api, fields, models, _
 from odoo.addons.http_routing.models.ir_http import slug, unslug
 from odoo.osv.expression import AND, OR, FALSE_DOMAIN
+from odoo.tools import escape_psql, pycompat
 import logging
 
 _logger = logging.getLogger(__name__)
