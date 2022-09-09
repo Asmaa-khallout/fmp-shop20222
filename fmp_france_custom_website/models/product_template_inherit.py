@@ -116,7 +116,7 @@ class ProductTemplateInherit(models.Model):
         total = AND(domains)
         _logger.info(type(total))
 
-        return total, domain2
+        return total, AND(domain2)
 
 
 
