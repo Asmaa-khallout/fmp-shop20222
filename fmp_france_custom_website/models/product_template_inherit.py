@@ -89,9 +89,9 @@ class ProductTemplateInherit(models.Model):
         domains = domain.copy()
         _logger.info("domain asmmaaa ")
         _logger.info(fields)
+        subdomains = []
         if search:
             for field in fields:
-                subdomains = []
                 if(field !="product_variant_ids.default_code"):
                     for search_term in search.split(' '):
                         subdomains = []
@@ -102,7 +102,7 @@ class ProductTemplateInherit(models.Model):
                 else:
                     subdomains.append([(field, '=', escape_psql(search))])
                     domains.append(OR(subdomains))
-        _logger.info("domains domains domains domains %s ----"%(AND(domains)))
+
         return AND(domains)
 
 
