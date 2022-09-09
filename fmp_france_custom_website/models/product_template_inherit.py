@@ -91,7 +91,7 @@ class ProductTemplateInherit(models.Model):
         _logger.info(fields)
         _logger.info("domains copy %s" %(domains))
         subdomains = []
-        domain2 = []
+        domain2 = domain.copy()
         if search:
             subdomains = []
             for field in fields:
