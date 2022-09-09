@@ -91,6 +91,7 @@ class ProductTemplateInherit(models.Model):
         _logger.info(fields)
         _logger.info("domains copy %s" %(domains))
         subdomains = []
+        domain2 = []
         if search:
             for field in fields:
                 subdomains = []
@@ -102,9 +103,16 @@ class ProductTemplateInherit(models.Model):
                             subdomains.append(extra(self.env, search_term))
                         domains.append(OR(subdomains))
                 else:
-                    domains.append(OR([(field, '=', escape_psql(search))]))
+                    domain2.append([(field, '=', escape_psql(search))])
+                    #domains.append(OR(domain2))
 
-        return AND(domains)
+        total = AND(domains)
+        total2 = OR(domain2)
+        _logger.info("total %s " %(total))
+        _logger.info("domain2 %s" %(domain2))
+        _logger.info("total2 %s" % (total2))
+
+        return total
 
 
 
