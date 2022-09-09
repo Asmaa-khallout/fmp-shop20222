@@ -99,7 +99,7 @@ class ProductTemplateInherit(models.Model):
                             subdomains.append(extra(self.env, search_term))
                         domains.append(OR(subdomains))
                 else:
-                    subdomains.append((field, 'ilike', escape_psql(search)))
+                    subdomains.append([(field, 'ilike', escape_psql(search))])
                     domains.append(OR(subdomains))
         _logger.info("domains domains domains domains %s ----"%(AND(domains)))
         return AND(domains)
