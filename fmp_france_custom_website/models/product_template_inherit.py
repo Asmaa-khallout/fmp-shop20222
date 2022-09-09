@@ -93,6 +93,14 @@ class ProductTemplateInherit(models.Model):
         subdomains = []
         domain2 = []
         if search:
+            subdomains = []
+            for field in fields:
+                subdomains.append([(field, 'ilike', escape_psql(search))])
+            if extra:
+                subdomains.append(extra(self.env, search))
+            subdomains.append([('product_variant_ids.default_code', 'ilike', escape_psql(search))])
+            domains.append(OR(subdomains))
+
             for search_term in search.split(' '):
                 subdomains = []
                 for field in fields:
@@ -100,13 +108,15 @@ class ProductTemplateInherit(models.Model):
                 if extra:
                     subdomains.append(extra(self.env, search_term))
                 subdomains.append([('product_variant_ids.default_code', '=', escape_psql(search_term))])
-                domains.append(OR(subdomains))
+                domain2.append(OR(subdomains))
+
+
             return AND(domains)
 
         total = AND(domains)
         _logger.info(type(total))
 
-        return total
+        return total, domain2
 
 
 
@@ -116,7 +126,7 @@ class ProductTemplateInherit(models.Model):
 
         fields = search_detail['search_fields']
         base_domain = search_detail['base_domain']
-        domain = self._search_build_domain_custom(base_domain, search, fields, search_detail.get('search_extra'))
+        domain, domain2 = self._search_build_domain_custom(base_domain, search, fields, search_detail.get('search_extra'))
         _logger.info("dommain est %s" %(domain))
         model = self.sudo() if search_detail.get('requires_sudo') else self
         results = model.search(
@@ -124,7 +134,14 @@ class ProductTemplateInherit(models.Model):
             limit=limit,
             order=search_detail.get('order', order)
         )
+        results += model.search(
+            domain2,
+            limit=limit,
+            order=search_detail.get('order', order)
+        )
+
         count = model.search_count(domain)
+        count += model.search_count(domain2)
         return results, count
 
     @api.model
@@ -159,7 +176,7 @@ class ProductTemplateInherit(models.Model):
                     ids = [value[1]]
             if attrib:
                 domains.append([('attribute_line_ids.value_ids', 'in', ids)])
-        search_fields = ['name', 'product_variant_ids.default_code']
+        search_fields = ['name']
         fetch_fields = ['id', 'name', 'website_url']
         mapping = {
             'name': {'name': 'name', 'type': 'text', 'match': True},
