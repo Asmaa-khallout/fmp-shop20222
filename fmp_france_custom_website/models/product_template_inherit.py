@@ -102,8 +102,7 @@ class ProductTemplateInherit(models.Model):
                             subdomains.append(extra(self.env, search_term))
                         domains.append(OR(subdomains))
                 else:
-                    subdomains.append([(field, '=', escape_psql(search))])
-                    domains.append(OR((field, '=', escape_psql(search))))
+                    domains.append(OR([(field, '=', escape_psql(search))]))
 
         return AND(domains)
 
