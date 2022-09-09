@@ -46,6 +46,32 @@ class WebsiteInherit(models.Model):
 class ProductTemplateInherit(models.Model):
     _inherit = 'product.template'
 
+    def _search_build_domain_custom(self, domain, search, fields, extra=None):
+        """
+        Builds a search domain AND-combining a base domain with partial matches of each term in
+        the search expression in any of the fields.
+
+        :param domain: base domain combined in the search expression
+        :param search: search expression string
+        :param fields: list of field names to match the terms of the search expression with
+        :param extra: function that returns an additional subdomain for a search term
+
+        :return: domain limited to the matches of the search expression
+        """
+        domains = domain.copy()
+        _logger.info("domain asmmaaa")
+        _logger.info(fields)
+        if search:
+            for search_term in search.split(' '):
+                subdomains = []
+                for field in fields:
+                    subdomains.append([(field, 'ilike', escape_psql(search_term))])
+                if extra:
+                    subdomains.append(extra(self.env, search_term))
+                domains.append(OR(subdomains))
+        return AND(domains)
+
+
 
     @api.model
     def _search_fetch_custom(self, search_detail, search, limit, order):
@@ -53,7 +79,7 @@ class ProductTemplateInherit(models.Model):
 
         fields = search_detail['search_fields']
         base_domain = search_detail['base_domain']
-        domain = self._search_build_domain(base_domain, search, fields, search_detail.get('search_extra'))
+        domain = self._search_build_domain_custom(base_domain, search, fields, search_detail.get('search_extra'))
         _logger.info("dommain est %s" %(domain))
         model = self.sudo() if search_detail.get('requires_sudo') else self
         results = model.search(
