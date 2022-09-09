@@ -31,7 +31,7 @@ class WebsiteInherit(models.Model):
         _logger.info("search : %s" %(search))
         for search_detail in search_details:
             model = self.env[search_detail['model']]
-            if(model=="product.template"):
+            if(search_detail['model']=="product.template"):
                 results, count = model._search_fetch_custom(search_detail, search, limit, order)
             else:
                 results, count = model._search_fetch(search_detail, search, limit, order)
