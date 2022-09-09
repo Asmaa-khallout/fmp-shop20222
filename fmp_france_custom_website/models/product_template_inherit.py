@@ -92,7 +92,6 @@ class ProductTemplateInherit(models.Model):
         if search:
             for field in fields:
                 subdomains = []
-
                 if(field !="product_variant_ids.default_code"):
                     for search_term in search.split(' '):
                         subdomains.append([(field, 'ilike', escape_psql(search_term))])
