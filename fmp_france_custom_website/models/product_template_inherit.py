@@ -94,7 +94,6 @@ class ProductTemplateInherit(models.Model):
         domain2 = []
         if search:
             for field in fields:
-                subdomains = []
                 if(field !="product_variant_ids.default_code"):
                     subdomains.append([(field, 'ilike', escape_psql(search))])
                     if extra:
