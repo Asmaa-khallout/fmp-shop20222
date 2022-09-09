@@ -93,21 +93,18 @@ class ProductTemplateInherit(models.Model):
         subdomains = []
         domain2 = []
         if search:
-            for field in fields:
-                if(field !="product_variant_ids.default_code"):
-                    subdomains.append([(field, 'ilike', escape_psql(search))])
-                    if extra:
-                        subdomains.append(extra(self.env, search))
-
-                else:
-                    subdomains.append([(field, '=', escape_psql(search))])
+            for search_term in search.split(' '):
+                subdomains = []
+                for field in fields:
+                    subdomains.append([(field, 'ilike', escape_psql(search_term))])
+                if extra:
+                    subdomains.append(extra(self.env, search_term))
+                subdomains.append([('product_variant_ids.default_code', '=', escape_psql(search_term))])
                 domains.append(OR(subdomains))
+            return AND(domains)
 
         total = AND(domains)
-        total2 = OR(domain2)
-        _logger.info("total %s " %(total))
-        _logger.info("domain2 %s" %(domain2))
-        _logger.info("total2 %s" % (total2))
+        _logger.info(type(total))
 
         return total
 
