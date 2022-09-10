@@ -107,7 +107,7 @@ class ProductTemplateInherit(models.Model):
                     subdomains.append([(field, 'ilike', escape_psql(search_term))])
                 if extra:
                     subdomains.append(extra(self.env, search_term))
-                subdomains.append([('product_variant_ids.default_code', '=', escape_psql(search_term))])
+                #subdomains.append([('product_variant_ids.default_code', 'ilike', escape_psql(search_term))])
                 domain2.append(OR(subdomains))
 
         total = AND(domains)
