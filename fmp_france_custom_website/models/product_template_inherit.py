@@ -110,13 +110,8 @@ class ProductTemplateInherit(models.Model):
                         subdomains.append(extra(self.env, search_term))
                     # subdomains.append([('product_variant_ids.default_code', 'ilike', escape_psql(search_term))])
                     domain2.append(OR(subdomains))
-
-
-        total = AND(domains)
-        _logger.info("total : %s" %(total))
-        _logger.info("total 2 %s" %(AND(domain2)))
-
-        return total, AND(domain2)
+                return AND(domains), AND(domain2)
+        return  AND(domains), False
 
 
 
@@ -134,14 +129,16 @@ class ProductTemplateInherit(models.Model):
             limit=limit,
             order=search_detail.get('order', order)
         )
-        results += model.search(
-            domain2,
-            limit=limit,
-            order=search_detail.get('order', order)
-        )
-
         count = model.search_count(domain)
-        count += model.search_count(domain2)
+        if(domain2):
+            results += model.search(
+                domain2,
+                limit=limit,
+                order=search_detail.get('order', order)
+            )
+
+            count += model.search_count(domain2)
+
         return results, count
 
     @api.model
