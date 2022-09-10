@@ -110,11 +110,7 @@ class ProductTemplateInherit(models.Model):
                 subdomains.append([('product_variant_ids.default_code', '=', escape_psql(search_term))])
                 domain2.append(OR(subdomains))
 
-
-            return AND(domains)
-
         total = AND(domains)
-        _logger.info(type(total))
 
         return total, AND(domain2)
 
