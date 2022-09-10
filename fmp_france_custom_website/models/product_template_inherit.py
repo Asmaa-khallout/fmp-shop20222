@@ -98,7 +98,7 @@ class ProductTemplateInherit(models.Model):
                 subdomains.append([(field, 'ilike', escape_psql(search))])
             if extra:
                 subdomains.append(extra(self.env, search))
-            subdomains.append([('product_variant_ids.default_code', '=', escape_psql(search))])
+            subdomains.append([('product_variant_ids.default_code', 'ilike', escape_psql(search))])
             domains.append(OR(subdomains))
             list_search = search.split(' ')
             if len(list_search)>1:
