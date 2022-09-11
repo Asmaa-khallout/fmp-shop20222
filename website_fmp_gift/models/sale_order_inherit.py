@@ -34,5 +34,5 @@ class SaleOrderInherit(models.Model):
                 'gift_card_id': gift_card.id,
                 'order_id': self.id
             })
-            #line.price_unit =  - amount
+            line.write({'price_unit':-2222})
         return error
