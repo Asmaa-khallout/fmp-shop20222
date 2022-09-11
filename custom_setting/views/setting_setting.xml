@@ -48,6 +48,10 @@
                                                                 <button type="object" name="activate_category_website" class="btn btn-danger btn-md btn-lg"
                                         string="Activer categorie"/>
 
+ <br/><br/><br/>
+                                                                <button type="object" name="create_portal_contact" class="btn btn-danger btn-md btn-lg"
+                                        string="Create user"/>
+
 
 
                             </page>

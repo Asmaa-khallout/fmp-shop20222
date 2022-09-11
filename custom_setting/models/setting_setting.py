@@ -186,6 +186,16 @@ class setting_setting_amb(models.TransientModel):
             a = row.to_dict()
             partner_id = a['Référence commande']
             a= partner_env.search([('display_name','=',partner_id.split('(')[0])])
+            if(a.parent_id):
+                a=a.parent_id
+            company = a.company_id or self.env.company
+            a = self.env['res.user'].sudo().with_company(company.id).create({
+                'name': a.name,
+                'login': a.email,
+                'partner_id': a.id,
+                'company_id': self.env.company.id,
+                'company_ids': [(6, 0, self.env.company.ids)],
+            })
 
 
 
