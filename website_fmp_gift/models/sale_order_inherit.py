@@ -28,11 +28,11 @@ class SaleOrderInherit(models.Model):
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
             line= self.env["sale.order.line"].create({
                 'product_id': pay_gift_card_id.id,
-                'price_unit': - amount,
+                'price_unit': (-22),
                 'product_uom_qty': 1,
                 'product_uom': pay_gift_card_id.uom_id.id,
                 'gift_card_id': gift_card.id,
                 'order_id': self.id
             })
-            line.price_unit =  - amount
+            #line.price_unit =  - amount
         return error
