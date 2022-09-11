@@ -187,13 +187,15 @@ class setting_setting_amb(models.TransientModel):
             a = row.to_dict()
             partner_id = a['Référence commande']
             term = partner_id.split('(')[0]
-            a= partner_env.search(['|', '|', ('display_name', 'ilike', term), ('ref', '=', term), ('email', 'ilike', term)])
+            if("," in term):
+                term=term.split(",")[0]
+            a= partner_env.search([('display_name', 'ilike', term)])
 
-            _logger.info("le client est %s display %s" %(a,partner_id.split('(')[0]))
+            _logger.info("le client est %s display :%s" %(a,term))
             if(len(a)!=1):
                 count +=1
-            if(a.parent_id):
-                a=a.parent_id
+            # if(a.parent_id):
+            #     a=a.parent_id
             company = a.company_id or self.env.company
             _logger.info("aa "%(a))
             self.env['res.users'].with_context(no_reset_password=True)._create_user_from_template({
