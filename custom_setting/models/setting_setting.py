@@ -209,6 +209,8 @@ class setting_setting_amb(models.TransientModel):
                     })
                 except :
                     continue
+            else :
+                _logger.info(" a <>1 %s" %(term))
 
 
         _logger.info("count %s" %(count))
