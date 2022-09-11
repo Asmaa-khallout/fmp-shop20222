@@ -138,7 +138,7 @@ class setting_setting_amb(models.TransientModel):
             active = a['active']
             name= a['name']
             if (str(id_category) not in ("nan", "/", "")):
-                cat = self.env['product.public.category'].search([('seo_name','=',str(id_category))])
+                cat = self.env['product.public.category'].search([('seo_name','=',str(id_category)),('active','in',(True,False))])
                 if(not cat):
                     data ={'name':name,'website_description':a['description'] if str(a['description']) not in ("nan", "/", "") else False, 'seo_name':str(id_category)}
                     self.env['product.public.category'].create(data)
@@ -149,8 +149,8 @@ class setting_setting_amb(models.TransientModel):
             id_parent=a['id_parent']
             id_category = a['id_category']
             if (str(id_parent) not in ("nan", "/", "")):
-                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_parent))])
-                cat_parent = self.env['product.public.category'].search([('seo_name','=',str(id_category))])
+                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_parent)),('active','in',(True,False))])
+                cat_parent = self.env['product.public.category'].search([('seo_name','=',str(id_category)),('active','in',(True,False))])
                 if(cat and cat_parent):
                     cat.parent_id = cat_parent.id
                 else:
@@ -163,8 +163,8 @@ class setting_setting_amb(models.TransientModel):
             id_category = a['id_category']
             id_product = a['id_product']
             if (str(id_product) not in ("nan", "/", "")):
-                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_category))])
-                product = self.env['product.template'].search([('x_id_presta','=',id_product)])
+                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_category)),('active','in',(True,False))])
+                product = self.env['product.template'].search([('x_id_presta','=',id_product),('active','in',(True,False))])
                 if(cat and product):
                     product.public_categ_ids=[(4,cat.id)]
                 else:
