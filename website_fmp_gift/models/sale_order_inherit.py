@@ -26,13 +26,13 @@ class SaleOrderInherit(models.Model):
         if not error and amount > 0:
             pay_gift_card_id = self.env.ref('gift_card.pay_with_gift_card_product')
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
-            line= self.env["sale.order.line"].create({
-                'product_id': pay_gift_card_id.id,
-                'price_unit': (-22),
-                'product_uom_qty': 1,
-                'product_uom': pay_gift_card_id.uom_id.id,
-                #'gift_card_id': gift_card.id,
-                'order_id': self.id
-            })
-            line.write({'price_unit':-2222})
+            # line= self.env["sale.order.line"].create({
+            #     'product_id': pay_gift_card_id.id,
+            #     'price_unit': (-22),
+            #     'product_uom_qty': 1,
+            #     'product_uom': pay_gift_card_id.uom_id.id,
+            #     #'gift_card_id': gift_card.id,
+            #     'order_id': self.id
+            # })
+            # line.write({'price_unit':-2222})
         return error
