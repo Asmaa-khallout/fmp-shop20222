@@ -182,11 +182,14 @@ class setting_setting_amb(models.TransientModel):
     def create_portal_contact(self):
         df = pd.read_excel("/home/odoo/src/user/custom_setting/models/liste des clients a activer.xlsx")
         partner_env = self.env['res.partner']
+        count=0
         for i, row in df.iterrows():
             a = row.to_dict()
             partner_id = a['Référence commande']
-            a= partner_env.search([('display_name','=',partner_id.split('(')[0])])
+            a= partner_env.search([('display_name','ilike',partner_id.split('(')[0])])
             _logger.info("le client est %s display %s" %(a,partner_id.split('(')[0]))
+            if(len(a)!=1):
+                count +=1
             if(a.parent_id):
                 a=a.parent_id
             company = a.company_id or self.env.company
@@ -198,6 +201,7 @@ class setting_setting_amb(models.TransientModel):
                 'company_id': self.env.company.id,
                 'company_ids': [(6, 0, self.env.company.ids)],
             })
+        _logger.info("count %s" %(count))
 
 
 
