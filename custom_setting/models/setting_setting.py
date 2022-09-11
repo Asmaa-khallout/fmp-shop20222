@@ -155,6 +155,8 @@ class setting_setting_amb(models.TransientModel):
                     cat.parent_id = cat_parent.id
                 else:
                     _logger.info("erreur %s de ligne %s" %(a,i))
+            else:
+                _logger.info("naaan %s %s" %(id_category,id_parent))
 
     def insert_mapping_product(self):
         df = pd.read_excel("/home/odoo/src/user/custom_setting/models/ps_category_product_samedi.xlsx")
