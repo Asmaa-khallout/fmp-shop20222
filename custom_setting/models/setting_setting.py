@@ -47,7 +47,7 @@ class setting_setting_amb(models.TransientModel):
     def get_images_products(self):
         products = self.env['product.template'].sudo().search([('x_id_presta','!=',False)])
         prestashop = PrestaShopWebServiceDict(
-            "https://www.fmp-france.com/", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
+            "http://51.159.13.78:10014", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
         count=0
         for record in products:
             _logger.info("product %s "%(record))
@@ -93,7 +93,7 @@ class setting_setting_amb(models.TransientModel):
     def publier_product(self):
         products = self.env['product.template'].sudo().search([])
         prestashop = PrestaShopWebServiceDict(
-            "https://www.fmp-france.com/", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
+            "http://51.159.13.78:10014", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
         count=0
         for record in products:
             try :
@@ -175,6 +175,22 @@ class setting_setting_amb(models.TransientModel):
 
 
         _logger.info("fiiiiiiiiiiiiiiiiiiiiiiiin")
+
+
+    def create_portal_contact(self):
+        df = pd.read_excel("/mnt/extra-addons/custom_setting/models/liste des clients a activer.xlsx")
+        partner_env = self.env['res.partner']
+        for i, row in df.iterrows():
+            a = row.to_dict()
+            partner_id = a['Référence commande']
+            a= partner_env.search([('display_name','=',partner_id.split('(')[0])])
+
+
+
+
+
+
+
 
 
 
