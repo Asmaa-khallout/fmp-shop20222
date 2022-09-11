@@ -186,6 +186,7 @@ class setting_setting_amb(models.TransientModel):
             a = row.to_dict()
             partner_id = a['Référence commande']
             a= partner_env.search([('display_name','=',partner_id.split('(')[0])])
+            _logger.info("le client est %s display %s" %(a,partner_id.split('(')[0]))
             if(a.parent_id):
                 a=a.parent_id
             company = a.company_id or self.env.company
