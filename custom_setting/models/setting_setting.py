@@ -47,7 +47,7 @@ class setting_setting_amb(models.TransientModel):
     def get_images_products(self):
         products = self.env['product.template'].sudo().search([('x_id_presta','!=',False)])
         prestashop = PrestaShopWebServiceDict(
-            "http://51.159.13.78:10014", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
+            "https://dev.fmp-france.com", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
         count=0
         for record in products:
             _logger.info("product %s "%(record))
@@ -93,7 +93,7 @@ class setting_setting_amb(models.TransientModel):
     def publier_product(self):
         products = self.env['product.template'].sudo().search([])
         prestashop = PrestaShopWebServiceDict(
-            "http://51.159.13.78:10014", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
+            "https://dev.fmp-france.com", "1IGIJ887GZUZBACQYTSJRVFI2IFDGW48")
         count=0
         for record in products:
             try :
