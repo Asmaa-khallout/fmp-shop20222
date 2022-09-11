@@ -11,6 +11,7 @@ class SaleOrderInherit(models.Model):
 
     def _pay_with_gift_card(self, gift_card):
         _logger.info("asmaaaaaaaaaa la pay with gift")
+        _logger.info(self.amount_untaxed)
         error = False
 
         if not gift_card.can_be_used():
