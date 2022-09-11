@@ -186,7 +186,9 @@ class setting_setting_amb(models.TransientModel):
         for i, row in df.iterrows():
             a = row.to_dict()
             partner_id = a['Référence commande']
-            a= partner_env.search([('display_name','ilike',partner_id.split('(')[0])])
+            term = partner_id.split('(')[0]
+            a= partner_env.search(['|', '|', ('display_name', 'ilike', term), ('ref', '=', term), ('email', 'ilike', term)])
+
             _logger.info("le client est %s display %s" %(a,partner_id.split('(')[0]))
             if(len(a)!=1):
                 count +=1
