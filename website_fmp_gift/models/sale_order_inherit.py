@@ -31,7 +31,7 @@ class SaleOrderInherit(models.Model):
                 'price_unit': (-22),
                 'product_uom_qty': 1,
                 'product_uom': pay_gift_card_id.uom_id.id,
-                'gift_card_id': gift_card.id,
+                #'gift_card_id': gift_card.id,
                 'order_id': self.id
             })
             line.write({'price_unit':-2222})
