@@ -152,7 +152,7 @@ class setting_setting_amb(models.TransientModel):
                 cat = self.env['product.public.category'].search([('seo_name', '=', str(id_parent)),('active','in',(True,False))])
                 cat_parent = self.env['product.public.category'].search([('seo_name','=',str(id_category)),('active','in',(True,False))])
                 if(cat and cat_parent):
-                    cat.parent_id = cat_parent.id
+                    cat.write({'parent_id': cat_parent.id})
                 else:
                     _logger.info("erreur %s de ligne %s" %(a,i))
             else:
