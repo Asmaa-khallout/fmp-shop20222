@@ -131,7 +131,7 @@ class setting_setting_amb(models.TransientModel):
         _logger.info("fiin")
 
     def create_cat(self):
-        df = pd.read_excel("/mnt/extra-addons/custom_setting/models/pc.xlsx")
+        df = pd.read_excel("/home/odoo/src/user/custom_setting/models/pc.xlsx")
         for i, row in df.iterrows():
             a = row.to_dict()
             id_category=a['id_category']
@@ -143,7 +143,7 @@ class setting_setting_amb(models.TransientModel):
                     data ={'name':name,'website_description':a['description'] if str(a['description']) not in ("nan", "/", "") else False, 'seo_name':str(id_category)}
                     self.env['product.public.category'].create(data)
     def create_parent(self):
-        df = pd.read_excel("/mnt/extra-addons/custom_setting/models/ps_category_lang.xlsx")
+        df = pd.read_excel("/home/odoo/src/user/custom_setting/models/ps_category_lang.xlsx")
         for i, row in df.iterrows():
             a = row.to_dict()
             id_parent=a['id_parent']
@@ -157,7 +157,7 @@ class setting_setting_amb(models.TransientModel):
                     _logger.info("erreur %s de ligne %s" %(a,i))
 
     def insert_mapping_product(self):
-        df = pd.read_excel("/mnt/extra-addons/custom_setting/models/liste_categorie_product.xlsx")
+        df = pd.read_excel("/home/odoo/src/user/custom_setting/models/liste_categorie_product.xlsx")
         for i, row in df.iterrows():
             a = row.to_dict()
             id_category = a['id_category']
@@ -178,7 +178,7 @@ class setting_setting_amb(models.TransientModel):
 
 
     def create_portal_contact(self):
-        df = pd.read_excel("/mnt/extra-addons/custom_setting/models/liste des clients a activer.xlsx")
+        df = pd.read_excel("/home/odoo/src/user/custom_setting/models/liste des clients a activer.xlsx")
         partner_env = self.env['res.partner']
         for i, row in df.iterrows():
             a = row.to_dict()
