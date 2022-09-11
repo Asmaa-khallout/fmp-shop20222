@@ -189,9 +189,9 @@ class setting_setting_amb(models.TransientModel):
             term = partner_id.split('(')[0]
             if("," in term):
                 term=term.split(",")[0]
-            a= partner_env.search([('display_name', 'ilike', term)])
+            a= partner_env.search([('display_name', 'ilike', term.strip())])
 
-            _logger.info("le client est %s display :%s" %(a,term))
+            _logger.info("le client est %s display :%s" %(a,term.strip()))
             if(len(a)!=1):
                 count +=1
             # if(a.parent_id):
