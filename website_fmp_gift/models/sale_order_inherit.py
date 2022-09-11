@@ -2,12 +2,15 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import _, api, fields, models
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class SaleOrderInherit(models.Model):
     _inherit = "sale.order"
 
     def _pay_with_gift_card(self, gift_card):
+        _logger.info("asmaaaaaaaaaa la pay with gift")
         error = False
 
         if not gift_card.can_be_used():
