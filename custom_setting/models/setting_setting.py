@@ -149,8 +149,8 @@ class setting_setting_amb(models.TransientModel):
             id_parent=a['id_parent']
             id_category = a['id_category']
             if (str(id_parent) not in ("nan", "/", "")):
-                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_parent)),('active','in',(True,False))])
-                cat_parent = self.env['product.public.category'].search([('seo_name','=',str(id_category)),('active','in',(True,False))])
+                cat = self.env['product.public.category'].search([('seo_name', '=', str(id_category)),('active','in',(True,False))])
+                cat_parent = self.env['product.public.category'].search([('seo_name','=',str(id_parent)),('active','in',(True,False))])
                 if(cat and cat_parent):
                     cat.write({'parent_id': cat_parent.id})
                 else:
