@@ -77,8 +77,8 @@ class setting_setting_amb(models.TransientModel):
                             i_record = self.env['product.image'].create({'name': record.name, 'image_1920': image_data})
                             liste_image_a.append((4, i_record.id))
                 record.write({'image_1920': image_1920, 'product_template_image_ids': liste_image_a})
-            except:
-                _logger.info("erreur ici %s" %(record))
+            except Exception as e :
+                _logger.info("erreur ici %s %s " %(record,e))
                 count +=1
                 record.write({'image_1920': image_1920, 'product_template_image_ids': liste_image_a})
                 continue
