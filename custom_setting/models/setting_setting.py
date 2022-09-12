@@ -192,16 +192,17 @@ class setting_setting_amb(models.TransientModel):
                 term = partner_id.split('(')[0]
             if ("," in term):
                 term = term.split(",")[0]
-            if(']' in term):
-                term = term.split(']')[1]
+
+
             a= partner_env.search([('display_name', '=', term.strip())])
+            if(']' in term and not a):
+                term = term.split(']')[1]
+                a = partner_env.search([('display_name', '=', term.strip())])
 
             _logger.info("le client est %s display :%s" %(a,term.strip()))
             if(len(a)!=1):
                 count +=1
             if(a):
-                if (a.parent_id):
-                    a = a.parent_id
                 if (len(a) == 1):
                     try:
                         company = a.company_id or self.env.company
