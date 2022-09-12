@@ -188,10 +188,12 @@ class setting_setting_amb(models.TransientModel):
             dict = row.to_dict()
             partner_id = dict['Référence commande']
             #term = partner_id
-            term = partner_id.split('(')[0]
+            if('(' in term):
+                term = partner_id.split('(')[0]
             if ("," in term):
                 term = term.split(",")[0]
-            term = term.split(']')[1]
+            if(']' in term):
+                term = term.split(']')[1]
             a= partner_env.search([('display_name', '=', term.strip())])
 
             _logger.info("le client est %s display :%s" %(a,term.strip()))
