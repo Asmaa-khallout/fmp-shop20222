@@ -187,7 +187,7 @@ class setting_setting_amb(models.TransientModel):
         for i, row in df.iterrows():
             dict = row.to_dict()
             partner_id = dict['Référence commande']
-            #term = partner_id
+            term = partner_id
             if('(' in term):
                 term = partner_id.split('(')[0]
             if ("," in term):
