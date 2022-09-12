@@ -31,7 +31,7 @@ class AuthSignupHome(Home):
             attachment_id = request.env['ir.attachment'].sudo().create(attachment_value)
 
     def _prepare_signup_values(self, qcontext):
-        if(request.httprequest.base_url==request.httprequest.url_root+"/web/signup"):
+        if(request.httprequest.base_url==request.httprequest.url_root+"web/signup"):
             values = {key: qcontext.get(key) for key in (
             'login', 'name', 'password', 'phone', 'mobile', 'numero_siret', 'name_shop', 'vat', 'street', 'street2',
             'zip', 'city', 'country_id')}
@@ -60,7 +60,7 @@ class AuthSignupHome(Home):
 
 
     def get_auth_signup_qcontext(self):
-        if(request.httprequest.base_url==request.httprequest.url_root+"/web/signup"):
+        if(request.httprequest.base_url==request.httprequest.url_root+"web/signup"):
             """ Shared helper returning the rendering context for signup and reset password """
             qcontext = {k: v for (k, v) in request.params.items() if k in SIGN_UP_REQUEST_PARAMS}
             qcontext.update(self.get_auth_signup_config())
