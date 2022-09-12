@@ -56,7 +56,7 @@ class AuthSignupHome(Home):
                 values['lang'] = lang
             return values
         else:
-            return super(AuthSignupHome)._prepare_signup_values(qcontext)
+            return super(AuthSignupHome,self)._prepare_signup_values(qcontext)
 
 
     def get_auth_signup_qcontext(self):
@@ -77,7 +77,7 @@ class AuthSignupHome(Home):
                     qcontext['invalid_token'] = True
             return qcontext
         else:
-            return super(AuthSignupHome).get_auth_signup_qcontext()
+            return super(AuthSignupHome,self).get_auth_signup_qcontext()
 
 
 
