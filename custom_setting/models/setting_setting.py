@@ -187,9 +187,8 @@ class setting_setting_amb(models.TransientModel):
         for i, row in df.iterrows():
             dict = row.to_dict()
             partner_id = dict['Référence commande']
-            term = partner_id
-            # if("," in term):
-            #     term=term.split(",")[0]
+            #term = partner_id
+            term = partner_id.split('(')[0]
             a= partner_env.search([('display_name', 'ilike', term.strip())])
 
             _logger.info("le client est %s display :%s" %(a,term.strip()))
