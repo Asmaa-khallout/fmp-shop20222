@@ -203,11 +203,11 @@ class setting_setting_amb(models.TransientModel):
                 if (a.parent_id):
                     a = a.parent_id
                 if (len(a) == 1):
-                    try:
+                    if(True):
                         company = a.company_id or self.env.company
                         _logger.info("aa " % (a))
                         user = self.env['res.users'].with_context(no_reset_password=True)._create_user_from_template({
-                            'name': a.name.split(']')[1],
+                            'name': a.name.split(']')[1] if ']' in a.name else a.name,
                             'login': a.email,
                             'partner_id': a.id,
                             'company_id': self.env.company.id,
@@ -215,12 +215,12 @@ class setting_setting_amb(models.TransientModel):
                         })
                         user.sudo().partner_id.activation_state = "active"
                         # user.action_reset_password()
-                    except Exception as e:
-                        _logger.info(e)
-                        _logger.info(dict)
-                        file.write("---------------------------Exception  ------------------- : %s \n" % (dict))
-                        file.write(("\n----------------------\n"))
-                        continue
+                    # except Exception as e:
+                    #     _logger.info(e)
+                    #     _logger.info(dict)
+                    #     file.write("---------------------------Exception  ------------------- : %s \n" % (dict))
+                    #     file.write(("\n----------------------\n"))
+                    #     continue
                 else:
                     _logger.info(" a <>1 %s" % (term))
                     file.write("---------------------------ELse %s  ------------------- : %s \n" % (len(a), dict))
