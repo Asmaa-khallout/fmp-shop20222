@@ -183,7 +183,7 @@ class setting_setting_amb(models.TransientModel):
         df = pd.read_excel("/home/odoo/src/user/custom_setting/models/liste des clients a activer.xlsx")
         partner_env = self.env['res.partner']
         count=0
-        file = open("/home/odoo/src/user/custom_setting/models/get_files_exception.txt", "wr")
+        file = open("/home/odoo/src/user/custom_setting/models/get_files_exception.txt", "w")
         for i, row in df.iterrows():
             dict = row.to_dict()
             partner_id = dict['Référence commande']
@@ -209,7 +209,7 @@ class setting_setting_amb(models.TransientModel):
                         'company_ids': [(6, 0, self.env.company.ids)],
                     })
                     user.sudo().partner_id.activation_state="active"
-                    user.action_reset_password()
+                    #user.action_reset_password()
                 except Exception as e :
                     _logger.info(e)
                     _logger.info(dict)
