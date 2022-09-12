@@ -183,9 +183,10 @@ class setting_setting_amb(models.TransientModel):
         df = pd.read_excel("/home/odoo/src/user/custom_setting/models/liste des clients a activer.xlsx")
         partner_env = self.env['res.partner']
         count=0
+        file = open("/home/odoo/src/user/custom_setting/models/get_files_exception.txt", "wr")
         for i, row in df.iterrows():
-            a = row.to_dict()
-            partner_id = a['Référence commande']
+            dict = row.to_dict()
+            partner_id = dict['Référence commande']
             term = partner_id.split('(')[0]
             if("," in term):
                 term=term.split(",")[0]
@@ -194,8 +195,8 @@ class setting_setting_amb(models.TransientModel):
             _logger.info("le client est %s display :%s" %(a,term.strip()))
             if(len(a)!=1):
                 count +=1
-            # if(a.parent_id):
-            #     a=a.parent_id
+            if(a.parent_id):
+                a=a.parent_id
             if(len(a)==1):
                 try:
                     company = a.company_id or self.env.company
@@ -211,11 +212,16 @@ class setting_setting_amb(models.TransientModel):
                     user.action_reset_password()
                 except Exception as e :
                     _logger.info(e)
+                    _logger.info(dict)
+                    file.write("---------------------------Exception  ------------------- : %s \n" % (dict))
+                    file.write(("\n----------------------\n"))
                     continue
             else :
                 _logger.info(" a <>1 %s" %(term))
+                file.write("---------------------------ELse %s  ------------------- : %s \n" % (len(a),dict))
+                file.write(("\n----------------------\n"))
 
-
+        file.close()
         _logger.info("count %s" %(count))
 
 

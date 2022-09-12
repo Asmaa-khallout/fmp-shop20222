@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0+e\n"
+"Project-Id-Version: Odoo Server 15.0+e-20220318\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-24 14:25+0000\n"
-"PO-Revision-Date: 2022-08-24 15:29+0100\n"
+"POT-Creation-Date: 2022-09-12 10:41+0000\n"
+"PO-Revision-Date: 2022-09-12 11:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,17 +40,6 @@ msgstr ""
 "          </span>"
 
 #. module: website_fmp_gift
-#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_layout_inherited_voucher
-msgid ""
-"<span>\n"
-"                    <i>to see your available coupons.</i>\n"
-"                </span>"
-msgstr ""
-"<span>\n"
-"                    <i>pour voir vos codes promo disponibles.</i>\n"
-"                </span>"
-
-#. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal
 msgid "AVAILABLE COUPONS"
 msgstr "Codes promo disponibles"
@@ -61,6 +50,7 @@ msgid "AVAILABLE Gift Card"
 msgstr "Cartes cadeaux disponibles"
 
 #. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
 msgid "Action"
 msgstr ""
@@ -75,6 +65,11 @@ msgstr "Tous"
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
 msgid "Amount Initial"
 msgstr "Montant Initial"
+
+#. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal
+msgid "Apply"
+msgstr "Utiliser"
 
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
@@ -94,22 +89,37 @@ msgstr "Annuler"
 
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.gift_code
-#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_layout_inherited_voucher
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.voucher_code
 msgid "Click here"
 msgstr "Cliquez ici"
 
 #. module: website_fmp_gift
 #: code:addons/website_fmp_gift/controller/portal_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
 #, python-format
 msgid "Code"
 msgstr ""
 
 #. module: website_fmp_gift
-#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_layout_inherited_voucher
-msgid "Coupon Codes"
-msgstr "Codes promo"
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_home_sale_custom
+msgid "Coupon Code"
+msgstr ""
+
+#. module: website_fmp_gift
+#: model:ir.model,name:website_fmp_gift.model_coupon_program
+msgid "Coupon Program"
+msgstr "Campagne de Coupon"
+
+#. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
+msgid "Coupons Codes"
+msgstr ""
+
+#. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_breadcrumbs_gift
+msgid "Coupons codes"
+msgstr ""
 
 #. module: website_fmp_gift
 #: code:addons/website_fmp_gift/controller/portal_inherit.py:0
@@ -118,6 +128,7 @@ msgid "Create Date"
 msgstr "Date création"
 
 #. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
 msgid "Create date"
 msgstr "Date création"
@@ -137,6 +148,18 @@ msgstr "Date d'expiration"
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal
 msgid "Get a maximum discount of"
 msgstr "Bénéficiez d'une réduction maximale de"
+
+#. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/sale_order_inherit.py:0
+#, python-format
+msgid "Gift Card already used."
+msgstr "Carte Cadeau déjà utilisée."
+
+#. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/sale_order_inherit.py:0
+#, python-format
+msgid "Gift Card are restricted for another user."
+msgstr "Les cartes cadeaux sont réservées à un autre utilisateur."
 
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_home_sale_custom
@@ -159,6 +182,12 @@ msgid "Initial Amount :"
 msgstr "Montant initial :"
 
 #. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/sale_order_inherit.py:0
+#, python-format
+msgid "Invalid or Expired Gift Card."
+msgstr "Carte cadeau invalide ou expirée."
+
+#. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal
 msgid "No<br/>Coupons<br/>Available"
 msgstr "Aucun<br/>code promo<br/>disponible"
@@ -174,14 +203,43 @@ msgid "Pay"
 msgstr "Payer"
 
 #. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/coupon_program_inherit.py:0
+#, python-format
+msgid "Promo code %s has been expired."
+msgstr "Le code promo %s a expiré."
+
+#. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/coupon_program_inherit.py:0
+#, python-format
+msgid "Promo code is expired"
+msgstr "Le code promo est expiré"
+
+#. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/coupon_program_inherit.py:0
+#, python-format
+msgid "Promo code is invalid"
+msgstr "Le code promo n'est pas valide"
+
+#. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal
 msgid "Specific Products"
 msgstr "Produits spécifiques"
 
 #. module: website_fmp_gift
+#: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
+msgid "There are currently no coupon code for your account."
+msgstr "Actuellement aucune carte cadeau disponible pour votre compte."
+
+#. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_gift
 msgid "There are currently no gift card for your account."
 msgstr "Actuellement aucune carte cadeau disponible pour votre compte."
+
+#. module: website_fmp_gift
+#: code:addons/website_fmp_gift/models/coupon_program_inherit.py:0
+#, python-format
+msgid "This coupon is not yet usable. It will be starting from %s"
+msgstr "Ce coupon n'est pas encore utilisable. Il le sera à partir de %s"
 
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.coupon_modal

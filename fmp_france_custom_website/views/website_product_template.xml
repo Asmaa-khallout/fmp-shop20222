@@ -173,9 +173,9 @@
                                         <i class="dri dri-home-l"/>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a t-att-href="keep(category=0)">Shop</a>
-                                </li>
+<!--                                <li class="breadcrumb-item">-->
+<!--                                    <a t-att-href="keep(category=0)">Shop</a>-->
+<!--                                </li>-->
                                 <li t-if="category" class="breadcrumb-item">
                                     <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)"
                                        t-field="category.name"/>
