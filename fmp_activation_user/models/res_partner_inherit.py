@@ -13,7 +13,7 @@ class ResPartnerInherit(models.Model):
 
     numero_siret = fields.Char("Siret")
     name_shop = fields.Char('Name of shop')
-    activation_state = fields.Selection(ACTIVATION_STATES, string='Activation state')
+    activation_state = fields.Selection(ACTIVATION_STATES, string='Activation state',default="inactive")
     # attachement_activation_ids = fields.Many2many("ir.attachment" ,string="Attachment for activation")
     attachment_activation_count = fields.Integer('Attachment Count',
                                                  compute='_compute_attachment_activation_count')
