@@ -53,7 +53,7 @@ class AuthSignupHome(Home):
         return values
 
     def get_auth_signup_qcontext(self):
-        _logger.info("ssss %s" %request.httprequest)
+        _logger.info("ssss %s and %s" %(request.httprequest.url,request.httprequest.url_root))
         """ Shared helper returning the rendering context for signup and reset password """
         qcontext = {k: v for (k, v) in request.params.items() if k in SIGN_UP_REQUEST_PARAMS}
         qcontext.update(self.get_auth_signup_config())
