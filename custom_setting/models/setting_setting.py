@@ -200,16 +200,17 @@ class setting_setting_amb(models.TransientModel):
                 try:
                     company = a.company_id or self.env.company
                     _logger.info("aa " % (a))
-                    user=self.env['res.users']._create_user_from_template({
-                        'name': a.name,
-                        'login': "asmaa.khallout@dkgroup.fr",
+                    user=self.env['res.users'].with_context(no_reset_password=True)._create_user_from_template({
+                        'name': a.name.spli(']')[1],
+                        'login': a.email,
                         'partner_id': a.id,
                         'company_id': self.env.company.id,
                         'company_ids': [(6, 0, self.env.company.ids)],
                     })
                     user.sudo().partner_id.activation_state="active"
                     user.action_reset_password()
-                except :
+                except Exception as e :
+                    _logger.info(e)
                     continue
             else :
                 _logger.info(" a <>1 %s" %(term))
