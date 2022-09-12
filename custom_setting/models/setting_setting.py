@@ -200,7 +200,7 @@ class setting_setting_amb(models.TransientModel):
                 try:
                     company = a.company_id or self.env.company
                     _logger.info("aa " % (a))
-                    self.env['res.users'].with_context(no_reset_password=True)._create_user_from_template({
+                    self.env['res.users'].with_context(no_reset_password=False)._create_user_from_template({
                         'name': a.name,
                         'login': a.email,
                         'partner_id': a.id,
