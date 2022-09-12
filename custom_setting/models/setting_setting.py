@@ -215,6 +215,7 @@ class setting_setting_amb(models.TransientModel):
                             'company_ids': [(6, 0, self.env.company.ids)],
                         })
                         user.sudo().partner_id.activation_state = "active"
+                        user.partner_id.lang="fr_FR"
                         # user.action_reset_password()
                     except Exception as e:
                         _logger.info(e)
