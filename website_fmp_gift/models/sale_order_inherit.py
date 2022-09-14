@@ -59,6 +59,7 @@ class SaleOrderInherit(models.Model):
     def _get_reward_values_discount_fixed_amount(self, program):
         total_amount = sum(self._get_base_order_lines(program).mapped('price_subtotal'))
         fixed_amount = program._compute_program_amount('discount_fixed_amount', self.currency_id)
+        _logger.info("les totauuuuuux %s" %(total_amount,fixed_amount))
         if total_amount < fixed_amount:
             return total_amount
         else:
