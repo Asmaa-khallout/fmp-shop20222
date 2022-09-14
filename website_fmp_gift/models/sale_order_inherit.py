@@ -68,6 +68,7 @@ class SaleOrderInherit(models.Model):
 
 
     def _get_reward_values_percentage_amount(self, program):
+        _logger.info("iciiii asmaa percentage!!!")
         # Invalidate multiline fixed_price discount line as they should apply after % discount
         fixed_price_products = self._get_applied_programs().filtered(
             lambda p: p.discount_type == 'fixed_amount'
