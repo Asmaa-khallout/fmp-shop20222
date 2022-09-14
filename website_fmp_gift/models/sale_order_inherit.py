@@ -145,3 +145,9 @@ class SaleOrderInherit(models.Model):
                 if reward_dict[val]["price_unit"] == 0:
                     del reward_dict[val]
         return reward_dict.values()
+
+
+    def _get_reward_values_discount_percentage_per_line(self, program, line):
+        _logger.info("line price reduce %s  ,, %s " %(line.price_reduce,program.discount_percentage))
+        discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
+        return discount_amount
