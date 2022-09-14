@@ -220,13 +220,13 @@ class setting_setting_amb(models.TransientModel):
                     except Exception as e:
                         _logger.info(e)
                         _logger.info(dict)
-                        file.write("---------------------------Exception  ------------------- : %s \n" % (dict))
-                        file.write(("\n----------------------\n"))
+                        _logger.info("---------------------------Exception  ------------------- : %s \n" % (dict))
+                        _logger.info(("\n----------------------\n"))
                         continue
                 else:
                     _logger.info(" a <>1 %s" % (term))
-                    file.write("---------------------------ELse %s  ------------------- : %s \n" % (len(a), dict))
-                    file.write(("\n----------------------\n"))
+                    _logger.info("---------------------------ELse %s  ------------------- : %s \n" % (len(a), dict))
+                    _logger.info(("\n----------------------\n"))
 
 
         file.close()
