@@ -105,9 +105,10 @@ class SaleOrderInherit(models.Model):
 
             # when processing lines we should not discount more than the order remaining total
             currently_discounted_amount = 0
+            _logger.info("eliiif")
             for line in lines:
                 discount_line_amount = min(self._get_reward_values_discount_percentage_per_line(program, line), amount_total - currently_discounted_amount)
-
+                _logger.info("discount line amount :%s" %(discount_line_amount))
                 if discount_line_amount:
 
                     if line.tax_id in reward_dict:
