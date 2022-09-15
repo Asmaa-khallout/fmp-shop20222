@@ -11,6 +11,7 @@
   "data"                 :  [
                              'views/templates.xml',
                              'views/portal_home_gift.xml',
+                             'views/gift_card_view_inherit.xml',
                              'security/ir.model.access.csv',
                             ],
   "assets"               : {'web.assets_frontend': ["/website_fmp_gift/static/src/js/voucher.js","/website_fmp_gift/static/src/css/voucher.css"]},
