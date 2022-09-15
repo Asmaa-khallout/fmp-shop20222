@@ -84,7 +84,7 @@ class SaleOrderInherit(models.Model):
             line = self._get_cheapest_line()
             if line:
                 discount_line_amount = min(line.price_reduce * (program.discount_percentage / 100), amount_total)
-                _logger.info("price percentage %S et amout tota %s" %(discount_line_amount,amount_total))
+                _logger.info("price percentage %s et amout tota %s" %(discount_line_amount,amount_total))
                 if discount_line_amount:
                     taxes = self.fiscal_position_id.map_tax(line.tax_id)
 
