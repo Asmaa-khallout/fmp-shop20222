@@ -77,6 +77,7 @@ class SaleOrderInherit(models.Model):
 
         reward_dict = {}
         lines = self._get_paid_order_lines()
+        _logger("nombre de lines est %s nombre %s" %(lines,len(lines)))
         amount_total = sum([line.price_subtotal
                             for line in self._get_base_order_lines(program)])
         _logger.info("amount total %s" %(amount_total))
