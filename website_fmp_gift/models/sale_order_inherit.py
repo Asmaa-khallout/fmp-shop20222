@@ -149,8 +149,9 @@ class SaleOrderInherit(models.Model):
 
     def _get_reward_values_discount_percentage_per_line(self, program, line):
         _logger.info("les info line : %s price reduce %s percentage %s" %(line,line.price_reduce,program.discount_percentage))
+        discount_amount= self.price_subtotal * (program.discount_percentage / 100)
 
-        discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
+        #discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
         _logger.info("line price reduce %s  ,, %s " % (line.price_reduce, program.discount_percentage))
         _logger.info(discount_amount)
         return discount_amount
