@@ -152,6 +152,7 @@ class SaleOrderInherit(models.Model):
         discount_amount= self.amount_untaxed * (program.discount_percentage / 100)
 
         #discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
-        _logger.info("line price reduce %s  ,, %s " % (line.price_reduce, program.discount_percentage))
+        _logger.info("totaaal d order %s" %(self.amount_untaxed))
+        #_logger.info("line price reduce %s  ,, %s " % (line.price_reduce, program.discount_percentage))
         _logger.info(discount_amount)
         return discount_amount
