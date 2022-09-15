@@ -10,7 +10,7 @@
 
         </xpath>
          <xpath expr="//field[@name='code']" position="after">
-            <field name="partner_id" widget="many2one_avatar_user"/>
+            <field name="partner_id" />
              <field name="initial_amount"/>
 
         </xpath>
