@@ -77,7 +77,6 @@ class SaleOrderInherit(models.Model):
 
         reward_dict = {}
         lines = self._get_paid_order_lines()
-        _logger.info("nombre de lines est %s nombre %s" %(lines,len(lines)))
         amount_total = sum([line.price_subtotal
                             for line in self._get_base_order_lines(program)])
         _logger.info("amount total %s" %(amount_total))
@@ -148,12 +147,11 @@ class SaleOrderInherit(models.Model):
         return reward_dict.values()
 
 
-    def _get_reward_values_discount_percentage_per_line(self, program, line):
-        _logger.info("les info line : %s price reduce %s percentage %s" %(line,line.price_reduce,program.discount_percentage))
-        discount_amount= self.amount_untaxed * (program.discount_percentage / 100)
-
-        #discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
-        _logger.info("totaaal d order %s" %(self.amount_untaxed))
-        #_logger.info("line price reduce %s  ,, %s " % (line.price_reduce, program.discount_percentage))
-        _logger.info(discount_amount)
-        return discount_amount
+    # def _get_reward_values_discount_percentage_per_line(self, program, line):
+    #     #discount_amount= self.amount_untaxed * (program.discount_percentage / 100)
+    #
+    #     discount_amount = line.product_uom_qty * line.price_reduce * (program.discount_percentage / 100)
+    #     #_logger.info("totaaal d order %s" %(self.amount_untaxed))
+    #     #_logger.info("line price reduce %s  ,, %s " % (line.price_reduce, program.discount_percentage))
+    #     _logger.info(discount_amount)
+    #     return discount_amount
