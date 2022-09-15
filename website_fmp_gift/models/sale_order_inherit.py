@@ -65,11 +65,11 @@ class SaleOrderInherit(models.Model):
         else:
             return fixed_amount
 
-    # def _get_paid_order_lines_all(self):
-    #     """ Returns the taxes included sale order total amount without the rewards amount"""
-    #     free_reward_product = self.env['coupon.program'].search([('reward_type', '=', 'product')]).mapped('discount_line_product_id')
-    #     return self.order_line.filtered(lambda x: not x._is_not_sellable_line() or x.is_delivery or x.product_id in free_reward_product)
-    #
+    def _get_paid_order_lines_all(self):
+        """ Returns the taxes included sale order total amount without the rewards amount"""
+        free_reward_product = self.env['coupon.program'].search([('reward_type', '=', 'product')]).mapped('discount_line_product_id')
+        return self.order_line.filtered(lambda x: not x._is_not_sellable_line() or x.is_delivery or x.product_id in free_reward_product)
+
 
 
     def _get_reward_values_percentage_amount(self, program):
@@ -81,7 +81,7 @@ class SaleOrderInherit(models.Model):
         self.order_line.filtered(lambda l: l.product_id in fixed_price_products).write({'price_unit': 0})
 
         reward_dict = {}
-        lines = self._get_paid_order_lines()
+        lines = self._get_paid_order_lines_all()
         amount_total = sum([line.price_subtotal
                             for line in self._get_base_order_lines(program)])
         _logger.info("amount total %s" %(amount_total))
