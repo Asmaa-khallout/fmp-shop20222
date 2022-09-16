@@ -26,8 +26,12 @@
             <field name="libelle"/>
 
         </xpath>
-         <xpath expr="//group[@name='gift_card']" position="after">
-            <field name="note" />
+         <xpath expr="//sheet" position="inside">
+            <notebook>
+                        <page string="Description" name="note">
+             <field name="note" />
+                        </page>
+            </notebook>
         </xpath>
         </field>
     </record>
