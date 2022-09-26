@@ -20,13 +20,13 @@ class SaleOrderInherit(models.Model):
         elif gift_card.partner_id and gift_card.partner_id != self.env.user.partner_id:
             error = _('Gift Card are restricted for another user.')
 
-        amount = min(self.amount_untaxed, gift_card.balance_converted(self.currency_id))
+        amount = min(self.amount_total, gift_card.balance_converted(self.currency_id))
         if not error and amount > 0:
             pay_gift_card_id = self.env.ref('gift_card.pay_with_gift_card_product')
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
             self.env["sale.order.line"].create({
                 'product_id': pay_gift_card_id.id,
-                'price_unit': -amount,
+                'price_total': -amount,
                 'product_uom_qty': 1,
                 'product_uom': pay_gift_card_id.uom_id.id,
                 'gift_card_id': gift_card.id,
@@ -40,7 +40,7 @@ class SaleOrderInherit(models.Model):
             lines_to_update = []
 
             gift_payment_lines = record.order_line.filtered('gift_card_id')
-            to_pay = sum((self.order_line - gift_payment_lines).mapped('price_subtotal'))
+            to_pay = sum((self.order_line - gift_payment_lines).mapped('price_total'))
 
             # consume older gift card first
             for gift_card_line in gift_payment_lines.sorted(lambda line: line.gift_card_id.expired_date):
@@ -49,7 +49,7 @@ class SaleOrderInherit(models.Model):
                     to_pay -= amount
                     if gift_card_line.price_unit != -amount or gift_card_line.product_uom_qty != 1:
                         lines_to_update.append(
-                            fields.Command.update(gift_card_line.id, {'price_unit': -amount, 'product_uom_qty': 1})
+                            fields.Command.update(gift_card_line.id, {'price_total': -amount, 'product_uom_qty': 1})
                         )
                 else:
                     lines_to_remove += gift_card_line
