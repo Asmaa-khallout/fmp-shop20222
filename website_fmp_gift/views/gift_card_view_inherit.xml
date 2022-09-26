@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="tree_gift_card_custom" model="ir.ui.view">
+    <record id="tree_gift_card_custom" model="ir.ui.view">
         <field name="name">gift.card.tree</field>
         <field name="model">gift.card</field>
         <field name="inherit_id" ref="gift_card.gift_card_view_tree"/>
         <field name="arch" type="xml">
-             <xpath expr="//field[@name='code']" position="before">
-            <field name="libelle"/>
+            <xpath expr="//field[@name='code']" position="before">
+                <field name="libelle"/>
 
-        </xpath>
-         <xpath expr="//field[@name='code']" position="after">
-            <field name="partner_id" />
-             <field name="initial_amount"/>
+            </xpath>
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="partner_id"/>
+                <field name="initial_amount"/>
 
-        </xpath>
+            </xpath>
         </field>
     </record>
 
-      <record id="form_gift_card_custom" model="ir.ui.view">
+    <record id="form_gift_card_custom" model="ir.ui.view">
         <field name="name">gift.card.form</field>
         <field name="model">gift.card</field>
         <field name="inherit_id" ref="gift_card.gift_card_view_form"/>
         <field name="arch" type="xml">
-             <xpath expr="//field[@name='create_date']" position="before">
-            <field name="libelle"/>
+            <xpath expr="//field[@name='create_date']" position="before">
+                <field name="libelle"/>
 
-        </xpath>
-         <xpath expr="//sheet" position="inside">
-            <notebook>
-                        <page string="Description" name="note">
-             <field name="note" />
-                        </page>
-            </notebook>
-        </xpath>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Description" name="note">
+                        <field name="note"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gift_card_view_search_inherit" model="ir.ui.view">
+        <field name="name">gift.card.search.inherit</field>
+        <field name="model">gift.card.search</field>
+        <field name="inherit_id" ref="gift_card.gift_card_view_search"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="libelle"/>
+                    <field name="partner_id"/>
+                    <field name="initial_amount"/>
+                    <field name="balance"/>
+                </xpath>
+            </data>
         </field>
     </record>
 </odoo>
