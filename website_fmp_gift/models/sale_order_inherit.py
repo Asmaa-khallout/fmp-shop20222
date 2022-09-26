@@ -22,7 +22,6 @@ class SaleOrderInherit(models.Model):
 
         amount = min(self.amount_total, gift_card.balance_converted(self.currency_id))
         amount = amount / (1 + 0.2)
-        _logger("asmaa ! 1 ! : %s")
         if not error and amount > 0:
             pay_gift_card_id = self.env.ref('gift_card.pay_with_gift_card_product')
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
