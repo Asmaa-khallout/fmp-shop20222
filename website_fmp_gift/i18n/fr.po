@@ -275,7 +275,7 @@ msgstr "Produits spécifiques"
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.view_gift_card_view_search_inherit
 msgid "State"
-msgstr "Etat"
+msgstr "État"
 
 #. module: website_fmp_gift
 #: model_terms:ir.ui.view,arch_db:website_fmp_gift.portal_my_coupon
