@@ -53,7 +53,7 @@ class SaleOrderInherit(models.Model):
                     to_pay -= amount
                     if gift_card_line.price_unit != -amount or gift_card_line.product_uom_qty != 1:
                         lines_to_update.append(
-                            fields.Command.update(gift_card_line.id, {'price_total': -amount, 'product_uom_qty': 1})
+                            fields.Command.update(gift_card_line.id, {'price_unit': -amount, 'product_uom_qty': 1})
                         )
                 else:
                     lines_to_remove += gift_card_line
