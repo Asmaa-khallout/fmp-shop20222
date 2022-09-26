@@ -21,12 +21,13 @@ class SaleOrderInherit(models.Model):
             error = _('Gift Card are restricted for another user.')
 
         amount = min(self.amount_total, gift_card.balance_converted(self.currency_id))
+        amount = amount - (amount / (1 + 0.2))
         if not error and amount > 0:
             pay_gift_card_id = self.env.ref('gift_card.pay_with_gift_card_product')
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
             self.env["sale.order.line"].create({
                 'product_id': pay_gift_card_id.id,
-                'price_total': -amount,
+                'price_unit': -amount,
                 'product_uom_qty': 1,
                 'product_uom': pay_gift_card_id.uom_id.id,
                 'gift_card_id': gift_card.id,
@@ -45,6 +46,7 @@ class SaleOrderInherit(models.Model):
             # consume older gift card first
             for gift_card_line in gift_payment_lines.sorted(lambda line: line.gift_card_id.expired_date):
                 amount = min(to_pay, gift_card_line.gift_card_id.balance_converted(record.currency_id))
+                amount = amount - (amount / (1 + 0.2))
                 if amount:
                     to_pay -= amount
                     if gift_card_line.price_unit != -amount or gift_card_line.product_uom_qty != 1:
