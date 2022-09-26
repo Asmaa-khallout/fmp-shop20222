@@ -56,6 +56,28 @@ class SaleOrderInherit(models.Model):
             lines_to_remove.unlink()
             record.update({'order_line': lines_to_update})
 
+    # def _recompute_gift_card_lines(self):
+    #     for record in self:
+    #         lines_to_remove = self.env['sale.order.line']
+    #         lines_to_update = []
+    #
+    #         gift_payment_lines = record.order_line.filtered('gift_card_id')
+    #         to_pay = sum((self.order_line - gift_payment_lines).mapped('price_total'))
+    #
+    #         # consume older gift card first
+    #         for gift_card_line in gift_payment_lines.sorted(lambda line: line.gift_card_id.expired_date):
+    #             amount = min(to_pay, gift_card_line.gift_card_id.balance_converted(record.currency_id)+gift_card_line.price_unit)
+    #             if amount:
+    #                 to_pay -= amount
+    #                 if gift_card_line.price_unit != -amount or gift_card_line.product_uom_qty != 1:
+    #                     lines_to_update.append(
+    #                         fields.Command.update(gift_card_line.id, {'price_unit': -amount, 'product_uom_qty': 1})
+    #                     )
+    #             else:
+    #                 lines_to_remove += gift_card_line
+    #         lines_to_remove.unlink()
+    #         record.update({'order_line': lines_to_update})
+
     def _get_reward_values_discount_fixed_amount(self, program):
         total_amount = sum(self._get_base_order_lines(program).mapped('price_subtotal'))
         fixed_amount = program._compute_program_amount('discount_fixed_amount', self.currency_id)
