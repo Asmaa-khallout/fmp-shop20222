@@ -20,10 +20,7 @@ class SaleOrderInherit(models.Model):
         elif gift_card.partner_id and gift_card.partner_id != self.env.user.partner_id:
             error = _('Gift Card are restricted for another user.')
 
-        amount = min(self.amount_total, gift_card.balance_converted(self.currency_id))
-        _logger.info("asmaa amount total %s" %(self.amount_total))
-        amount = amount / (1 + 0.2)
-        _logger.info("after asmaa amount : %s" %(amount))
+        amount = min(self.amount_untaxed, gift_card.balance_converted(self.currency_id))
         if not error and amount > 0:
             pay_gift_card_id = self.env.ref('gift_card.pay_with_gift_card_product')
             gift_card.redeem_line_ids.filtered(lambda redeem: redeem.state != "sale").unlink()
@@ -43,12 +40,11 @@ class SaleOrderInherit(models.Model):
             lines_to_update = []
 
             gift_payment_lines = record.order_line.filtered('gift_card_id')
-            to_pay = sum((self.order_line - gift_payment_lines).mapped('price_total'))
+            to_pay = sum((self.order_line - gift_payment_lines).mapped('price_subtotal'))
 
             # consume older gift card first
             for gift_card_line in gift_payment_lines.sorted(lambda line: line.gift_card_id.expired_date):
                 amount = min(to_pay, gift_card_line.gift_card_id.balance_converted(record.currency_id))
-                amount = amount / (1 + 0.2)
                 if amount:
                     to_pay -= amount
                     if gift_card_line.price_unit != -amount or gift_card_line.product_uom_qty != 1:
