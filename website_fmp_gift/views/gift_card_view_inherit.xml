@@ -48,6 +48,10 @@
                     <field name="initial_amount"/>
                     <field name="balance"/>
                 </xpath>
+                <xpath expr="//group[@name='groupby']" position="after">
+                        <filter string="Partner" name="financialaccount" context="{'group_by':'partner_id'}"/>
+                        <filter string="State" name="product" context="{'group_by':'state'}"/>
+                    </xpath>
             </data>
         </field>
     </record>
